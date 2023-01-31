@@ -1,5 +1,5 @@
 ---
-import Footer from "../components/Footer";
+import Footer from "../components/ui/Footer";
 import Header from "../components/ui/Header";
 
 const { content } = Astro.props;
@@ -14,10 +14,10 @@ const { content } = Astro.props;
   </head>
   <body>
     <div
-      class="grid grid-cols-1 sm:min-h-max h-screen md:h-screen lg:h-screen dark:bg-black cursor-default w-screen p-96"
+      class="grid h-screen w-screen cursor-default auto-rows-auto grid-cols-1 grid-rows-3 p-10 dark:bg-black sm:min-h-max md:h-screen lg:h-screen"
     >
       <Header client:load />
-      <div class="grow p-20 self-stretch">
+      <div class="grow self-stretch p-20">
         <slot />
       </div>
       <Footer />
