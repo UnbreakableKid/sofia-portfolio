@@ -1,37 +1,27 @@
 ---
 // Component Imports
-import ThemeToggle from "../components/ui/ThemeToggle";
-import { Button } from "../components/ui/Button";
+
+import MainLayout from "../layouts/MainLayout.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
+const title = "Susu";
+const description = "Susu";
+const meta = {
+  title,
+  description,
+};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Susu</title>
-  </head>
-
-  <body>
-    <div class="flex flex-col h-screen justify-between dark:bg-black">
-      <div class="flex place-content-between z-10">
-        <Button variant="link" client:visible className="w-fit">hi 1</Button>
-        <ThemeToggle client:visible>hi 2</ThemeToggle>
-      </div>
-      <div class="justify-center self-center z-10">
-        <h1 class="prose prose-xl font-bold font-serif text-9xl">Sofia</h1>
-      </div>
-      <div class="z-10 w-fit">
-        <Button client:visible variant="link">hi</Button>
-      </div>
-      <canvas class="absolute h-screen" id="canvas"></canvas>
-    </div>
-    <script>
-      import "../scripts/Balls";
-    </script>
-  </body>
-</html>
+<MainLayout content={meta}>
+  <div class="grid h-full content-center justify-center">
+    <h1 class="prose prose-xl font-bold font-serif text-9xl z-10 relative">
+      Sofia
+    </h1>
+  </div>
+  <canvas class="absolute h-screen w-screen top-0 right-0 z-0" id="canvas"
+  ></canvas>
+  <script>
+    import "../scripts/Balls";
+  </script>
+</MainLayout>
