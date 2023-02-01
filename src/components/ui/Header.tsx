@@ -12,7 +12,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="top-0 left-0 z-10 flex h-fit w-full place-content-between items-center justify-between ">
+    <div className="top-0 left-0 z-10 flex h-fit w-full place-content-between items-center justify-between">
       <a href="/">
         <Button
           variant="link"
@@ -24,9 +24,11 @@ const Header = () => {
         </Button>
       </a>
       <div className="flex items-center">
-        <Button variant="link" className="text-2xl font-black">
-          trabalhos
-        </Button>
+        <a href="/trabalhos">
+          <Button variant="link" className="text-2xl font-black">
+            trabalhos
+          </Button>
+        </a>
         <ThemeToggle />
       </div>
     </div>

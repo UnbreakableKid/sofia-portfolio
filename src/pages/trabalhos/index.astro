@@ -1,0 +1,18 @@
+---
+import WorkTab from "../../components/TabWork";
+
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const resource = {
+  title: "Astro",
+  description:
+    "Astro is a new kind of static site generator. It's fast, modern, and built for the future.",
+  image: "https://astro.build/assets/social.png",
+  url: "https://astro.build",
+  twitter: "@withastro",
+};
+---
+
+<MainLayout content={resource}>
+  <WorkTab client:load />
+</MainLayout>

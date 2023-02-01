@@ -10,6 +10,11 @@ export interface Ball {
 
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+const maskCanvas = document.getElementById("canvas") as HTMLCanvasElement;
+const maskCtx = maskCanvas.getContext("2d") as CanvasRenderingContext2D;
+
+var h1 = document.getElementById("sofia");
+var h1Rect = h1!.getBoundingClientRect();
 
 const mouse = { x: -100, y: -100 };
 
@@ -47,9 +52,14 @@ function animate() {
 
   const isDarkMode = document.documentElement.classList.contains("dark");
 
-  if (Math.random() < 0.05) {
+  if (Math.random() < 0.001) {
+    // dont put the ball over the rectangle
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
+
+    if (x > h1Rect.left && x < h1Rect.right) {
+      x = Math.random() * canvas.width * 0.5 + canvas.width * 0.5;
+    }
 
     balls.push({
       x: x,
@@ -63,36 +73,64 @@ function animate() {
   }
 
   for (let i = 0; i < balls.length; i++) {
-    let dx = mouse.x - balls[i].x;
-    let dy = mouse.y - balls[i].y;
+    let ball = balls[i];
+    let dx = mouse.x - ball.x;
+    let dy = mouse.y - ball.y;
     let distance = Math.sqrt(dx * dx + dy * dy);
-    balls[i].color = !isDarkMode
-      ? `rgb(${distance / 5}, ${distance / 5}, ${distance / 5})`
-      : `rgb(${255 - distance / 5}, ${255 - distance / 5}, ${
-          255 - distance / 5
-        })`;
 
-    if (distance < 20) {
-      balls[i].x += dx * 0.05;
-      balls[i].y += dy * 0.05;
+    const lightModeColor = distance / 5;
+
+    const darkModeColor = 255 - distance / 5;
+    ball.color = !isDarkMode
+      ? `rgb(${lightModeColor}, ${lightModeColor}, ${lightModeColor})`
+      : `rgb(${darkModeColor}, ${darkModeColor}, ${darkModeColor})`;
+
+    if (distance < 30) {
+      ball.x += dx * 0.05;
+      ball.y += dy * 0.05;
     }
 
-    if (balls[i].y + balls[i].size >= canvas.height) {
-      balls[i].direction = -1;
-      balls[i].slowingDown = true;
-    } else if (balls[i].y - balls[i].size <= 0) {
-      balls[i].direction = 1;
+    const isBallTouchingTopOfH1 =
+      ball.x + ball.size >= h1Rect.left &&
+      ball.x - ball.size <= h1Rect.right &&
+      ball.y + ball.size >= h1Rect.top &&
+      ball.y - ball.size <= h1Rect.bottom;
+
+    const isBallTouchingBottomOfH1 =
+      ball.x + ball.size >= h1Rect.left &&
+      ball.x - ball.size <= h1Rect.right &&
+      ball.y + ball.size >= h1Rect.bottom &&
+      ball.y - ball.size <= h1Rect.bottom;
+
+    if (
+      (isBallTouchingTopOfH1 && isBallTouchingBottomOfH1) ||
+      ball.y - ball.size <= 0
+    ) {
+      ball.direction = 1;
+    } else if (ball.y + ball.size >= canvas.height || isBallTouchingTopOfH1) {
+      ball.direction = -1;
+      ball.slowingDown = true;
     }
 
-    if (balls[i].slowingDown) {
-      balls[i].velocity -= 0.01;
+    if (ball.slowingDown && ball.velocity < 0.1) {
+      ball.slowingDown = false;
     }
 
-    balls[i].y += balls[i].velocity * balls[i].direction;
+    if (ball.slowingDown) {
+      ball.velocity -= 0.01;
+    }
+
+    ball.y += ball.velocity * ball.direction;
+
+    if (balls.length > 100) {
+      balls.splice(i, 1);
+      i--;
+      continue;
+    }
 
     ctx.beginPath();
-    ctx.fillStyle = balls[i].color;
-    ctx.arc(balls[i].x, balls[i].y, balls[i].size, 0, Math.PI * 2);
+    ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
+    ctx.fillStyle = ball.color;
     ctx.fill();
   }
 }
