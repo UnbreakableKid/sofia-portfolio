@@ -1,6 +1,6 @@
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./ui/Tabs";
 
-const WorkTab = () => {
+export default function WorkTab() {
   return (
     <Tabs defaultValue="full">
       <div className="flex  justify-center">
@@ -26,6 +26,4 @@ const WorkTab = () => {
       <TabsContent value="partial">Partial</TabsContent>
     </Tabs>
   );
-};
-
-export default WorkTab;
+}
