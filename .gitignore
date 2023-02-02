@@ -19,3 +19,24 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+.vercel/output/config.json
+.vercel/output/functions/render.func/.vc-config.json
+.vercel/output/functions/render.func/package.json
+.vercel/output/functions/render.func/src/pages/contactos.astro
+.vercel/output/functions/render.func/src/pages/index.astro
+.vercel/output/functions/render.func/src/pages/trabalhos/index.astro
+.vercel/output/static/bla.png
+.vercel/output/static/favicon.svg
+.vercel/output/static/_astro/client.7b8c5678.js
+.vercel/output/static/_astro/client.a90dab03.js
+.vercel/output/static/_astro/client.ff9f8b8a.js
+.vercel/output/static/_astro/confetti.module.249a7e39.js
+.vercel/output/static/_astro/contactos.0a0bfa84.css
+.vercel/output/static/_astro/Header.e426e9e2.js
+.vercel/output/static/_astro/hoisted.cf33ad8b.js
+.vercel/output/static/_astro/index.3a1555ae.js
+.vercel/output/static/_astro/index.81e52648.js
+.vercel/output/static/_astro/jsx-runtime.a188210c.js
+.vercel/output/static/_astro/signals.module.1c46778e.js
+.vercel/output/static/_astro/TabWork.84bac77c.js
+.vercel/output/static/_astro/TabWork.d9ca5b6d.js
