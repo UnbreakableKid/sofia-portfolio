@@ -50,10 +50,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 Button.displayName = "Button";
-Button.defaultProps = {
-  onClick: () => {
-    confetti();
-  },
-};
+
 
 export { Button, buttonVariants };
