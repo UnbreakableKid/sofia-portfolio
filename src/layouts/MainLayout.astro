@@ -34,32 +34,20 @@ const { content } = Astro.props;
 
       //make the cursor follow the mouse
       document.addEventListener("mousemove", (e) => {
-        const cursor = document.querySelector(".movable");
+        const cursor = document.getElementById("movable");
         cursor.style.left = e.pageX + "px";
         cursor.style.top = e.pageY + "px";
       });
     </script>
-    <style is:global>
-      .movable {
-        width: 20px;
-        height: 20px;
-        background: rgb(254, 254, 254);
-        position: fixed;
-        z-index: 999999999;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        pointer-events: none;
-        mix-blend-mode: difference;
-        transition: background 0.5s ease 0s;
-      }
-    </style>
   </head>
   <body>
     <div
       class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white p-10 dark:bg-black sm:min-h-max md:h-screen lg:h-screen"
     >
       <Header client:load />
-      <ins class="movable"></ins>
+      <ins
+        class="pointer-events-none fixed z-[999999999] h-5 w-5 -translate-x-2/4 -translate-y-2/4 rounded-[50%] bg-white mix-blend-difference transition-[background] delay-[0s] duration-[0.5s] ease-[ease]"
+        id="movable"></ins>
       <main class="grow self-stretch p-20">
         <slot />
       </main>
