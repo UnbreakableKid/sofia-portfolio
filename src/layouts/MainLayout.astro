@@ -11,17 +11,6 @@ const { content } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <title>{content.title}</title>
-  </head>
-  <body>
-    <div
-      class="flex h-screen w-screen cursor-default auto-rows-auto flex-col p-10 dark:bg-black sm:min-h-max md:h-screen lg:h-screen"
-    >
-      <Header client:load />
-      <div class="grow self-stretch p-20">
-        <slot />
-      </div>
-      <Footer />
-    </div>
     <script is:inline>
       const theme = (() => {
         if (
@@ -42,6 +31,39 @@ const { content } = Astro.props;
         document.documentElement.classList.add("dark");
       }
       window.localStorage.setItem("theme", theme);
+
+      //make the cursor follow the mouse
+      document.addEventListener("mousemove", (e) => {
+        const cursor = document.querySelector(".movable");
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY + "px";
+      });
     </script>
+    <style is:global>
+      .movable {
+        width: 20px;
+        height: 20px;
+        background: rgb(254, 254, 254);
+        position: fixed;
+        z-index: 999999999;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        pointer-events: none;
+        mix-blend-mode: difference;
+        transition: background 0.5s ease 0s;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white p-10 dark:bg-black sm:min-h-max md:h-screen lg:h-screen"
+    >
+      <Header client:load />
+      <ins class="movable"></ins>
+      <main class="grow self-stretch p-20">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

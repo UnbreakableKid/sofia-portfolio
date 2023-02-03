@@ -78,7 +78,7 @@ function animate() {
     let dy = mouse.y - ball.y;
     let distance = Math.sqrt(dx * dx + dy * dy);
 
-    const lightModeColor = distance / 5;
+    const lightModeColor = 255 - distance / 5;
 
     const darkModeColor = 255 - distance / 5;
     ball.color = !isDarkMode
@@ -102,12 +102,9 @@ function animate() {
       ball.y + ball.size >= h1Rect.bottom &&
       ball.y - ball.size <= h1Rect.bottom;
 
-    if (
-      (isBallTouchingTopOfH1 && isBallTouchingBottomOfH1) ||
-      ball.y - ball.size <= 0
-    ) {
+    if (ball.y - ball.size <= 0) {
       ball.direction = 1;
-    } else if (ball.y + ball.size >= canvas.height || isBallTouchingTopOfH1) {
+    } else if (ball.y + ball.size >= canvas.height) {
       ball.direction = -1;
       ball.slowingDown = true;
     }

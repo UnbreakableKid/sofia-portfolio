@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./Button";
 
-const ThemeToggle: React.FC = () => {
+const ThemeToggle = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
 
   const handleClick = () => {

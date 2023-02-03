@@ -10,7 +10,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind(), preact(), react()],
+  integrations: [tailwind(), react()],
   vite: {
     ssr: {
       noExternal: ["@radix-ui/react-tabs"],

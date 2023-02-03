@@ -1,6 +1,5 @@
 ---
 // Component Imports
-
 import MainLayout from "../layouts/MainLayout.astro";
 
 // Full Astro Component Syntax:
@@ -13,17 +12,18 @@ const meta = {
 };
 ---
 
-<MainLayout content={meta}>
+<MainLayout content={meta} class="absolute">
   <div class="grid h-full content-center justify-center">
     <h1
-      class="prose prose-xl relative z-10 font-serif text-9xl font-bold"
+      class="prose relative z-10 bg-black font-serif text-9xl font-bold text-white mix-blend-difference"
       id="sofia"
     >
       Sofia
     </h1>
   </div>
-  <canvas class="absolute top-0 right-0 z-0 h-screen w-screen" id="canvas"
-  ></canvas>
+  <canvas
+    class="absolute top-0 right-0 z-0 h-screen w-screen mix-blend-difference"
+    id="canvas"></canvas>
   <script>
     import "../scripts/Balls";
     import "../scripts/Surprise";
