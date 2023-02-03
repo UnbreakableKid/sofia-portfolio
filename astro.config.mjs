@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   vite: {
     ssr: {
-      noExternal: ["@radix-ui/react-tabs"],
+      noExternal: ["@radix-ui/react-tabs", "@radix-ui/react-scroll-area"],
     },
   },
 });

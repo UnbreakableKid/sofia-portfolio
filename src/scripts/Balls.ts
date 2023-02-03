@@ -52,7 +52,7 @@ function animate() {
 
   const isDarkMode = document.documentElement.classList.contains("dark");
 
-  if (Math.random() < 0.001) {
+  if (Math.random() < 0.01) {
     // dont put the ball over the rectangle
     let x = Math.random() * canvas.width;
     let y = Math.random() * canvas.height;
