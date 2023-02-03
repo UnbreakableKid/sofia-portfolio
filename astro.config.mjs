@@ -9,11 +9,11 @@ import preact from "@astrojs/preact";
 import react from "@astrojs/react";
 
 // https://astro.build/config
-import netlify from "@astrojs/netlify/functions";
-
-// https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), tailwind(), preact(), react()],
-  output: "server",
-  adapter: netlify()
+  vite: {
+    ssr: {
+      noExternal: ["@radix-ui/react-tabs"],
+    },
+  },
 });
