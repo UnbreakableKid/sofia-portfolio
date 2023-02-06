@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "./Button";
 import ThemeToggle from "./ThemeToggle";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   const [fontStyle, setFontStyle] = useState("font-black");
   useEffect(() => {
     const fontStyles = ["font-sans", "font-serif", "font-mono"];
@@ -26,7 +28,7 @@ const Header = () => {
       <div className="flex items-center">
         <a href="/trabalhos">
           <Button variant="link" className="text-2xl font-black">
-            trabalhos
+            {t("header.work")}
           </Button>
         </a>
         <ThemeToggle />

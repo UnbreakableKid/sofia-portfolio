@@ -14,10 +14,15 @@ specifiers:
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   astro: ^2.0.6
+  astro-i18next: 1.0.0-beta.17
   autoprefixer: ^10.4.13
   canvas-confetti: ^1.6.0
   class-variance-authority: ^0.4.0
   clsx: ^1.2.1
+  i18next: ^22.4.9
+  i18next-browser-languagedetector: ^7.0.1
+  i18next-fs-backend: ^2.1.1
+  i18next-http-backend: ^2.1.1
   lucide-react: ^0.108.0
   postcss: ^8.4.21
   preact: 10.6.5
@@ -26,6 +31,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.2.2
   react: 18.0.0
   react-dom: 18.0.0
+  react-i18next: ^12.1.5
   tailwind-merge: ^1.9.0
   tailwindcss: ^3.2.4
   tailwindcss-animate: ^1.0.5
@@ -43,13 +49,19 @@ dependencies:
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   astro: 2.0.6
+  astro-i18next: 1.0.0-beta.17_astro@2.0.6
   canvas-confetti: 1.6.0
   class-variance-authority: 0.4.0
   clsx: 1.2.1
+  i18next: 22.4.9
+  i18next-browser-languagedetector: 7.0.1
+  i18next-fs-backend: 2.1.1
+  i18next-http-backend: 2.1.1
   lucide-react: 0.108.0_react@18.0.0
   preact: 10.6.5
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
+  react-i18next: 12.1.5_2mnqndwsze3gjpfvah655nga6q
   tailwind-merge: 1.9.0
   tailwindcss-animate: 1.0.5_tailwindcss@3.2.4
 
@@ -875,6 +887,15 @@ packages:
       escalade: 3.1.1
     dev: false
 
+  /@proload/plugin-tsm/0.2.1_@proload+core@0.3.3:
+    resolution: {integrity: sha512-Ex1sL2BxU+g8MHdAdq9SZKz+pU34o8Zcl9PHWo2WaG9hrnlZme607PU6gnpoAYsDBpHX327+eu60wWUk+d/b+A==}
+    peerDependencies:
+      '@proload/core': ^0.3.2
+    dependencies:
+      '@proload/core': 0.3.3
+      tsm: 2.3.0
+    dev: false
+
   /@radix-ui/number/1.0.0:
     resolution: {integrity: sha512-Ofwh/1HX69ZfJRiRBMTy7rgjAzHmwe4kW9C9Y99HTRUcYLUuVT0KESFj15rPjRgKJs20GPq8Bm5aEDJ8DuA3vA==}
     dependencies:
@@ -1368,6 +1389,26 @@ packages:
     hasBin: true
     dev: false
 
+  /astro-i18next/1.0.0-beta.17_astro@2.0.6:
+    resolution: {integrity: sha512-EyVhwLuNcQoQnte4Gn/2Mj9SuTS7lmWPZFDRF+rrONcBSm/Il3wQv78PaOUWfdE3QjHznYfg8o6RvLuvu6RM4Q==}
+    hasBin: true
+    peerDependencies:
+      astro: '>=1.0.0'
+    dependencies:
+      '@proload/core': 0.3.3
+      '@proload/plugin-tsm': 0.2.1_@proload+core@0.3.3
+      astro: 2.0.6
+      i18next: 22.4.9
+      i18next-browser-languagedetector: 7.0.1
+      i18next-fs-backend: 2.1.1
+      i18next-http-backend: 2.1.1
+      iso-639-1: 2.1.15
+      locale-emoji: 0.3.0
+      pathe: 1.1.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /astro/2.0.6:
     resolution: {integrity: sha512-aI8Ijy2EpMyP5SpjmDJpEUdNL6CUAxnja6IeaBC1BokD/mNAnijtmMnTyWVI3UeEZ727wYLISQMyqCfEUq8VNA==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
@@ -1718,6 +1759,14 @@ packages:
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /cross-fetch/3.1.5:
+    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
+    dependencies:
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /cross-spawn/7.0.3:
@@ -2502,6 +2551,12 @@ packages:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
     dev: false
 
+  /html-parse-stringify/3.0.1:
+    resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
+    dependencies:
+      void-elements: 3.1.0
+    dev: false
+
   /html-void-elements/2.0.1:
     resolution: {integrity: sha512-0quDb7s97CfemeJAnW9wC0hw78MtW7NU3hqtCD75g2vFlDLt36llsYD7uB7SUzojLMP24N5IatXf7ylGXiGG9A==}
     dev: false
@@ -2519,6 +2574,30 @@ packages:
   /human-signals/3.0.1:
     resolution: {integrity: sha512-rQLskxnM/5OCldHo+wNXbpVgDn5A17CUoKX+7Sokwaknlq7CdSnphy0W39GU8dw59XiCXmFXDg4fRuckQRKewQ==}
     engines: {node: '>=12.20.0'}
+    dev: false
+
+  /i18next-browser-languagedetector/7.0.1:
+    resolution: {integrity: sha512-Pa5kFwaczXJAeHE56CHG2aWzFBMJNUNghf0Pm4SwSrEMps/PTKqW90EYWlIvhuYStf3Sn1K0vw+gH3+TLdkH1g==}
+    dependencies:
+      '@babel/runtime': 7.20.13
+    dev: false
+
+  /i18next-fs-backend/2.1.1:
+    resolution: {integrity: sha512-FTnj+UmNgT3YRml5ruRv0jMZDG7odOL/OP5PF5mOqvXud2vHrPOOs68Zdk6iqzL47cnnM0ZVkK2BAvpFeDJToA==}
+    dev: false
+
+  /i18next-http-backend/2.1.1:
+    resolution: {integrity: sha512-jByfUCDVgQ8+/Wens7queQhYYvMcGTW/lR4IJJNEDDXnmqjLrwi8ubXKpmp76/JIWEZHffNdWqnxFJcTVGeaOw==}
+    dependencies:
+      cross-fetch: 3.1.5
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
+  /i18next/22.4.9:
+    resolution: {integrity: sha512-8gWMmUz460KJDQp/ob3MNUX84cVuDRY9PLFPnV8d+Qezz/6dkjxwOaH70xjrCNDO+JrUL25iXfAIN9wUkInNZw==}
+    dependencies:
+      '@babel/runtime': 7.20.13
     dev: false
 
   /ieee754/1.2.1:
@@ -2653,6 +2732,11 @@ packages:
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  /iso-639-1/2.1.15:
+    resolution: {integrity: sha512-7c7mBznZu2ktfvyT582E2msM+Udc1EjOyhVRE/0ZsjD9LBtWSm23h3PtiRh2a35XoUsTQQjJXaJzuLjXsOdFDg==}
+    engines: {node: '>=6.0'}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: false
@@ -2712,6 +2796,10 @@ packages:
       js-yaml: 3.14.1
       pify: 4.0.1
       strip-bom: 3.0.0
+    dev: false
+
+  /locale-emoji/0.3.0:
+    resolution: {integrity: sha512-JGm8+naU49CBDnH1jksS3LecPdfWQLxFgkLN6ZhYONKa850pJ0Xt8DPGJnYK0ZuJI8jTuiDDPCDtSL3nyacXwg==}
     dev: false
 
   /locate-path/3.0.0:
@@ -3436,6 +3524,18 @@ packages:
       '@types/nlcst': 1.0.0
     dev: false
 
+  /node-fetch/2.6.7:
+    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+
   /node-fetch/2.6.9:
     resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
     engines: {node: 4.x || >=6.0.0}
@@ -3634,6 +3734,10 @@ packages:
 
   /path-to-regexp/6.2.1:
     resolution: {integrity: sha512-JLyh7xT1kizaEvcaXOQwOc2/Yhw6KZOvPf1S8401UyLk86CU79LN3vl7ztXGm/pZ+YjoyAJ4rxmHwbkBXJX+yw==}
+    dev: false
+
+  /pathe/1.1.0:
+    resolution: {integrity: sha512-ODbEPR0KKHqECXW1GoxdDb+AZvULmXjVPy4rt+pGo2+TnjJTIPJQSVS6N63n8T2Ip+syHhbn52OewKicV0373w==}
     dev: false
 
   /periscopic/3.1.0:
@@ -3899,6 +4003,26 @@ packages:
       loose-envify: 1.4.0
       react: 18.0.0
       scheduler: 0.21.0
+    dev: false
+
+  /react-i18next/12.1.5_2mnqndwsze3gjpfvah655nga6q:
+    resolution: {integrity: sha512-7PQAv6DA0TcStG96fle+8RfTwxVbHVlZZJPoEszwUNvDuWpGldJmNWa3ZPesEsZQZGF6GkzwvEh6p57qpFD2gQ==}
+    peerDependencies:
+      i18next: '>= 19.0.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.20.13
+      html-parse-stringify: 3.0.1
+      i18next: 22.4.9
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
     dev: false
 
   /react/18.0.0:
@@ -4425,6 +4549,14 @@ packages:
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
 
+  /tsm/2.3.0:
+    resolution: {integrity: sha512-++0HFnmmR+gMpDtKTnW3XJ4yv9kVGi20n+NfyQWB9qwJvTaIWY9kBmzek2YUQK5APTQ/1DTrXmm4QtFPmW9Rzw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dependencies:
+      esbuild: 0.15.18
+    dev: false
+
   /type-fest/0.13.1:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
     engines: {node: '>=10'}
@@ -4620,6 +4752,11 @@ packages:
         optional: true
     dependencies:
       vite: 4.1.1
+    dev: false
+
+  /void-elements/3.1.0:
+    resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
+    engines: {node: '>=0.10.0'}
     dev: false
 
   /vscode-css-languageservice/6.2.3:

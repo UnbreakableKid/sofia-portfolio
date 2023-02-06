@@ -1,11 +1,13 @@
 ---
 import Footer from "../components/ui/Footer";
 import Header from "../components/ui/Header";
+import { LanguageSelector } from "astro-i18next/components";
+import i18next from "i18next";
 
 const { content } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -44,7 +46,7 @@ const { content } = Astro.props;
     <div
       class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white p-10 dark:bg-black sm:min-h-max md:h-screen lg:h-screen"
     >
-      <Header client:load />
+      <Header client:visible />
       <ins
         class="pointer-events-none fixed z-[999999999] h-6 w-6 -translate-x-2/4 -translate-y-2/4 rounded-[50%] bg-white mix-blend-difference transition-[background] delay-[0s] duration-[0.5s] ease-[ease]"
         id="movable"></ins>

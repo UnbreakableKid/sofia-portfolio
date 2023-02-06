@@ -1,9 +1,9 @@
 ---
 // Component Imports
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
 import { t, changeLanguage } from "i18next";
 
-changeLanguage("en");
+changeLanguage("pt");
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -28,7 +28,7 @@ const meta = {
     class="absolute top-0 right-0 z-0 h-screen w-screen mix-blend-difference"
     id="canvas"></canvas>
   <script>
-    import "../scripts/Balls";
-    import "../scripts/Surprise";
+    import "../../scripts/Balls";
+    import "../../scripts/Surprise";
   </script>
 </MainLayout>
