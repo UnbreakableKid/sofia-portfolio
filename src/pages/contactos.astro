@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import instagramSvg from "../../public/instagram.svg";
 import linkedInSvg from "../../public/linkedin.svg";
 import behanceSvg from "../../public/behance.svg";
+import { Button } from "../components/ui/Button";
 const content = {
   title: "Home",
   description: "Home page",
@@ -12,24 +13,17 @@ const content = {
 ---
 
 <MainLayout content={content}>
-  <div class="w-52">
-    <h1 class="text-2xl font-bold">Olá novamente</h1>
-    <p class="mt-5">Vamos passar à conversa?</p>
-    <p>
-      Manda uma mensagem para <a
-        class="prose text-red-500"
-        href="mailto:ribeiro.anasofia@gmail.com">ribeiro.anasofia@gmail.com</a
-      >
-    </p>
-    <p class="mt-10">Segue-me em</p>
-    <div class="mt-2 flex gap-3">
-      <a href="https://www.instagram.com/ah_sofs"
-        ><img src={instagramSvg} alt="Instagram" srcset="" /></a
-      >
-      <a href="https://www.linkedin.com/in/sofia-ribeiro-design/"
-        ><img src={linkedInSvg} alt="LinkedIn" srcset="" /></a
-      >
-      <a href=""><img src={behanceSvg} alt="Behance" srcset="" /></a>
+  <div class="grid h-full content-center justify-center justify-items-center">
+    <h2
+      class="relative z-10 bg-black font-serif text-7xl font-bold text-white mix-blend-difference"
+    >
+      Vamos conversar?
+    </h2>
+    <div class="mt-6 flex flex-wrap justify-center gap-10">
+      <Button variant="link">E-mail</Button>
+      <Button variant="link">Instagram</Button>
+      <Button variant="link">Behance</Button>
+      <Button variant="link">LinkedIn</Button>
     </div>
   </div>
 </MainLayout>
