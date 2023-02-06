@@ -4,7 +4,10 @@ import ThemeToggle from "./ThemeToggle";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  //get current language from html lang attribute
+  const isTuga = i18n.language === "pt" ? "/pt/" : "/";
+
   const [fontStyle, setFontStyle] = useState("font-black");
   useEffect(() => {
     const fontStyles = ["font-sans", "font-serif", "font-mono"];
@@ -15,7 +18,7 @@ const Header = () => {
 
   return (
     <div className="left-0 z-10 flex h-fit w-full place-content-between items-center justify-between">
-      <a href="/">
+      <a href={`${isTuga}`}>
         <Button
           variant="link"
           size="lg"
@@ -26,7 +29,7 @@ const Header = () => {
         </Button>
       </a>
       <div className="flex items-center">
-        <a href="/trabalhos">
+        <a href={`${isTuga}trabalhos`}>
           <Button variant="link" className="text-2xl font-black">
             {t("header.work")}
           </Button>
