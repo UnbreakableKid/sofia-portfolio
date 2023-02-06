@@ -17,7 +17,7 @@ const Header = () => {
         <Button
           variant="link"
           size="lg"
-          className={` text-6xl ${fontStyle}`}
+          className={`text-6xl ${fontStyle} hover:no-underline`}
           id="logo"
         >
           S
