@@ -16,52 +16,55 @@ const content = {
 ---
 
 <MainLayout content={content}>
-  <div class="grid grid-cols-2 divide-x">
-    <div class="grid grid-cols-2 grid-rows-5 gap-12">
-      <div>
-        <div>
-          Adobe Illustrator
-          <Progress client:visible value={50} />
+  <div class="grid grid-cols-1 gap-2 md:grid-cols-3">
+    <section class="md:col-span-2">
+      <h1 class="prose mb-5 text-4xl">Skills</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 md:grid-rows-5 md:gap-14">
+        <div class="grid gap-5 md:gap-5">
+          <div>
+            <label for="Adobe Illustrator">Adobe Illustrator</label>
+            <Progress client:visible value={90} id="Adobe Illustrator" />
+          </div>
+          <div>
+            <label for="Adobe InDesign">Adobe InDesign</label>
+            <Progress client:visible value={80} id="Adobe InDesign" />
+          </div>
+          <div>
+            <label for="Figma">Figma</label>
+            <Progress client:visible value={80} id="Figma" />
+          </div>
+          <div>
+            <label for="Sketch">Sketch</label>
+            <Progress client:visible value={15} id="Sketch" />
+          </div>
+          <div>
+            <label for="MailChimp">MailChimp</label>
+            <Progress client:visible value={15} id="MailChimp" />
+          </div>
         </div>
-        <div>
-          Adobe InDesign
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          Figma
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          Sketch
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          MailChimp
-          <Progress client:visible value={50} />
+        <div class="grid gap-5 md:gap-5">
+          <div>
+            <label for="Photoshop">Adobe Photoshop</label>
+            <Progress client:visible value={75} id="Photoshop" />
+          </div>
+          <div>
+            <label for="Adobe Premiere">Adobe Premiere</label>
+            <Progress client:visible value={50} id="Adobe Premiere" />
+          </div>
+          <div>
+            <label for="Fusion 360">Fusion 360</label>
+            <Progress client:visible value={50} id="Fusion 360" />
+          </div>
+          <div>
+            <label for="CSS e HTML">CSS e HTML</label>
+            <Progress client:visible value={50} id="CSS e HTML" />
+          </div>
+          <div>
+            <label for="Blender">Blender</label>
+            <Progress client:visible value={15} id="Blender" />
+          </div>
         </div>
       </div>
-      <div>
-        <div>
-          Adobe Photoshop
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          Adobe Premiere
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          Fusion 360
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          CSS e HTML
-          <Progress client:visible value={50} />
-        </div>
-        <div>
-          Blender
-          <Progress client:visible value={50} />
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
 </MainLayout>
