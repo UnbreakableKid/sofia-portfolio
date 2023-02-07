@@ -3,31 +3,50 @@ import { Button } from "./Button";
 import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
-
-  const handleClick = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-  };
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+  const [isMounted, setIsMounted] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (import.meta.env.SSR) {
+      return undefined;
     }
-    localStorage.setItem("theme", theme);
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  });
+
+  const toggleTheme = () => {
+    const t = theme === "light" ? "dark" : "light";
+    localStorage.setItem("theme", t);
+    setTheme(t);
+  };
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "light") {
+      root.classList.remove("dark");
+    } else {
+      root.classList.add("dark");
+    }
   }, [theme]);
 
-  return (
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  return isMounted ? (
     <Button
       size={"sm"}
       variant="link"
       type="button"
       className="hover:no-underline focus:ring-transparent dark:focus:ring-transparent"
-      onClick={handleClick}
+      onClick={toggleTheme}
     >
       {theme === "light" ? <Moon /> : <Sun />}
     </Button>
+  ) : (
+    <div />
   );
 };
 

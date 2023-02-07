@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import { Button } from "./Button";
 import { useTranslation } from "react-i18next";
 
-const Header = ({ homeLink, workLink }) => {
+const Header = ({
+  homeLink,
+  workLink,
+}: {
+  homeLink: string;
+  workLink: string;
+}) => {
   const { t } = useTranslation();
   //get current language from html lang attribute
 
