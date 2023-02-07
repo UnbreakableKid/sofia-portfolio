@@ -1,0 +1,36 @@
+---
+import { localizePath } from "astro-i18next";
+import i18next from "i18next";
+
+export interface Props extends astroHTML.JSX.SelectHTMLAttributes {
+  showFlag?: boolean;
+}
+
+const currentLanguage = i18next.language;
+
+const { pathname } = Astro.url;
+---
+
+<div class="flex cursor-none gap-1 hover:cursor-none">
+  <button
+    class={`${
+      currentLanguage === "pt" ? "font-black" : "font-light"
+    } cursor-none hover:cursor-none`}
+    onclick="location = this.value;"
+    disabled={currentLanguage === "pt"}
+    value={localizePath(pathname, "pt")}
+  >
+    PT
+  </button>
+  /
+  <button
+    class={`${
+      currentLanguage === "en" ? "font-black" : "font-light"
+    } cursor-none hover:cursor-none`}
+    onclick="location = this.value;"
+    disabled={currentLanguage === "en"}
+    value={localizePath(pathname, "en")}
+  >
+    ENG
+  </button>
+</div>

@@ -1,12 +1,12 @@
 ---
 import { changeLanguage } from "i18next";
-import { Progress } from "../../components/ui/Progress";
-import { ScrollArea } from "../../components/ui/ScrollArea";
-import MainLayout from "../../layouts/MainLayout.astro";
+import { Progress } from "../components/ui/Progress";
+import { ScrollArea } from "../components/ui/ScrollArea";
+import MainLayout from "../layouts/MainLayout.astro";
 import { Image, Picture } from "@astrojs/image/components";
-import timelinePng from "../../../public/timeline.png";
+import timelinePng from "../../public/timeline.png";
 
-changeLanguage("pt");
+changeLanguage("en");
 
 const content = {
     title: "Hello World",

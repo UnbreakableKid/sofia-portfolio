@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "./Button";
-import ThemeToggle from "./ThemeToggle";
 import { useTranslation } from "react-i18next";
 
-const Header = () => {
-  const { t, i18n } = useTranslation();
+const Header = ({ homeLink, workLink }) => {
+  const { t } = useTranslation();
   //get current language from html lang attribute
-  const isTuga = i18n.language === "pt" ? "/pt/" : "/";
 
   const [fontStyle, setFontStyle] = useState("font-black");
   useEffect(() => {
@@ -17,8 +15,8 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="left-0 z-10 flex h-fit w-full place-content-between items-center justify-between">
-      <a href={`${isTuga}`}>
+    <header className="left-0 z-10 flex h-fit w-full place-content-between items-center justify-between">
+      <a href={`${homeLink}`}>
         <Button
           variant="link"
           size="lg"
@@ -28,15 +26,12 @@ const Header = () => {
           S
         </Button>
       </a>
-      <div className="flex items-center">
-        <a href={`${isTuga}trabalhos`}>
-          <Button variant="link" className="text-2xl font-black">
-            {t("header.work")}
-          </Button>
-        </a>
-        <ThemeToggle />
-      </div>
-    </div>
+      <a href={`${workLink}`}>
+        <Button variant="link" className="text-2xl font-black">
+          {t("header.work")}
+        </Button>
+      </a>
+    </header>
   );
 };
 

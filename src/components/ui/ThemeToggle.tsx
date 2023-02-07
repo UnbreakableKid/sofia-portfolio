@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "./Button";
+import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
@@ -18,8 +19,14 @@ const ThemeToggle = () => {
   }, [theme]);
 
   return (
-    <Button size={"sm"} variant="ghost" type="button" onClick={handleClick}>
-      {theme === "light" ? "🌙" : "🌞"}
+    <Button
+      size={"sm"}
+      variant="link"
+      type="button"
+      className="hover:no-underline focus:ring-transparent dark:focus:ring-transparent"
+      onClick={handleClick}
+    >
+      {theme === "light" ? <Moon /> : <Sun />}
     </Button>
   );
 };

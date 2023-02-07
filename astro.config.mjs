@@ -6,17 +6,14 @@ import astroI18next from "astro-i18next";
 import react from "@astrojs/react";
 
 // https://astro.build/config
-export default defineConfig({
-  integrations: [tailwind(), react(), astroI18next()],
+import image from "@astrojs/image";
 
+// https://astro.build/config
+export default defineConfig({
+  integrations: [tailwind(), react(), astroI18next(), image()],
   vite: {
     ssr: {
-      noExternal: [
-        "@radix-ui/react-tabs",
-        "@radix-ui/react-scroll-area",
-        "@radix-ui/react-accordion",
-        "@radix-ui/react-progress",
-      ],
-    },
-  },
+      noExternal: ["@radix-ui/react-tabs", "@radix-ui/react-scroll-area", "@radix-ui/react-accordion", "@radix-ui/react-progress"]
+    }
+  }
 });

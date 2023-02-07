@@ -2,6 +2,8 @@
 import Footer from "../components/ui/Footer";
 import Header from "../components/ui/Header";
 import i18next from "i18next";
+import LanguageSelector from "../components/ui/LanguageSelector.astro";
+import { localizePath } from "astro-i18next";
 
 const { content } = Astro.props;
 ---
@@ -43,16 +45,22 @@ const { content } = Astro.props;
   </head>
   <body>
     <div
-      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white p-10 dark:bg-black sm:min-h-max md:h-screen lg:h-screen"
+      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white p-5 dark:bg-black dark:text-white sm:min-h-max md:h-screen lg:h-screen"
     >
-      <Header client:visible />
+      <Header homeLink={localizePath("/")} workLink={localizePath("/works")} />
       <ins
         class="pointer-events-none fixed z-[999999999] h-6 w-6 -translate-x-2/4 -translate-y-2/4 rounded-[50%] bg-white mix-blend-difference transition-[background] delay-[0s] duration-[0.5s] ease-[ease]"
         id="movable"></ins>
-      <main class="grow self-stretch p-20">
+      <main class="grow self-stretch p-10">
         <slot />
       </main>
-      <Footer />
+      <Footer
+        client:visible
+        aboutLink={localizePath("/about")}
+        contactLink={localizePath("contact")}
+      >
+        <LanguageSelector />
+      </Footer>
     </div>
   </body>
 </html>
