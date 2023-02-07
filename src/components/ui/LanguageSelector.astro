@@ -14,7 +14,9 @@ const { pathname } = Astro.url;
 <div class="flex cursor-none gap-1 hover:cursor-none">
   <button
     class={`${
-      currentLanguage === "pt" ? "font-black" : "font-light"
+      currentLanguage === "pt"
+        ? "font-black hover:pointer-events-none pointer-events-none"
+        : "font-light"
     } cursor-none hover:cursor-none`}
     onclick="location = this.value;"
     disabled={currentLanguage === "pt"}
@@ -25,7 +27,9 @@ const { pathname } = Astro.url;
   /
   <button
     class={`${
-      currentLanguage === "en" ? "font-black" : "font-light"
+      currentLanguage === "en"
+        ? "font-black hover:pointer-events-none pointer-events-none"
+        : "font-light"
     } cursor-none hover:cursor-none`}
     onclick="location = this.value;"
     disabled={currentLanguage === "en"}
