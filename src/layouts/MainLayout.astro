@@ -15,25 +15,28 @@ const { content } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <title>{content.title}</title>
     <script is:inline>
-      const theme = (() => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-        return "light";
-      })();
-
-      if (theme === "light") {
-        document.documentElement.classList.remove("dark");
+      // credits to satnaing on github
+      const primaryColorScheme = "none";
+      const darkModeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const currentTheme = localStorage.getItem("theme");
+      let theme;
+      if (currentTheme) {
+        theme = currentTheme === "dark" ? "dark" : "";
       } else {
-        document.documentElement.classList.add("dark");
+        if (
+          primaryColorScheme === "dark" ||
+          (primaryColorScheme === "none" && darkModeMediaQuery)
+        ) {
+          theme = "dark";
+        } else if (primaryColorScheme === "light") {
+          theme = "";
+        } else {
+          theme = darkModeMediaQuery ? "dark" : "";
+        }
       }
-      window.localStorage.setItem("theme", theme);
+      document.documentElement.className = theme;
 
       //make the cursor follow the mouse
       document.addEventListener("mousemove", (e) => {
