@@ -11,7 +11,12 @@ export default defineConfig({
 
   vite: {
     ssr: {
-      noExternal: ["@radix-ui/react-tabs", "@radix-ui/react-scroll-area"],
+      noExternal: [
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-scroll-area",
+        "@radix-ui/react-accordion",
+        "@radix-ui/react-progress",
+      ],
     },
   },
 });

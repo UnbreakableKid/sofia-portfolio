@@ -1,49 +1,67 @@
 ---
 import { changeLanguage } from "i18next";
+import { Progress } from "../components/ui/Progress";
 import { ScrollArea } from "../components/ui/ScrollArea";
 import MainLayout from "../layouts/MainLayout.astro";
 
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    description: "This is a test page",
-    url: "https://example.com",
-    image: "https://example.com/image.jpg",
-    date: "2021-01-01",
+  title: "Hello World",
+  description: "This is a test page",
+  url: "https://example.com",
+  image: "https://example.com/image.jpg",
+  date: "2021-01-01",
 };
 ---
 
 <MainLayout content={content}>
   <div class="grid grid-cols-2 divide-x">
-    <div>
-      <ScrollArea
-        client:load
-        className="flex w-96 flex-col text-left p-4 prose prose-h1:prose-2xl"
-      >
+    <div class="grid grid-cols-2 grid-rows-5 gap-12">
+      <div>
         <div>
-          <h1 class="font-bold">
-            Olá, eu sou a Sofia, uma designer de comunicaçao.
-          </h1>
-          <div class="mt-4">
-            Eu acrescento valor a marcas através de elementos gráficos. Procuro
-            a simplicidade e lógica, aplicando um pensamento lateral sempre que
-            possível
-          </div>
+          Adobe Illustrator
+          <Progress client:visible value={50} />
         </div>
-        <div class="mt-10">
-          <h1 class="font-bold">Formação</h1>
-          <p>
-            Sou licenciada em Design pela Universidade de Aveiro, onde trabalhei
-            com design de produto, gráfico e interação para ter um conhecimento
-            mais abrangente do design e perceber a área com que mais me
-            identifico.
-          </p>
+        <div>
+          Adobe InDesign
+          <Progress client:visible value={50} />
         </div>
-      </ScrollArea>
-    </div>
-    <div class="flex pl-8">
-      <div class="w-fit bg-slate-500">hi</div>
+        <div>
+          Figma
+          <Progress client:visible value={50} />
+        </div>
+        <div>
+          Sketch
+          <Progress client:visible value={50} />
+        </div>
+        <div>
+          MailChimp
+          <Progress client:visible value={50} />
+        </div>
+      </div>
+      <div>
+        <div>
+          Adobe Photoshop
+          <Progress client:visible value={50} />
+        </div>
+        <div>
+          Adobe Premiere
+          <Progress client:visible value={50} />
+        </div>
+        <div>
+          Fusion 360
+          <Progress client:visible value={50} />
+        </div>
+        <div>
+          CSS e HTML
+          <Progress client:visible value={50} />
+        </div>
+        <div>
+          Blender
+          <Progress client:visible value={50} />
+        </div>
+      </div>
     </div>
   </div>
 </MainLayout>
