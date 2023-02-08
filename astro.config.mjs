@@ -10,10 +10,22 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), astroI18next(), image()],
+  integrations: [
+    tailwind(),
+    react(),
+    astroI18next(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+  ],
   vite: {
     ssr: {
-      noExternal: ["@radix-ui/react-tabs", "@radix-ui/react-scroll-area", "@radix-ui/react-accordion", "@radix-ui/react-progress"]
-    }
-  }
+      noExternal: [
+        "@radix-ui/react-tabs",
+        "@radix-ui/react-scroll-area",
+        "@radix-ui/react-accordion",
+        "@radix-ui/react-progress",
+      ],
+    },
+  },
 });
