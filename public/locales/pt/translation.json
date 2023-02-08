@@ -9,5 +9,14 @@
     "contact": "Contato",
     "about": "Sobre"
   },
-  "contact": "Vamos conversar?"
+  "contact": "Vamos conversar?",
+  "works": {
+    "all": "Todos",
+    "webdesign": "Webdesign",
+    "illustration": "Ilustração",
+    "pictograms": "Pictogramas",
+    "branding": "Branding",
+    "packaging": "Packaging",
+    "infography": "Infografia"
+  }
 }

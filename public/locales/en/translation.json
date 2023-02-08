@@ -9,5 +9,14 @@
     "contact": "Contact",
     "about": "About"
   },
-  "contact": "Let's talk?"
+  "contact": "Let's talk?",
+  "works": {
+    "all": "All",
+    "webdesign": "Webdesign",
+    "illustration": "Illustration",
+    "pictograms": "Pictograms",
+    "branding": "Branding",
+    "packaging": "Packaging",
+    "infography": "Infography"
+  }
 }
