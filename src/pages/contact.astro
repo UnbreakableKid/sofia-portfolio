@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import MainLayout from "../layouts/MainLayout.astro";
 import { Button } from "../components/ui/Button";
 
@@ -18,8 +18,8 @@ const content = {
     <h2
       class="relative z-10 bg-black font-serif text-7xl font-bold text-white mix-blend-difference"
     >
-      Vamos conversar?
-    </h2>
+    {t("contact")}
+  </h2>
     <div class="mt-10 flex flex-wrap justify-center gap-10">
       <a href="mailto:ribeiro.anasofia@gmail.com">
         <Button variant="link">E-mail</Button>
