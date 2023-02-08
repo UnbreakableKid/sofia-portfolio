@@ -7,7 +7,7 @@ const Footer = ({ children, contactLink, aboutLink }: any) => {
   //get current language from html lang attribute
 
   return (
-    <footer className=" bottom-0 left-0 z-10 flex w-full place-content-between items-end justify-between">
+    <footer className=" bottom-0 left-0 z-10 flex w-full place-content-between items-center justify-between">
       <a href={aboutLink}>
         <Button variant="link" className="text-2xl font-black">
           {t("footer.about")}
