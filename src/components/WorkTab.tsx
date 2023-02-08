@@ -1,7 +1,8 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./ui/Tabs";
 
 export default function WorkTab() {
+  const { t } = useTranslation();
   const categories = [
     { key: "all", value: t("works.all") },
     { key: "webdesign", value: t("works.webdesign") },
