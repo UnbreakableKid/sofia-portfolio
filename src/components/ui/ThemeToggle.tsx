@@ -22,6 +22,7 @@ const ThemeToggle = () => {
     localStorage.setItem("theme", t);
     setTheme(t);
   };
+
   useEffect(() => {
     const root = document.documentElement;
     if (theme === "light") {

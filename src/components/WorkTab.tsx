@@ -24,16 +24,45 @@ export default function WorkTab() {
           ))}
         </TabsList>
       </div>
-      <TabsContent value="all" className="pt-10">
-        <div className="grid grid-cols-4 grid-rows-4 place-items-center gap-5">
-          <h1>
-            <a href="/trabalhos/hi">h1</a>
-          </h1>
-          <h1>h2</h1>
-          <h1>h3</h1>
-          <h1>h4</h1>
-          <h1>h5</h1>
-          <h1>h6</h1>
+      <TabsContent value="all">
+        <div className="flex justify-center ">
+          <div className="gap grid w-8/12 place-items-center gap-y-6 md:grid-cols-3">
+            <div>
+              <img
+                src={"./public/36daysthumb.jpg"}
+                alt=""
+                className="aspect-square h-72 object-contain"
+              />
+            </div>
+            <div>
+              <img
+                src={"./public/36daysthumb.jpg"}
+                alt=""
+                className="aspect-square h-72 object-contain"
+              />
+            </div>
+            <div>
+              <img
+                src={"./public/36daysthumb.jpg"}
+                alt=""
+                className="aspect-square h-72 object-contain"
+              />
+            </div>
+            <div>
+              <img
+                src={"./public/36daysthumb.jpg"}
+                alt=""
+                className="aspect-square h-72 object-contain"
+              />
+            </div>
+            <div>
+              <img
+                src={"./public/36daysthumb.jpg"}
+                alt=""
+                className="aspect-square h-72 object-contain"
+              />
+            </div>
+          </div>
         </div>
       </TabsContent>
       <TabsContent value="webdesign">Partial</TabsContent>
