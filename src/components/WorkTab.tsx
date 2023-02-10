@@ -2,7 +2,11 @@ import { useTranslation } from "react-i18next";
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./ui/Tabs";
 
 export default function WorkTab() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const slug = i18n.language === "en" ? "./public" : "../public";
+  const days = `${slug}/36daysthumb.jpg`;
+
   const categories = [
     { key: "all", value: t("works.all") },
     { key: "webdesign", value: t("works.webdesign") },
@@ -29,35 +33,35 @@ export default function WorkTab() {
           <div className="gap grid w-8/12 place-items-center gap-y-6 md:grid-cols-3">
             <div>
               <img
-                src={"./public/36daysthumb.jpg"}
+                src={days}
                 alt=""
                 className="aspect-square h-72 object-contain"
               />
             </div>
             <div>
               <img
-                src={"./public/36daysthumb.jpg"}
+                src={days}
                 alt=""
                 className="aspect-square h-72 object-contain"
               />
             </div>
             <div>
               <img
-                src={"./public/36daysthumb.jpg"}
+                src={days}
                 alt=""
                 className="aspect-square h-72 object-contain"
               />
             </div>
             <div>
               <img
-                src={"./public/36daysthumb.jpg"}
+                src={days}
                 alt=""
                 className="aspect-square h-72 object-contain"
               />
             </div>
             <div>
               <img
-                src={"./public/36daysthumb.jpg"}
+                src={days}
                 alt=""
                 className="aspect-square h-72 object-contain"
               />
