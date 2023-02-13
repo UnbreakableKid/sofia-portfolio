@@ -5,10 +5,19 @@ export default function WorkTab() {
   const { t, i18n } = useTranslation();
 
   const slug = i18n.language === "en" ? "./public" : "../public";
-  const days = `${slug}/36days/Capa_36days.jpeg`; // ilustração
-  const daHorta = `${slug}/daHorta/Capa_daHorta.png`; // branding e webdesign
-  const cicloexpressoCover = `${slug}/cicloExpresso/cicloexpressoCover.png`; // ilustração e infografia
-  const pictogramas = `${slug}/pictogramas/pictogramas.png`; // pictogramas
+  const days = { img: `${slug}/36days/Capa_36days.jpeg`, url: "/works/36days" }; // ilustração
+  const daHorta = {
+    img: `${slug}/daHorta/Capa_daHorta.png`,
+    url: "/works/daHorta",
+  }; // branding e webdesign
+  const cicloexpressoCover = {
+    img: `${slug}/cicloExpresso/cicloexpressoCover.png`,
+    url: "/works/cicloexpresso",
+  }; // ilustração e infografia
+  const pictogramas = {
+    img: `${slug}/pictogramas/pictogramas.png`,
+    url: "/works/pictogramas",
+  }; // pictogramas
 
   const categories = [
     {
@@ -56,9 +65,12 @@ export default function WorkTab() {
               >
                 {category.elements?.map((element) => (
                   <img
-                    src={element}
+                    src={element.img}
                     alt=""
                     className="aspect-square h-72 object-contain"
+                    onClick={() => {
+                      window.open(element.url, "_self");
+                    }}
                   />
                 ))}
               </div>

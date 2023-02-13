@@ -1,0 +1,38 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const content = {
+  title: "Hello World",
+  body: "This is a test",
+};
+
+const baseImgUrl = "../../../public/36days/";
+---
+
+<MainLayout {content}>
+  <div class="grid grid-flow-row grid-cols-5 gap-7">
+    <img
+      src={baseImgUrl + "A.png"}
+      class="aspect-square h-16 object-scale-down"
+      alt=""
+    />
+    <img src={baseImgUrl + "B.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "C.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "D.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "E.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "F.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "G.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "H.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "I.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "J.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "K.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "L.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "M.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "N.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "O.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "P.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "Q.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "R.png"} alt="" class="aspect-square h-16" />
+    <img src={baseImgUrl + "S.png"} alt="" class="aspect-square h-16" />
+  </div>
+</MainLayout>
