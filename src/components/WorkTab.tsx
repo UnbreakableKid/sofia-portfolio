@@ -5,16 +5,35 @@ export default function WorkTab() {
   const { t, i18n } = useTranslation();
 
   const slug = i18n.language === "en" ? "./public" : "../public";
-  const days = `${slug}/36daysthumb.jpg`;
+  const days = `${slug}/36days/Capa_36days.jpeg`; // ilustração
+  const daHorta = `${slug}/daHorta/Capa_daHorta.png`; // branding e webdesign
+  const cicloexpressoCover = `${slug}/cicloExpresso/cicloexpressoCover.png`; // ilustração e infografia
+  const pictogramas = `${slug}/pictogramas/pictogramas.png`; // pictogramas
 
   const categories = [
-    { key: "all", value: t("works.all") },
-    { key: "webdesign", value: t("works.webdesign") },
-    { key: "illustration", value: t("works.illustration") },
-    { key: "pictorgrams", value: t("works.pictograms") },
-    { key: "branding", value: t("works.branding") },
+    {
+      key: "all",
+      value: t("works.all"),
+      elements: [days, daHorta, cicloexpressoCover],
+    },
+    { key: "webdesign", value: t("works.webdesign"), elements: [daHorta] },
+    {
+      key: "illustration",
+      value: t("works.illustration"),
+      elements: [days, cicloexpressoCover],
+    },
+    {
+      key: "pictorgrams",
+      value: t("works.pictograms"),
+      elements: [pictogramas],
+    },
+    { key: "branding", value: t("works.branding"), elements: [daHorta] },
     { key: "packaging", value: t("works.packaging") },
-    { key: "infography", value: t("works.infography") },
+    {
+      key: "infography",
+      value: t("works.infography"),
+      elements: [cicloexpressoCover],
+    },
   ];
 
   return (
@@ -28,53 +47,25 @@ export default function WorkTab() {
           ))}
         </TabsList>
       </div>
-      <TabsContent value="all">
-        <div className="flex justify-center ">
-          <div className="gap grid w-8/12 place-items-center gap-y-6 md:grid-cols-3">
-            <div>
-              <img
-                src={days}
-                alt=""
-                className="aspect-square h-72 object-contain"
-              />
-            </div>
-            <div>
-              <img
-                src={days}
-                alt=""
-                className="aspect-square h-72 object-contain"
-              />
-            </div>
-            <div>
-              <img
-                src={days}
-                alt=""
-                className="aspect-square h-72 object-contain"
-              />
-            </div>
-            <div>
-              <img
-                src={days}
-                alt=""
-                className="aspect-square h-72 object-contain"
-              />
-            </div>
-            <div>
-              <img
-                src={days}
-                alt=""
-                className="aspect-square h-72 object-contain"
-              />
-            </div>
-          </div>
+      <div className="flex justify-center">
+        <div className="flex w-[80%]">
+          {categories.map((category) => (
+            <TabsContent key={category.key} value={category.key}>
+              <div
+                className={`flex flex-grow flex-wrap justify-center gap-4 self-center px-7 md:justify-start`}
+              >
+                {category.elements?.map((element) => (
+                  <img
+                    src={element}
+                    alt=""
+                    className="aspect-square h-72 object-contain"
+                  />
+                ))}
+              </div>
+            </TabsContent>
+          ))}
         </div>
-      </TabsContent>
-      <TabsContent value="webdesign">Partial</TabsContent>
-      <TabsContent value="illustration">Partial</TabsContent>
-      <TabsContent value="pictorgrams">Partial</TabsContent>
-      <TabsContent value="branding">Partial</TabsContent>
-      <TabsContent value="packaging">Partial</TabsContent>
-      <TabsContent value="infography">Partial</TabsContent>
+      </div>
     </Tabs>
   );
 }
