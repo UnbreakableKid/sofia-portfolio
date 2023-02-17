@@ -50,7 +50,7 @@ const { content } = Astro.props;
       <ins
         class="pointer-events-none fixed z-[999999999] h-6 w-6 -translate-x-2/4 -translate-y-2/4 rounded-[50%] bg-white mix-blend-difference transition-[background] delay-[0s] duration-[0.5s] ease-[ease]"
         id="movable"></ins>
-      <main class="grow self-stretch p-10">
+      <main class="grow self-stretch overflow-hidden p-10">
         <slot />
       </main>
       <Footer
