@@ -25,6 +25,7 @@ export default defineConfig({
         "@radix-ui/react-scroll-area",
         "@radix-ui/react-accordion",
         "@radix-ui/react-progress",
+        "@radix-ui/react-dialog",
       ],
     },
   },

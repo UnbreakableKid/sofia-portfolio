@@ -5,24 +5,35 @@ import { cn } from "src/lib/utils";
 
 type ScrollAreaProps = {
   scrollBar?: boolean;
+  classNameForView?: string;
 } & React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>;
 
 const ScrollArea = React.forwardRef<
   React.ElementRef<typeof ScrollAreaPrimitive.Root> & ScrollAreaProps,
   ScrollAreaProps
->(({ className, children, scrollBar = true, ...props }, ref) => (
-  <ScrollAreaPrimitive.Root
-    ref={ref}
-    className={cn("relative overflow-hidden", className)}
-    {...props}
-  >
-    <ScrollAreaPrimitive.Viewport className="h-full w-full snap-y rounded-[inherit]">
-      {children}
-    </ScrollAreaPrimitive.Viewport>
-    {scrollBar && <ScrollBar />}
-    <ScrollAreaPrimitive.Corner />
-  </ScrollAreaPrimitive.Root>
-));
+>(
+  (
+    { className, classNameForView, children, scrollBar = true, ...props },
+    ref
+  ) => (
+    <ScrollAreaPrimitive.Root
+      ref={ref}
+      className={cn("relative overflow-hidden", className)}
+      {...props}
+    >
+      <ScrollAreaPrimitive.Viewport
+        className={cn(
+          "flex h-full w-full snap-y snap-mandatory flex-col rounded-[inherit]",
+          classNameForView
+        )}
+      >
+        {children}
+      </ScrollAreaPrimitive.Viewport>
+      {scrollBar && <ScrollBar />}
+      <ScrollAreaPrimitive.Corner />
+    </ScrollAreaPrimitive.Root>
+  )
+);
 ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
 
 type ScrollBarProps = {
@@ -45,7 +56,7 @@ const ScrollBar = React.forwardRef<
       orientation === "vertical" &&
         "h-full w-2.5 snap-x border-l border-l-transparent p-[1px]",
       orientation === "horizontal" &&
-        "h-2.5 snap-y border-t border-t-transparent p-[1px]",
+        "h-2.5 snap-y snap-mandatory border-t border-t-transparent p-[1px]",
       className
     )}
     {...props}

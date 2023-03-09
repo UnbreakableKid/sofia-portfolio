@@ -1,0 +1,51 @@
+---
+import WorkLayout from "../../layouts/WorkLayout.astro";
+import ClicableImage from "../../components/ClicableImage";
+import capaPNG from "../../../public/daHorta/Capa_daHorta.png";
+import examePNG from "../../../public/daHorta/Exame.png";
+import sitemapPNG from "../../../public/daHorta/Sitemap.png";
+import screens01PNG from "../../../public/daHorta/screens-01.png";
+import screens02PNG from "../../../public/daHorta/screens-02.png";
+import conjuntoJPG from "../../../public/daHorta/conjunto.jpg";
+
+const content = {
+  title: "Hello World",
+  body: "This is a test",
+};
+
+const baseImgUrl = "../../../daHorta/";
+---
+
+<WorkLayout {content}>
+  <div slot="description" class="h-fit">
+    <h1 class="mb-8 text-4xl font-bold">DaHorta</h1>
+    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
+      A associação “Localsapproach” propôs a criação de um website para a venda
+      de produtos alimentares locais, a um preço justo e reduzindo a pegada
+      ecológica. O exercício incluía o naming, branding e realização do website.
+    </p>
+
+    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+      O daHorta é um website que para além de mercado de frutas e legumes
+      online, ensina e incentiva os utilizadores a tomar práticas mais
+      sustentáveis, tanto na produção como no consumo. Destina-se aos pequenos e
+      médios produtores e fornece-lhes ferramentas que ajudam a determinar o
+      preço justo dos produtos e de recompensação sempre que melhoram a sua
+      prática em termos ambientais. Para os consumidores a plataforma permite
+      adequar a ordenação dos produtos conforme as suas prioridades e sugere
+      receitas com os produtos vendidos na loja.
+    </p>
+  </div>
+  <div slot="images" class="flex flex-col gap-5">
+    <ClicableImage client:load src={baseImgUrl + "Capa_daHorta.png"} />
+    <ClicableImage client:load src={baseImgUrl + "Exame.png"} />
+    <ClicableImage client:load src={baseImgUrl + "Sitemap.png"} />
+    <ClicableImage client:load src={baseImgUrl + "screens-01.png"} />
+    <div class="flex">
+      <ClicableImage client:load src={baseImgUrl + "screens-01.png"} />
+      <ClicableImage client:load src={baseImgUrl + "screens-01.png"} />
+    </div>
+    <ClicableImage client:load src={baseImgUrl + "screens-02.png"} />
+    <ClicableImage client:load src={baseImgUrl + "conjunto.jpg"} />
+  </div>
+</WorkLayout>

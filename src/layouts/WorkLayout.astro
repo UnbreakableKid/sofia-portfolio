@@ -42,17 +42,18 @@ const { content } = Astro.props;
 </style>
 
 <MainLayout {content}>
-  <div class="flex">
-    <div class="h-fit w-1/2 flex-shrink p-12">
+  <div class="grid grid-cols-2">
+    <div class="h-fit p-12">
       <slot name="description" />
     </div>
-    <div class="flex-1 flex-grow">
+    <div class="flex-1 flex-grow-0">
       <div class="topGradient"></div>
       <div class="bottomGradient"></div>
       <ScrollArea
         client:load
         client:load
-        className="h-[calc(100vh-10px)] pb-52 md:pb-44"
+        className="h-[calc(100vh-10px)] pb-52 md:pb-44 "
+        classNameForView="flex flex-col gap-5"
       >
         <slot name="images" />
       </ScrollArea>
