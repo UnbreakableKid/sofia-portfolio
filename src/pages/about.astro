@@ -5,57 +5,58 @@ import { ScrollArea } from "../components/ui/ScrollArea";
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image, Picture } from "@astrojs/image/components";
 import timelinePng from "../../public/timeline.png";
+import { Button } from "../components/ui/Button";
 
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    description: "This is a test page",
-    url: "https://example.com",
-    image: "https://example.com/image.jpg",
-    date: "2021-01-01",
+  title: "Hello World",
+  description: "This is a test page",
+  url: "https://example.com",
+  image: "https://example.com/image.jpg",
+  date: "2021-01-01",
 };
 const skills = [
-    {
-        name: "Adobe Illustrator",
-        value: 90,
-    },
-    {
-        name: "Adobe InDesign",
-        value: 80,
-    },
-    {
-        name: "Figma",
-        value: 80,
-    },
-    {
-        name: "Sketch",
-        value: 15,
-    },
-    {
-        name: "MailChimp",
-        value: 15,
-    },
-    {
-        name: "Adobe Photoshop",
-        value: 75,
-    },
-    {
-        name: "Adobe Premiere",
-        value: 50,
-    },
-    {
-        name: "Fusion 360",
-        value: 50,
-    },
-    {
-        name: "CSS e HTML",
-        value: 50,
-    },
-    {
-        name: "Blender",
-        value: 15,
-    },
+  {
+    name: "Adobe Illustrator",
+    value: 90,
+  },
+  {
+    name: "Adobe InDesign",
+    value: 80,
+  },
+  {
+    name: "Figma",
+    value: 80,
+  },
+  {
+    name: "Sketch",
+    value: 15,
+  },
+  {
+    name: "MailChimp",
+    value: 15,
+  },
+  {
+    name: "Adobe Photoshop",
+    value: 75,
+  },
+  {
+    name: "Adobe Premiere",
+    value: 50,
+  },
+  {
+    name: "Fusion 360",
+    value: 50,
+  },
+  {
+    name: "CSS e HTML",
+    value: 50,
+  },
+  {
+    name: "Blender",
+    value: 15,
+  },
 ];
 ---
 
@@ -64,7 +65,33 @@ const skills = [
     <section>
       <h1 class="mb-5 text-4xl">Description</h1>
 
-      <h1 class="mb-5 text-4xl">Skills</h1>
+      <div class="prose mb-5 font-sans dark:prose-invert">
+        <p class="mb-2">
+          Olá. Eu sou a Sofia, uma designer de comunicação que através dos seus
+          variados gostos e competências resolve problemas de comunicação visual
+          para promover conhecimento e marcas.
+        </p>
+
+        <p class="mb-2">
+          Durante a minha licenciatura em Design na Universidade de Aveiro tive
+          a oportunidade de trabalhar em várias áreas do design e descobri o meu
+          amor pela vertente gráfica e digital. No mestrado em Design de
+          Comunicação da Universidade de Lisboa pude aprofundar os conhecimentos
+          nestas áreas e abrir os horizontes sobre o papel do design gráfico na
+          sociedade.
+        </p>
+        <Button
+          client:load
+          size="lg"
+          className={`hover:no-underline p-0 font-bold text-2xl`}
+          id="logo"
+          variant={"link"}
+        >
+          Curriculum Vitae
+        </Button>
+      </div>
+
+      <!-- <h1 class="mb-5 text-4xl">Skills</h1>
       <div
         class="grid w-5/6 grid-cols-1 md:grid-cols-2 md:grid-rows-5 md:gap-5"
       >
@@ -80,7 +107,7 @@ const skills = [
             </div>
           ))
         }
-      </div>
+      </div> -->
     </section>
     <Image
       src={timelinePng}

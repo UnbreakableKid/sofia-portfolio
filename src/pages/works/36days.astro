@@ -10,11 +10,61 @@ const content = {
 const baseImgUrl = "../../../public/36days/";
 ---
 
+<style>
+  .topGradient {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0)
+    );
+    position: fixed;
+    top: 100px;
+    z-index: 100;
+  }
+
+  .bottomGradient {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0)
+    );
+    position: fixed;
+    bottom: 4.5rem;
+    z-index: 100;
+  }
+
+  @media (min-width: 768px) {
+    .topGradient {
+      top: 100px;
+    }
+
+    .bottomGradient {
+      bottom: 3.5rem;
+    }
+  }
+</style>
+
 <MainLayout {content}>
   <div class="grid grid-cols-2">
-    <div>bla bla bla</div>
-    <ScrollArea client:load className="h-1/5">
-      <div class="flex flex-col gap-8">
+    <div class="p-12">
+      <h1 class="mb-8 text-4xl font-bold">36 Days of Type</h1>
+      <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+        Este projeto pessoal surge do desafio 36 days of type, onde conjugo as
+        minhas duas áreas de interesse, ilustração e tipografia. Este projeto
+        tem sido bastante desafiante e gratificante e o seu desenvolvimento pode
+        ser acompanhado em <a
+          class="cursor-none no-underline hover:cursor-none hover:text-blue-500 hover:no-underline"
+          href="https://www.instagram.com/ah_sofs">@ah_sofs</a
+        > no instagram
+      </p>
+    </div>
+    <div>
+      <div class="topGradient"></div>
+      <div class="bottomGradient"></div>
+      <ScrollArea client:load className="h-[calc(100vh-10px)] pb-52 md:pb-44  ">
         <img src={baseImgUrl + "A.png"} alt="" class="snap-center" />
         <img src={baseImgUrl + "B.png"} alt="" class="snap-center" />
         <img src={baseImgUrl + "C.png"} alt="" class="snap-center" />
@@ -34,7 +84,7 @@ const baseImgUrl = "../../../public/36days/";
         <img src={baseImgUrl + "Q.png"} alt="" class="snap-center" />
         <img src={baseImgUrl + "R.png"} alt="" class="snap-center" />
         <img src={baseImgUrl + "S.png"} alt="" class="snap-center" />
-      </div>
-    </ScrollArea>
+      </ScrollArea>
+    </div>
   </div>
 </MainLayout>

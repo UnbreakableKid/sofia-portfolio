@@ -26,14 +26,14 @@ const Header = ({
         <Button
           variant="link"
           size="lg"
-          className={`text-6xl ${fontStyle} hover:no-underline`}
+          className={`md:text-6xl ${fontStyle} hover:no-underline`}
           id="logo"
         >
           S
         </Button>
       </a>
       <a href={`${workLink}`}>
-        <Button variant="link" className="text-2xl font-black">
+        <Button variant="link" className="font-black md:text-2xl">
           {t("header.work")}
         </Button>
       </a>

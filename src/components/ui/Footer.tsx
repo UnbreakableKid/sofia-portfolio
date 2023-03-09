@@ -9,7 +9,7 @@ const Footer = ({ children, contactLink, aboutLink }: any) => {
   return (
     <footer className=" bottom-0 left-0 z-10 flex w-full place-content-between items-center justify-between">
       <a href={aboutLink}>
-        <Button variant="link" className="text-2xl font-black">
+        <Button variant="link" className="font-black md:text-2xl">
           {t("footer.about")}
         </Button>
       </a>
@@ -18,7 +18,7 @@ const Footer = ({ children, contactLink, aboutLink }: any) => {
         <ThemeToggle />
       </div>
       <a href={contactLink}>
-        <Button variant="link" className="text-2xl font-black">
+        <Button variant="link" className="font-black md:text-2xl">
           {t("footer.contact")}
         </Button>
       </a>
