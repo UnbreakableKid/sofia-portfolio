@@ -1,0 +1,61 @@
+---
+import { ScrollArea } from "../components/ui/ScrollArea";
+import MainLayout from "./MainLayout.astro";
+const { content } = Astro.props;
+---
+
+<style>
+  .topGradient {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0)
+    );
+    position: fixed;
+    top: 100px;
+    z-index: 10;
+  }
+
+  .bottomGradient {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0)
+    );
+    position: fixed;
+    bottom: 4.5rem;
+    z-index: 10;
+  }
+
+  @media (min-width: 768px) {
+    .topGradient {
+      top: 100px;
+    }
+
+    .bottomGradient {
+      bottom: 3.5rem;
+    }
+  }
+</style>
+
+<MainLayout {content}>
+  <div class="flex">
+    <div class="h-fit w-1/2 flex-shrink p-12">
+      <slot name="description" />
+    </div>
+    <div class="flex-1 flex-grow">
+      <div class="topGradient"></div>
+      <div class="bottomGradient"></div>
+      <ScrollArea
+        client:load
+        client:load
+        className="h-[calc(100vh-10px)] pb-52 md:pb-44"
+      >
+        <slot name="images" />
+      </ScrollArea>
+    </div>
+  </div>
+</MainLayout>

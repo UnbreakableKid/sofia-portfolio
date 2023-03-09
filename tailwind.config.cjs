@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Helvetica", ...defaultTheme.fontFamily.sans],
-    }
+    },
   },
-  plugins: [require("@tailwindcss/typography")],
+
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 };

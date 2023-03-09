@@ -1,0 +1,36 @@
+---
+import ClicableImage from "../../components/ClicableImage";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "../../components/ui/Dialog";
+import WorkLayout from "../../layouts/WorkLayout.astro";
+
+const content = {
+  title: "Hello World",
+  body: "This is a test",
+};
+
+const baseImgUrl = "../../../public/cicloExpresso/";
+---
+
+<WorkLayout {content}>
+  <div slot="description" class="h-fit">
+    <h1 class="mb-8 text-4xl font-bold">Cicloexpresso</h1>
+    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+      Na cadeira de Infografia realizei projetos infográficos para retratar
+      vários temas e projetos retratados no programa É P'ra Amanhã. Os projetos
+      tinham de ter perspetivas diferentes como sequências de ações,
+      user-journey e visão macro.
+    </p>
+
+    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+      A infografia do cicloexpresso retratava a user-journey, objetivos,
+      recursos, intervenientes e modelo do serviço.
+    </p>
+  </div>
+  <div slot="images" class="h-fit">
+    <ClicableImage client:load src={baseImgUrl + "cicloexpresso.png"} />
+  </div>
+</WorkLayout>

@@ -1,7 +1,6 @@
 ---
-import { ScrollArea } from "../../components/ui/ScrollArea";
-import MainLayout from "../../layouts/MainLayout.astro";
-
+import WorkLayout from "../../layouts/WorkLayout.astro";
+import ClicableImage from "../../components/ClicableImage";
 const content = {
   title: "Hello World",
   body: "This is a test",
@@ -10,81 +9,38 @@ const content = {
 const baseImgUrl = "../../../public/36days/";
 ---
 
-<style>
-  .topGradient {
-    height: 50px;
-    width: 100%;
-    background: linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0)
-    );
-    position: fixed;
-    top: 100px;
-    z-index: 100;
-  }
-
-  .bottomGradient {
-    height: 50px;
-    width: 100%;
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0)
-    );
-    position: fixed;
-    bottom: 4.5rem;
-    z-index: 100;
-  }
-
-  @media (min-width: 768px) {
-    .topGradient {
-      top: 100px;
-    }
-
-    .bottomGradient {
-      bottom: 3.5rem;
-    }
-  }
-</style>
-
-<MainLayout {content}>
-  <div class="grid grid-cols-2">
-    <div class="p-12">
-      <h1 class="mb-8 text-4xl font-bold">36 Days of Type</h1>
-      <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
-        Este projeto pessoal surge do desafio 36 days of type, onde conjugo as
-        minhas duas áreas de interesse, ilustração e tipografia. Este projeto
-        tem sido bastante desafiante e gratificante e o seu desenvolvimento pode
-        ser acompanhado em <a
-          class="cursor-none no-underline hover:cursor-none hover:text-blue-500 hover:no-underline"
-          href="https://www.instagram.com/ah_sofs">@ah_sofs</a
-        > no instagram
-      </p>
-    </div>
-    <div>
-      <div class="topGradient"></div>
-      <div class="bottomGradient"></div>
-      <ScrollArea client:load className="h-[calc(100vh-10px)] pb-52 md:pb-44  ">
-        <img src={baseImgUrl + "A.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "B.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "C.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "D.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "E.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "F.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "G.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "H.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "I.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "J.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "K.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "L.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "M.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "N.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "O.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "P.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "Q.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "R.png"} alt="" class="snap-center" />
-        <img src={baseImgUrl + "S.png"} alt="" class="snap-center" />
-      </ScrollArea>
-    </div>
+<WorkLayout {content}>
+  <div slot="description">
+    <h1 class="mb-8 text-4xl font-bold">36 Days of Type</h1>
+    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+      Este projeto pessoal surge do desafio 36 days of type, onde conjugo as
+      minhas duas áreas de interesse, ilustração e tipografia. Este projeto tem
+      sido bastante desafiante e gratificante e o seu desenvolvimento pode ser
+      acompanhado em <a
+        class="cursor-none no-underline hover:cursor-none hover:text-blue-500 hover:no-underline"
+        href="https://www.instagram.com/ah_sofs">@ah_sofs</a
+      > no instagram
+    </p>
   </div>
-</MainLayout>
+  <div slot="images">
+    <ClicableImage client:visible src={baseImgUrl + "A.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "B.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "C.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "D.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "E.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "F.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "G.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "H.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "I.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "J.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "K.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "L.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "M.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "N.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "O.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "P.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "Q.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "R.png"} />
+    <ClicableImage client:visible src={baseImgUrl + "S.png"} />
+  </div>
+</WorkLayout>
