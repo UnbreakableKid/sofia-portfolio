@@ -9,58 +9,58 @@ import ClicableImage from "../components/ClicableImage";
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    description: "This is a test page",
-    url: "https://example.com",
-    image: "https://example.com/image.jpg",
-    date: "2021-01-01",
+  title: "Hello World",
+  description: "This is a test page",
+  url: "https://example.com",
+  image: "https://example.com/image.jpg",
+  date: "2021-01-01",
 };
 const skills = [
-    {
-        name: "Adobe Illustrator",
-        value: 90,
-    },
-    {
-        name: "Adobe InDesign",
-        value: 80,
-    },
-    {
-        name: "Figma",
-        value: 80,
-    },
-    {
-        name: "Sketch",
-        value: 15,
-    },
-    {
-        name: "MailChimp",
-        value: 15,
-    },
-    {
-        name: "Adobe Photoshop",
-        value: 75,
-    },
-    {
-        name: "Adobe Premiere",
-        value: 50,
-    },
-    {
-        name: "Fusion 360",
-        value: 50,
-    },
-    {
-        name: "CSS e HTML",
-        value: 50,
-    },
-    {
-        name: "Blender",
-        value: 15,
-    },
+  {
+    name: "Adobe Illustrator",
+    value: 90,
+  },
+  {
+    name: "Adobe InDesign",
+    value: 80,
+  },
+  {
+    name: "Figma",
+    value: 80,
+  },
+  {
+    name: "Sketch",
+    value: 15,
+  },
+  {
+    name: "MailChimp",
+    value: 15,
+  },
+  {
+    name: "Adobe Photoshop",
+    value: 75,
+  },
+  {
+    name: "Adobe Premiere",
+    value: 50,
+  },
+  {
+    name: "Fusion 360",
+    value: 50,
+  },
+  {
+    name: "CSS e HTML",
+    value: 50,
+  },
+  {
+    name: "Blender",
+    value: 15,
+  },
 ];
 ---
 
 <MainLayout content={content}>
-  <div class="grid h-fit grid-cols-1 gap-2 md:grid-cols-2">
+  <div class="grid h-screen grid-cols-1 gap-2 overflow-auto md:grid-cols-2">
     <section>
       <h1 class="mb-5 text-4xl">Description</h1>
 
@@ -108,7 +108,7 @@ const skills = [
         }
       </div> -->
     </section>
-    <ClicableImage client:load>
+    <ClicableImage client:load classNamesThumb={"md:overflow-y-auto md:pb-48"}>
       {/* @ts-ignore */}
 
       <Image src={timelinePng} slot={"thumbnail"} alt="My life timeline" />
@@ -119,7 +119,7 @@ const skills = [
         slot={"fullImage"}
         alt="My life timeline"
         quality={"max"}
-        height={1000}
+        height={900}
         class={"justify-self-center"}
       />
     </ClicableImage>
