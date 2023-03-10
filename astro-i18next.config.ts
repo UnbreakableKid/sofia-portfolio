@@ -17,6 +17,9 @@ const config: AstroI18nextConfig = {
       contact: "contato",
       works: {
         index: "trabalhos",
+        "36days": "36days",
+        cicloexpresso: "cicloexpresso",
+        daHorta: "daHorta",
       },
     },
   },

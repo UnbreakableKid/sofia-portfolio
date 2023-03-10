@@ -1,7 +1,12 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
 import WorkTab from "../../components/WorkTab";
 import MainLayout from "../../layouts/MainLayout.astro";
+import daHortaCapa from "../../assets/daHorta/Capa_daHorta.png";
+import cicloExpressoPng from "../../assets/cicloExpresso/cicloexpressoCover.png";
+import pictogramasPng from "../../assets/pictogramas/pictogramas.png";
+import daysPng from "../../assets/36days/Capa_36days.jpeg";
 
 changeLanguage("en");
 
@@ -12,8 +17,46 @@ const resource = {
     url: "https://astro.build",
     twitter: "@withastro",
 };
+const daHorta = {
+    img: daHortaCapa,
+    url: localizePath("/works/daHorta"),
+}; // branding e webdesign
+const cicloexpressoCover = {
+    img: cicloExpressoPng,
+    url: localizePath("/works/cicloexpresso"),
+}; // ilustração e infografia
+const pictogramas = {
+    img: pictogramasPng,
+    url: localizePath("/works/pictogramas"),
+}; // pictogramas
+const days = { img: daysPng, url: localizePath("/works/36days") }; // ilustração
+const categories = [
+    {
+        key: "all",
+        value: t("works.all"),
+        elements: [days, daHorta, cicloexpressoCover],
+    },
+    { key: "webdesign", value: t("works.webdesign"), elements: [daHorta] },
+    {
+        key: "illustration",
+        value: t("works.illustration"),
+        elements: [days, cicloexpressoCover],
+    },
+    {
+        key: "pictorgrams",
+        value: t("works.pictograms"),
+        elements: [pictogramas],
+    },
+    { key: "branding", value: t("works.branding"), elements: [daHorta] },
+    { key: "packaging", value: t("works.packaging"), elements: [] },
+    {
+        key: "infography",
+        value: t("works.infography"),
+        elements: [cicloexpressoCover],
+    },
+];
 ---
 
 <MainLayout content={resource}>
-  <WorkTab client:load />
+  <WorkTab client:load categories={categories} />
 </MainLayout>

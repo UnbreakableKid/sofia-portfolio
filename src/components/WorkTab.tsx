@@ -1,50 +1,23 @@
+import type { ImageMetadata } from "astro/dist/assets/types";
 import { useTranslation } from "react-i18next";
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./ui/Tabs";
 
-export default function WorkTab() {
-  const { t, i18n } = useTranslation();
+type WorkTabProps = {
+  categories: category[];
+};
 
-  const slug = i18n.language === "en" ? "./public" : "../public";
-  const days = { img: `${slug}/36days/Capa_36days.jpeg`, url: "/works/36days" }; // ilustração
-  const daHorta = {
-    img: `${slug}/daHorta/Capa_daHorta.png`,
-    url: "/works/daHorta",
-  }; // branding e webdesign
-  const cicloexpressoCover = {
-    img: `${slug}/cicloExpresso/cicloexpressoCover.png`,
-    url: "/works/cicloexpresso",
-  }; // ilustração e infografia
-  const pictogramas = {
-    img: `${slug}/pictogramas/pictogramas.png`,
-    url: "/works/pictogramas",
-  }; // pictogramas
+type category = {
+  key: string;
+  value: string;
+  elements: element[];
+};
 
-  const categories = [
-    {
-      key: "all",
-      value: t("works.all"),
-      elements: [days, daHorta, cicloexpressoCover],
-    },
-    { key: "webdesign", value: t("works.webdesign"), elements: [daHorta] },
-    {
-      key: "illustration",
-      value: t("works.illustration"),
-      elements: [days, cicloexpressoCover],
-    },
-    {
-      key: "pictorgrams",
-      value: t("works.pictograms"),
-      elements: [pictogramas],
-    },
-    { key: "branding", value: t("works.branding"), elements: [daHorta] },
-    { key: "packaging", value: t("works.packaging") },
-    {
-      key: "infography",
-      value: t("works.infography"),
-      elements: [cicloexpressoCover],
-    },
-  ];
+type element = {
+  img: ImageMetadata;
+  url: string;
+};
 
+export default function WorkTab({ categories }: WorkTabProps) {
   return (
     <Tabs defaultValue="all">
       <div className="flex justify-center">
@@ -65,7 +38,8 @@ export default function WorkTab() {
               >
                 {category.elements?.map((element) => (
                   <img
-                    src={element.img}
+                    key={element.url}
+                    src={element.img.src}
                     alt=""
                     className="aspect-square h-72 object-contain"
                     onClick={() => {

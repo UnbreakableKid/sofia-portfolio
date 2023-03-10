@@ -1,62 +1,61 @@
 ---
 import { changeLanguage } from "i18next";
-import { Progress } from "../components/ui/Progress";
-import { ScrollArea } from "../components/ui/ScrollArea";
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image, Picture } from "@astrojs/image/components";
-import timelinePng from "../../public/timeline.png";
+import { Image } from "astro:assets";
+import timelinePng from "../assets/timeline.png";
 import { Button } from "../components/ui/Button";
+import ClicableImage from "../components/ClicableImage";
 
 changeLanguage("en");
 
 const content = {
-  title: "Hello World",
-  description: "This is a test page",
-  url: "https://example.com",
-  image: "https://example.com/image.jpg",
-  date: "2021-01-01",
+    title: "Hello World",
+    description: "This is a test page",
+    url: "https://example.com",
+    image: "https://example.com/image.jpg",
+    date: "2021-01-01",
 };
 const skills = [
-  {
-    name: "Adobe Illustrator",
-    value: 90,
-  },
-  {
-    name: "Adobe InDesign",
-    value: 80,
-  },
-  {
-    name: "Figma",
-    value: 80,
-  },
-  {
-    name: "Sketch",
-    value: 15,
-  },
-  {
-    name: "MailChimp",
-    value: 15,
-  },
-  {
-    name: "Adobe Photoshop",
-    value: 75,
-  },
-  {
-    name: "Adobe Premiere",
-    value: 50,
-  },
-  {
-    name: "Fusion 360",
-    value: 50,
-  },
-  {
-    name: "CSS e HTML",
-    value: 50,
-  },
-  {
-    name: "Blender",
-    value: 15,
-  },
+    {
+        name: "Adobe Illustrator",
+        value: 90,
+    },
+    {
+        name: "Adobe InDesign",
+        value: 80,
+    },
+    {
+        name: "Figma",
+        value: 80,
+    },
+    {
+        name: "Sketch",
+        value: 15,
+    },
+    {
+        name: "MailChimp",
+        value: 15,
+    },
+    {
+        name: "Adobe Photoshop",
+        value: 75,
+    },
+    {
+        name: "Adobe Premiere",
+        value: 50,
+    },
+    {
+        name: "Fusion 360",
+        value: 50,
+    },
+    {
+        name: "CSS e HTML",
+        value: 50,
+    },
+    {
+        name: "Blender",
+        value: 15,
+    },
 ];
 ---
 
@@ -109,12 +108,20 @@ const skills = [
         }
       </div> -->
     </section>
-    <Image
-      src={timelinePng}
-      alt="My life timeline"
-      width={550}
-      height={700}
-      class={"place-self-center"}
-    />
+    <ClicableImage client:load>
+      {/* @ts-ignore */}
+
+      <Image src={timelinePng} slot={"thumbnail"} alt="My life timeline" />
+      {/* @ts-ignore */}
+
+      <Image
+        src={timelinePng}
+        slot={"fullImage"}
+        alt="My life timeline"
+        quality={"max"}
+        height={1000}
+        class={"justify-self-center"}
+      />
+    </ClicableImage>
   </div>
 </MainLayout>

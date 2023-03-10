@@ -1,10 +1,10 @@
 ---
 import { changeLanguage } from "i18next";
-import { Progress } from "../../components/ui/Progress";
-import { ScrollArea } from "../../components/ui/ScrollArea";
 import MainLayout from "../../layouts/MainLayout.astro";
-import { Image, Picture } from "@astrojs/image/components";
-import timelinePng from "../../../public/timeline.png";
+import { Image } from "astro:assets";
+import timelinePng from "../../assets/timeline.png";
+import { Button } from "../../components/ui/Button";
+import ClicableImage from "../../components/ClicableImage";
 
 changeLanguage("pt");
 
@@ -64,7 +64,33 @@ const skills = [
     <section>
       <h1 class="mb-5 text-4xl">Description</h1>
 
-      <h1 class="mb-5 text-4xl">Skills</h1>
+      <div class="prose mb-5 font-sans dark:prose-invert">
+        <p class="mb-2">
+          Olá. Eu sou a Sofia, uma designer de comunicação que através dos seus
+          variados gostos e competências resolve problemas de comunicação visual
+          para promover conhecimento e marcas.
+        </p>
+
+        <p class="mb-2">
+          Durante a minha licenciatura em Design na Universidade de Aveiro tive
+          a oportunidade de trabalhar em várias áreas do design e descobri o meu
+          amor pela vertente gráfica e digital. No mestrado em Design de
+          Comunicação da Universidade de Lisboa pude aprofundar os conhecimentos
+          nestas áreas e abrir os horizontes sobre o papel do design gráfico na
+          sociedade.
+        </p>
+        <Button
+          client:load
+          size="lg"
+          className={`hover:no-underline p-0 font-bold text-2xl`}
+          id="logo"
+          variant={"link"}
+        >
+          Curriculum Vitae
+        </Button>
+      </div>
+
+      <!-- <h1 class="mb-5 text-4xl">Skills</h1>
       <div
         class="grid w-5/6 grid-cols-1 md:grid-cols-2 md:grid-rows-5 md:gap-5"
       >
@@ -80,14 +106,22 @@ const skills = [
             </div>
           ))
         }
-      </div>
+      </div> -->
     </section>
-    <Image
-      src={timelinePng}
-      alt="My life timeline"
-      width={550}
-      height={700}
-      class={"place-self-center"}
-    />
+    <ClicableImage client:load>
+      {/* @ts-ignore */}
+
+      <Image src={timelinePng} slot={"thumbnail"} alt="My life timeline" />
+      {/* @ts-ignore */}
+
+      <Image
+        src={timelinePng}
+        slot={"fullImage"}
+        alt="My life timeline"
+        quality={"max"}
+        height={1000}
+        class={"justify-self-center"}
+      />
+    </ClicableImage>
   </div>
 </MainLayout>

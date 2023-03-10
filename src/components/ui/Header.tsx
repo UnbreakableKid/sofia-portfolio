@@ -13,6 +13,7 @@ const Header = ({
   //get current language from html lang attribute
 
   const [fontStyle, setFontStyle] = useState("font-black");
+
   useEffect(() => {
     const fontStyles = ["font-sans", "font-serif", "font-mono"];
     const randomFontStyle =

@@ -6,18 +6,14 @@ import astroI18next from "astro-i18next";
 import react from "@astrojs/react";
 
 // https://astro.build/config
-import image from "@astrojs/image";
-
-// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind(),
-    react(),
-    astroI18next(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
-  ],
+  experimental: {
+    assets: true,
+  },
+  image: {
+    service: "astro/assets/services/sharp",
+  },
+  integrations: [tailwind(), react(), astroI18next()],
   vite: {
     ssr: {
       noExternal: [

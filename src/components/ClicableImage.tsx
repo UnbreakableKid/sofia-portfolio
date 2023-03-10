@@ -1,21 +1,19 @@
+import type React from "react";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/Dialog";
 
 interface ClicableImageProps {
-  src: string;
+  thumbnail?: React.ReactNode;
+  fullImage?: React.ReactNode;
 }
 
-const ClicableImage = ({ src }: ClicableImageProps) => {
+const ClicableImage = ({ thumbnail, fullImage }: ClicableImageProps) => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <img
-          src={src}
-          alt=""
-          className="max-w-3xl cursor-zoom-in snap-center"
-        />
+        <div className="cursor-zoom-in snap-center">{thumbnail}</div>
       </DialogTrigger>
-      <DialogContent className="w-3/5 cursor-none md:max-w-none">
-        <img src={src} alt="" className=" object-contain" />
+      <DialogContent className="cursor-none md:w-3/5 md:max-w-none">
+        {fullImage}
       </DialogContent>
     </Dialog>
   );

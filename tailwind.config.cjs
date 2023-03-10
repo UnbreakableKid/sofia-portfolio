@@ -8,6 +8,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Helvetica", ...defaultTheme.fontFamily.sans],
+      serif: [...defaultTheme.fontFamily.serif],
+      mono: [...defaultTheme.fontFamily.mono],
     },
   },
 
