@@ -1,5 +1,6 @@
 import type { ImageMetadata } from "astro/dist/assets/types";
 import { useTranslation } from "react-i18next";
+import LoadingImage from "./ui/LoadingImage";
 import { TabsList, TabsTrigger, Tabs, TabsContent } from "./ui/Tabs";
 
 type WorkTabProps = {
@@ -32,16 +33,20 @@ export default function WorkTab({ categories }: WorkTabProps) {
       <div className="flex justify-center">
         <div className="flex w-[80%]">
           {categories.map((category) => (
-            <TabsContent key={category.key} value={category.key}>
+            <TabsContent
+              key={category.key}
+              value={category.key}
+              className="px-7"
+            >
               <div
-                className={`flex flex-grow flex-wrap justify-center gap-4 self-center px-7 md:justify-start`}
+                className={`flex flex-grow flex-wrap justify-center gap-4 self-center`}
               >
                 {category.elements?.map((element) => (
                   <img
                     key={element.url}
                     src={element.img.src}
+                    className="aspect-square h-72  object-contain"
                     alt=""
-                    className="aspect-square h-72 object-contain"
                     onClick={() => {
                       window.open(element.url, "_self");
                     }}

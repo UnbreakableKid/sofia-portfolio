@@ -18,6 +18,7 @@ specifiers:
   '@types/react-dom': 18.0.6
   astro: ^2.1.2
   astro-i18next: 1.0.0-beta.17
+  astro-tabs: ^0.1.7
   autoprefixer: ^10.4.13
   canvas-confetti: ^1.6.0
   class-variance-authority: ^0.4.0
@@ -28,6 +29,7 @@ specifiers:
   i18next-http-backend: ^2.1.1
   lucide-react: ^0.108.0
   postcss: ^8.4.21
+  postcss-nesting: ^11.2.1
   preact: 10.6.5
   prettier: ^2.8.4
   prettier-plugin-astro: ^0.8.0
@@ -36,6 +38,7 @@ specifiers:
   react-dom: 18.0.0
   react-i18next: ^12.2.0
   rollup: ^3.18.0
+  sass: ^1.58.3
   sharp: ^0.31.3
   tailwind-merge: ^1.10.0
   tailwindcss: ^3.2.7
@@ -56,8 +59,9 @@ dependencies:
   '@types/canvas-confetti': 1.6.0
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
-  astro: 2.1.2_sharp@0.31.3
+  astro: 2.1.2_sass@1.58.3+sharp@0.31.3
   astro-i18next: 1.0.0-beta.17_astro@2.1.2
+  astro-tabs: 0.1.7
   canvas-confetti: 1.6.0
   class-variance-authority: 0.4.0
   clsx: 1.2.1
@@ -70,6 +74,7 @@ dependencies:
   react: 18.0.0
   react-dom: 18.0.0_react@18.0.0
   react-i18next: 12.2.0_ub3gddlyxmszukphvv4qfn7pr4
+  sass: 1.58.3
   sharp: 0.31.3
   tailwind-merge: 1.10.0
 
@@ -77,6 +82,7 @@ devDependencies:
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.7
   autoprefixer: 10.4.13_postcss@8.4.21
   postcss: 8.4.21
+  postcss-nesting: 11.2.1_postcss@8.4.21
   prettier: 2.8.4
   prettier-plugin-astro: 0.8.0
   prettier-plugin-tailwindcss: 0.2.4_cfgkwvtfb3vmyej4cugnuognhu
@@ -125,7 +131,7 @@ packages:
       astro: ^2.1.0
     dependencies:
       '@astrojs/prism': 2.1.0
-      astro: 2.1.2_sharp@0.31.3
+      astro: 2.1.2_sass@1.58.3+sharp@0.31.3
       github-slugger: 1.5.0
       image-size: 1.0.2
       import-meta-resolve: 2.2.1
@@ -177,7 +183,7 @@ packages:
     dependencies:
       '@astrojs/webapi': 2.1.0
       '@netlify/functions': 1.4.0
-      astro: 2.1.2_sharp@0.31.3
+      astro: 2.1.2_sass@1.58.3+sharp@0.31.3
       esbuild: 0.15.18
     dev: false
 
@@ -230,7 +236,7 @@ packages:
       tailwindcss: ^3.0.24
     dependencies:
       '@proload/core': 0.3.3
-      astro: 2.1.2_sharp@0.31.3
+      astro: 2.1.2_sass@1.58.3+sharp@0.31.3
       autoprefixer: 10.4.13_postcss@8.4.21
       postcss: 8.4.21
       postcss-load-config: 4.0.1_postcss@8.4.21
@@ -263,7 +269,7 @@ packages:
       '@astrojs/webapi': 2.1.0
       '@vercel/analytics': 0.1.11_react@18.0.0
       '@vercel/nft': 0.22.6
-      astro: 2.1.2_sharp@0.31.3
+      astro: 2.1.2_sass@1.58.3+sharp@0.31.3
       fast-glob: 3.2.12
       set-cookie-parser: 2.5.1
       web-vitals: 3.1.1
@@ -516,6 +522,17 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
     dev: false
+
+  /@csstools/selector-specificity/2.1.1_wajs5nedgkikc5pcuwett7legi:
+    resolution: {integrity: sha512-jwx+WCqszn53YHOfvFMJJRd/B2GqkCBt+1MJSG6o5/s8+ytHMvDZXsJgUEWLk12UnLd7HYKac4BYU5i/Ron1Cw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+      postcss-selector-parser: ^6.0.10
+    dependencies:
+      postcss: 8.4.21
+      postcss-selector-parser: 6.0.11
+    dev: true
 
   /@emmetio/abbreviation/2.2.3:
     resolution: {integrity: sha512-87pltuCPt99aL+y9xS6GPZ+Wmmyhll2WXH73gG/xpGcQ84DRnptBsI2r0BeIQ0EB/SQTOe2ANPqFqj3Rj5FOGA==}
@@ -1569,7 +1586,7 @@ packages:
     dependencies:
       '@proload/core': 0.3.3
       '@proload/plugin-tsm': 0.2.1_@proload+core@0.3.3
-      astro: 2.1.2_sharp@0.31.3
+      astro: 2.1.2_sass@1.58.3+sharp@0.31.3
       i18next: 22.4.11
       i18next-browser-languagedetector: 7.0.1
       i18next-fs-backend: 2.1.1
@@ -1581,7 +1598,11 @@ packages:
       - encoding
     dev: false
 
-  /astro/2.1.2_sharp@0.31.3:
+  /astro-tabs/0.1.7:
+    resolution: {integrity: sha512-hhAMa7nJBxVrz0oufAc39+o26J7mo9P1jyFBM1usFalk6rExU/o5sD6kLxvvNxUkGQvw+O62BNS2eTEjS78/2g==}
+    dev: false
+
+  /astro/2.1.2_sass@1.58.3+sharp@0.31.3:
     resolution: {integrity: sha512-qxBIPHfFJhwNOxI2E96XrGrUM6lGkDRkDY8iqEJNFWPGP+t5yY5SWb8H+OdYUGopexy1GGjoY7SYQCzFBkt7iw==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -1642,7 +1663,7 @@ packages:
       typescript: 4.9.5
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.1.4
+      vite: 4.1.4_sass@1.58.3
       vitefu: 0.2.4_vite@4.1.4
       yargs-parser: 21.1.1
       zod: 3.21.4
@@ -2864,6 +2885,10 @@ packages:
     hasBin: true
     dependencies:
       queue: 6.0.2
+    dev: false
+
+  /immutable/4.2.4:
+    resolution: {integrity: sha512-WDxL3Hheb1JkRN3sQkyujNlL/xRjAo3rJtaU5xeufUauG66JdMr32bLj4gF+vWl84DIA3Zxw7tiAjneYzRRw+w==}
     dev: false
 
   /import-meta-resolve/2.2.1:
@@ -4143,6 +4168,17 @@ packages:
       postcss: 8.4.21
       postcss-selector-parser: 6.0.11
 
+  /postcss-nesting/11.2.1_postcss@8.4.21:
+    resolution: {integrity: sha512-E6Jq74Jo/PbRAtZioON54NPhUNJYxVWhwxbweYl1vAoBYuGlDIts5yhtKiZFLvkvwT73e/9nFrW3oMqAtgG+GQ==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/selector-specificity': 2.1.1_wajs5nedgkikc5pcuwett7legi
+      postcss: 8.4.21
+      postcss-selector-parser: 6.0.11
+    dev: true
+
   /postcss-selector-parser/6.0.10:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
     engines: {node: '>=4'}
@@ -4648,6 +4684,16 @@ packages:
     resolution: {integrity: sha512-hXdxU6PCkiV3XAiSnX+XLqz2ohHoEnVUlrd8LEVMAI80uB1+OTScIkH9n6qQwImZpTye1r1WG1rbGUteHNhoHg==}
     dependencies:
       suf-log: 2.5.3
+
+  /sass/1.58.3:
+    resolution: {integrity: sha512-Q7RaEtYf6BflYrQ+buPudKR26/lH+10EmO9bBqbmPh/KeLqv8bjpTNqxe71ocONqXq+jYiCbpPUmQMS+JJPk4A==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.2.4
+      source-map-js: 1.0.2
+    dev: false
 
   /scheduler/0.21.0:
     resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
@@ -5200,7 +5246,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite/4.1.4:
+  /vite/4.1.4_sass@1.58.3:
     resolution: {integrity: sha512-3knk/HsbSTKEin43zHu7jTwYWv81f8kgAL99G5NWBcA1LKvtvcVAC4JjBH1arBunO9kQka+1oGbrMKOjk4ZrBg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5229,6 +5275,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.18.0
+      sass: 1.58.3
     optionalDependencies:
       fsevents: 2.3.2
     dev: false
@@ -5241,7 +5288,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.1.4
+      vite: 4.1.4_sass@1.58.3
     dev: false
 
   /void-elements/3.1.0:
