@@ -94,7 +94,7 @@ const categories = [
       {
         categories.map((category, i) => (
           <div
-            class="border-b-2 px-10 py-1 data-[active=true]:font-bold data-[active=false]:hover:border-violet-50 dark:border-gray-700 data-[active=true]:dark:border-violet-400 data-[active=true]:dark:text-violet-400"
+            class=" px-9 py-3 data-[active=true]:font-bold data-[active=false]:hover:underline data-[active=false]:hover:underline-offset-8 "
             role="tab"
             tabindex={i}
             data-active={i === 0 ? "true" : "false"}
@@ -106,7 +106,6 @@ const categories = [
       }
     </div>
 
-    <!-- now the content panels -->
     {
       categories.map((category, i) => (
         <>

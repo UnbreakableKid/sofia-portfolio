@@ -26,8 +26,8 @@ import letterS from "../../assets/36days/S.png";
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+  title: "Hello World",
+  body: "This is a test",
 };
 ---
 
@@ -59,6 +59,7 @@ const content = {
 
       <Image src={letterB} slot={"thumbnail"} alt="Letter B" />
 
+      {/* @ts-ignore */}
       <Image src={letterB} slot={"fullImage"} alt="Letter B" quality={"max"} />
     </ClicableImage>
 
