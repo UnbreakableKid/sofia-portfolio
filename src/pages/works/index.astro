@@ -15,76 +15,68 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const resource = {
-  title: "Astro",
-  description:
-    "Astro is a new kind of static site generator. It's fast, modern, and built for the future.",
-  image: "https://astro.build/assets/social.png",
-  url: "https://astro.build",
-  twitter: "@withastro",
+    title: "Astro",
+    description: "Astro is a new kind of static site generator. It's fast, modern, and built for the future.",
+    image: "https://astro.build/assets/social.png",
+    url: "https://astro.build",
+    twitter: "@withastro",
 };
 const daHorta = {
-  img: daHortaCapa,
-  url: localizePath("/works/daHorta"),
+    img: daHortaCapa,
+    url: localizePath("/works/daHorta"),
 };
 const cicloexpressoCover = {
-  img: cicloExpressoPng,
-  url: localizePath("/works/cicloexpresso"),
+    img: cicloExpressoPng,
+    url: localizePath("/works/cicloexpresso"),
 };
-
 const days = { img: daysPng, url: localizePath("/works/36days") };
-
 const steps5 = { img: steps5Png, url: localizePath("/works/steps5") };
-
 // const caeiro = { img: caeiroPng, url: localizePath("/works/caeiro") };
-
 const memo = { img: memoPng, url: localizePath("/works/memo") };
-
 const fraunhofer = {
-  img: fraunhoferPng,
-  url: localizePath("/works/fraunhofer"),
+    img: fraunhoferPng,
+    url: localizePath("/works/fraunhofer"),
 };
-
 const sinaletica = {
-  img: sinaleticaPng,
-  url: localizePath("/works/sinaletica"),
+    img: sinaleticaPng,
+    url: localizePath("/works/sinaletica"),
 };
-
 const categories = [
-  {
-    key: "all",
-    value: t("works.all"),
-    elements: [
-      days,
-      daHorta,
-      cicloexpressoCover,
-      steps5,
-      //   caeiro,
-      memo,
-      fraunhofer,
-      sinaletica,
-    ],
-  },
-  {
-    key: "webdesign",
-    value: t("works.webdesign"),
-    elements: [daHorta],
-  },
-  {
-    key: "illustration",
-    value: t("works.illustration"),
-    elements: [days, memo],
-  },
-  {
-    key: "pictorgrams",
-    value: t("works.pictograms"),
-    elements: [daHorta, sinaletica],
-  },
-  { key: "branding", value: t("works.branding"), elements: [daHorta] },
-  {
-    key: "infography",
-    value: t("works.infography"),
-    elements: [steps5, cicloexpressoCover],
-  },
+    {
+        key: "all",
+        value: t("works.all"),
+        elements: [
+            days,
+            daHorta,
+            cicloexpressoCover,
+            steps5,
+            //   caeiro,
+            memo,
+            fraunhofer,
+            sinaletica,
+        ],
+    },
+    {
+        key: "webdesign",
+        value: t("works.webdesign"),
+        elements: [daHorta],
+    },
+    {
+        key: "illustration",
+        value: t("works.illustration"),
+        elements: [days, memo],
+    },
+    {
+        key: "pictorgrams",
+        value: t("works.pictograms"),
+        elements: [daHorta, sinaletica],
+    },
+    { key: "branding", value: t("works.branding"), elements: [daHorta] },
+    {
+        key: "infography",
+        value: t("works.infography"),
+        elements: [steps5, cicloexpressoCover],
+    },
 ];
 ---
 

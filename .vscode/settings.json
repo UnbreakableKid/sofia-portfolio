@@ -1,5 +1,5 @@
 {
   "discord.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "conventionalCommits.scopes": ["Works Index"]
+  "conventionalCommits.scopes": ["Works Index", "Translations"]
 }
