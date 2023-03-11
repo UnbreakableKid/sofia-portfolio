@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/ui/Footer";
-import Header from "../components/ui/Header";
+import Footer from "../components/ui/Footer.astro";
+import Header from "../components/ui/Header.astro";
 import i18next from "i18next";
 import LanguageSelector from "../components/ui/LanguageSelector.astro";
 import { localizePath } from "astro-i18next";
@@ -26,7 +26,7 @@ const { content } = Astro.props;
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           return "dark";
         }
-        return "light";
+        return "dark";
       })();
       if (theme === "light") {
         document.documentElement.classList.remove("dark");
@@ -46,11 +46,7 @@ const { content } = Astro.props;
     <div
       class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white p-5 font-sans dark:bg-black dark:text-white sm:min-h-max md:h-screen lg:h-screen"
     >
-      <Header
-        client:visible
-        homeLink={localizePath("/")}
-        workLink={localizePath("/works")}
-      />
+      <Header homeLink={localizePath("/")} workLink={localizePath("/works")} />
       <ins
         class="delay-[0s] duration-[0.5s] ease-[ease] pointer-events-none fixed z-[999999999] h-6 w-6 -translate-x-2/4 -translate-y-2/4 rounded-[50%] bg-white mix-blend-difference transition-[background]"
         id="movable"></ins>
@@ -58,7 +54,6 @@ const { content } = Astro.props;
         <slot />
       </main>
       <Footer
-        client:visible
         aboutLink={localizePath("/about")}
         contactLink={localizePath("contact")}
       >

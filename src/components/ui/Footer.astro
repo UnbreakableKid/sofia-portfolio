@@ -1,0 +1,28 @@
+---
+import { useTranslation } from "react-i18next";
+import Button from "./Button.astro";
+import ThemeToggle from "./ThemeToggle";
+
+import { t } from "i18next";
+
+const { aboutLink, contactLink } = Astro.props;
+---
+
+<footer
+  class="bottom-0 left-0 z-10 flex w-full place-content-between items-center justify-between"
+>
+  <a href={aboutLink}>
+    <Button variant="link" class="font-black md:text-2xl">
+      {t("footer.about")}
+    </Button>
+  </a>
+  <div class="flex items-center gap-2">
+    <slot />
+    <ThemeToggle client:only="react" />
+  </div>
+  <a href={contactLink}>
+    <Button variant="link" class="font-black md:text-2xl">
+      {t("footer.contact")}
+    </Button>
+  </a>
+</footer>
