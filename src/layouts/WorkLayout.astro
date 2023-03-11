@@ -5,11 +5,11 @@ const { content } = Astro.props;
 ---
 
 <MainLayout {content}>
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-2 overflow-hidden">
     <div class="h-fit md:p-12">
       <slot name="description" />
     </div>
-    <div class="flex-1 flex-grow-0">
+    <div class="flex-1 flex-grow-0 overflow-hidden">
       <div
         class="fixed top-20 z-10 h-16 w-full bg-gradient-to-b from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0"
       >
@@ -21,7 +21,7 @@ const { content } = Astro.props;
       <ScrollArea
         client:only="react"
         className="h-[calc(100vh-10px)] pb-52 md:pb-44 "
-        classNameForView="flex flex-col gap-5"
+        classNameForView="flex flex-col gap-5 "
       >
         <slot name="images" />
       </ScrollArea>
