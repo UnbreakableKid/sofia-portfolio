@@ -50,8 +50,7 @@ const { content } = Astro.props;
       <div class="topGradient"></div>
       <div class="bottomGradient"></div>
       <ScrollArea
-        client:load
-        client:load
+        client:only="react"
         className="h-[calc(100vh-10px)] pb-52 md:pb-44 "
         classNameForView="flex flex-col gap-5"
       >

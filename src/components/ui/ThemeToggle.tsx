@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Button } from "./Button";
 import { Moon, Sun } from "lucide-react";
 
 const ThemeToggle = () => {
@@ -37,15 +36,13 @@ const ThemeToggle = () => {
   }, []);
 
   return isMounted ? (
-    <Button
-      size={"sm"}
-      variant="link"
+    <button
       type="button"
-      className="hover:no-underline focus:ring-transparent dark:focus:ring-transparent"
+      className="cursor-none hover:cursor-none hover:no-underline focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-transparent dark:focus:ring-white dark:focus:ring-offset-gray-900"
       onClick={toggleTheme}
     >
       {theme === "light" ? <Moon /> : <Sun />}
-    </Button>
+    </button>
   ) : (
     <div />
   );
