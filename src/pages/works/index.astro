@@ -6,7 +6,7 @@ import daHortaCapa from "../../assets/CAPAS/Capa_daHorta.png";
 import cicloExpressoPng from "../../assets/CAPAS/cicloexpressoCover.png";
 import daysPng from "../../assets/CAPAS/capa36.png";
 import steps5Png from "../../assets/CAPAS/5passosCapa-01.png";
-// import caeiroPng from "../../assets/CAPAS/Capa_Caeiro.png";
+import caeiroPng from "../../assets/CAPAS/Capa_Caeiro.png";
 import memoPng from "../../assets/CAPAS/MEMOcolour-01.png";
 import fraunhoferPng from "../../assets/CAPAS/capaFraunhofer.png";
 import sinaleticaPng from "../../assets/CAPAS/pictogramas.png";
@@ -32,7 +32,7 @@ const cicloexpressoCover = {
 };
 const days = { img: daysPng, url: localizePath("/works/36days") };
 const steps5 = { img: steps5Png, url: localizePath("/works/steps5") };
-// const caeiro = { img: caeiroPng, url: localizePath("/works/caeiro") };
+const caeiro = { img: caeiroPng, url: localizePath("/works/caeiro") };
 const memo = { img: memoPng, url: localizePath("/works/memo") };
 const fraunhofer = {
     img: fraunhoferPng,
@@ -55,7 +55,7 @@ const categories = [
             daHorta,
             cicloexpressoCover,
             steps5,
-            //   caeiro,
+            caeiro,
             memo,
             fraunhofer,
             sinaletica,
@@ -65,7 +65,7 @@ const categories = [
     {
         key: "webdesign",
         value: t("works.webdesign"),
-        elements: [daHorta, booky],
+        elements: [daHorta, caeiro, booky],
     },
     {
         key: "illustration",
@@ -77,7 +77,7 @@ const categories = [
         value: t("works.pictograms"),
         elements: [daHorta, sinaletica],
     },
-    { key: "branding", value: t("works.branding"), elements: [daHorta] },
+    { key: "branding", value: t("works.branding"), elements: [daHorta, caeiro] },
     {
         key: "infography",
         value: t("works.infography"),
