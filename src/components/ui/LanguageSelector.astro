@@ -11,9 +11,11 @@ const currentLanguage = i18next.language;
 const { pathname } = Astro.url;
 ---
 
-<div class="flex cursor-none gap-1 hover:cursor-none">
+<div
+  class="flex cursor-none items-center justify-center gap-1 hover:cursor-none"
+>
   <button
-    class={` text-sm md:text-2xl ${
+    class={` text-sm md:text-xl ${
       currentLanguage === "pt"
         ? "font-black hover:pointer-events-none pointer-events-none"
         : "font-light"
@@ -22,11 +24,11 @@ const { pathname } = Astro.url;
     disabled={currentLanguage === "pt"}
     value={localizePath(pathname, "pt")}
   >
-    PT
+    PT/
   </button>
-  /
+
   <button
-    class={` text-sm md:text-2xl ${
+    class={` text-sm md:text-xl ${
       currentLanguage === "en"
         ? "font-black hover:pointer-events-none pointer-events-none"
         : "font-light"

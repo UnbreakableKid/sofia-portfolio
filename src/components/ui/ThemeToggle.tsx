@@ -38,7 +38,7 @@ const ThemeToggle = () => {
   return isMounted ? (
     <button
       type="button"
-      className="cursor-none hover:cursor-none hover:no-underline focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-transparent dark:focus:ring-white dark:focus:ring-offset-gray-900"
+      className="cursor-none hover:cursor-none hover:no-underline  focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-transparent dark:focus:ring-white dark:focus:ring-offset-gray-900"
       onClick={toggleTheme}
     >
       {theme === "light" ? <Moon /> : <Sun />}

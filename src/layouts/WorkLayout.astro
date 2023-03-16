@@ -4,55 +4,24 @@ import MainLayout from "./MainLayout.astro";
 const { content } = Astro.props;
 ---
 
-<style>
-  .topGradient {
-    height: 50px;
-    width: 100%;
-    background: linear-gradient(
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0)
-    );
-    position: fixed;
-    top: 100px;
-    z-index: 10;
-  }
-
-  .bottomGradient {
-    height: 50px;
-    width: 100%;
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0)
-    );
-    position: fixed;
-    bottom: 4.5rem;
-    z-index: 10;
-  }
-
-  @media (min-width: 768px) {
-    .topGradient {
-      top: 100px;
-    }
-
-    .bottomGradient {
-      bottom: 3.5rem;
-    }
-  }
-</style>
-
 <MainLayout {content}>
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-2 overflow-hidden">
     <div class="h-fit md:p-12">
       <slot name="description" />
     </div>
-    <div class="flex-1 flex-grow-0">
-      <div class="topGradient"></div>
-      <div class="bottomGradient"></div>
+    <div class="flex-1 flex-grow-0 overflow-hidden">
+      <div
+        class="fixed top-20 z-10 h-16 w-full bg-gradient-to-b from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0"
+      >
+      </div>
+      <div
+        class="fixed bottom-10 z-10 h-20 w-full bg-gradient-to-t from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0"
+      >
+      </div>
       <ScrollArea
         client:only="react"
         className="h-[calc(100vh-10px)] pb-52 md:pb-44 "
-        classNameForView="flex flex-col gap-5"
+        classNameForView="flex flex-col gap-5 "
       >
         <slot name="images" />
       </ScrollArea>

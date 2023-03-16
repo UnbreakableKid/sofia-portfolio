@@ -1,12 +1,17 @@
 ---
 import { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
-import WorkTab from "../../components/WorkTab";
 import MainLayout from "../../layouts/MainLayout.astro";
-import daHortaCapa from "../../assets/daHorta/Capa_daHorta.png";
-import cicloExpressoPng from "../../assets/cicloExpresso/cicloexpressoCover.png";
-import pictogramasPng from "../../assets/pictogramas/pictogramas.png";
-import daysPng from "../../assets/36days/Capa_36days.jpeg";
+import daHortaCapa from "../../assets/CAPAS/Capa_daHorta.png";
+import cicloExpressoPng from "../../assets/CAPAS/cicloexpressoCover.png";
+import daysPng from "../../assets/CAPAS/capa36.png";
+import steps5Png from "../../assets/CAPAS/5passosCapa-01.png";
+import caeiroPng from "../../assets/CAPAS/Capa_Caeiro.png";
+import memoPng from "../../assets/CAPAS/MEMOcolour-01.png";
+import fraunhoferPng from "../../assets/CAPAS/capaFraunhofer.png";
+import sinaleticaPng from "../../assets/CAPAS/pictogramas.png";
+import bookyPng from "../../assets/CAPAS/capa_booky.jpg";
+import { Image } from "astro:assets";
 
 changeLanguage("en");
 
@@ -20,43 +25,168 @@ const resource = {
 const daHorta = {
     img: daHortaCapa,
     url: localizePath("/works/daHorta"),
-}; // branding e webdesign
+};
 const cicloexpressoCover = {
     img: cicloExpressoPng,
     url: localizePath("/works/cicloexpresso"),
-}; // ilustração e infografia
-const pictogramas = {
-    img: pictogramasPng,
-    url: localizePath("/works/pictogramas"),
-}; // pictogramas
-const days = { img: daysPng, url: localizePath("/works/36days") }; // ilustração
+};
+const days = { img: daysPng, url: localizePath("/works/36days") };
+const steps5 = { img: steps5Png, url: localizePath("/works/steps5") };
+const caeiro = { img: caeiroPng, url: localizePath("/works/caeiro") };
+const memo = { img: memoPng, url: localizePath("/works/memo") };
+const fraunhofer = {
+    img: fraunhoferPng,
+    url: localizePath("/works/fraunhofer"),
+};
+const sinaletica = {
+    img: sinaleticaPng,
+    url: localizePath("/works/sinaletica"),
+};
+const booky = {
+    img: bookyPng,
+    url: localizePath("/works/booky"),
+};
 const categories = [
     {
         key: "all",
         value: t("works.all"),
-        elements: [days, daHorta, cicloexpressoCover],
+        elements: [
+            days,
+            daHorta,
+            cicloexpressoCover,
+            steps5,
+            caeiro,
+            memo,
+            fraunhofer,
+            sinaletica,
+            booky,
+        ],
     },
-    { key: "webdesign", value: t("works.webdesign"), elements: [daHorta] },
+    {
+        key: "webdesign",
+        value: t("works.webdesign"),
+        elements: [daHorta, caeiro, booky],
+    },
     {
         key: "illustration",
         value: t("works.illustration"),
-        elements: [days, cicloexpressoCover],
+        elements: [days, memo],
     },
     {
         key: "pictorgrams",
         value: t("works.pictograms"),
-        elements: [pictogramas],
+        elements: [daHorta, sinaletica],
     },
-    { key: "branding", value: t("works.branding"), elements: [daHorta] },
-    { key: "packaging", value: t("works.packaging"), elements: [] },
+    { key: "branding", value: t("works.branding"), elements: [daHorta, caeiro] },
     {
         key: "infography",
         value: t("works.infography"),
-        elements: [cicloexpressoCover],
+        elements: [steps5, cicloexpressoCover],
     },
 ];
 ---
 
+<style>
+  .botGradient {
+    @apply fixed bottom-0 z-10 h-32 w-[90%] md:h-32;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.654248) 56.86%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: matrix(1, 0, 0, -1, 0, 0);
+  }
+
+  /* if html has dark class */
+  html.dark .botGradient {
+    background: linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0.654248) 56.86%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .topGradient {
+    @apply absolute z-10 h-12 w-[95%] translate-y-32 md:h-24 md:w-[85%] md:translate-y-12;
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.654248) 56.86%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  /* if html has dark class */
+  html.dark .topGradient {
+    background: linear-gradient(
+      180deg,
+      #000000 0%,
+      rgba(0, 0, 0, 0.654248) 56.86%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+</style>
+
 <MainLayout content={resource}>
-  <WorkTab client:load categories={categories} />
+  <div
+    class="flex max-h-[calc(100vh-150px)] flex-col items-center md:mt-16 md:max-h-[calc(100vh-200px)]"
+  >
+    <div
+      class="grid w-fit grid-cols-2 justify-items-center dark:bg-black dark:text-gray-100 md:flex"
+      role="tablist"
+    >
+      {
+        categories.map((category, i) => (
+          <div
+            class=" px-9 py-3 data-[active=true]:font-bold data-[active=false]:hover:underline data-[active=false]:hover:underline-offset-8 "
+            role="tab"
+            tabindex={i}
+            data-active={i === 0 ? "true" : "false"}
+            aria-selected={i === 0 ? "true" : "false"}
+          >
+            {category.value}
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="topGradient"></div>
+    {
+      categories.map((category, i) => (
+        <>
+          <div
+            class="no-scrollbar flex flex-wrap justify-center gap-4 overflow-y-auto  data-[active=false]:hidden md:mt-16 md:grid md:grid-cols-4 md:gap-7 "
+            role="tabpanel"
+            tabindex={i}
+            data-active={i === 0 ? "true" : "false"}
+            aria-hidden={i === 0 ? "false" : "true"}
+          >
+            {category.elements.map((element) => (
+              <a
+                class="cursor-none hover:cursor-none"
+                href={element.url}
+                target="_self"
+              >
+                <Image
+                  src={element.img}
+                  class={
+                    "border grayscale filter transition-all duration-500 hover:filter-none"
+                  }
+                  width={350}
+                  alt={"hi"}
+                />
+              </a>
+            ))}
+          </div>
+        </>
+      ))
+    }
+    <div class="botGradient"></div>
+
+    <script>
+      import "../../scripts/Tabs";
+    </script>
+  </div>
 </MainLayout>

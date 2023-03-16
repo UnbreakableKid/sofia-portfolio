@@ -6,13 +6,13 @@ const { homeLink, workLink } = Astro.props;
 ---
 
 <header
-  class="left-0 z-10 flex h-fit w-full place-content-between items-center justify-between"
+  class="left-0 z-50 flex h-16 w-full place-content-between items-center justify-between bg-transparent pt-4"
 >
   <a href={`${homeLink}`}>
     <Button
       variant={"link"}
       size={"lg"}
-      class={`md:text-6xl font-sans hover:no-underline`}
+      class={`md:text-6xl text-4xl pl-5 hover:no-underline transition-all duration-300 ease-in-out`}
       id="logo"
     >
       S
