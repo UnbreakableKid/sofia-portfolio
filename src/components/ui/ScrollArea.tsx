@@ -1,54 +1,56 @@
-import * as React from "react";
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
-
+import React from "react";
+import {
+  Corner,
+  Root,
+  ScrollAreaScrollbar,
+  ScrollAreaThumb,
+  Viewport,
+} from "@radix-ui/react-scroll-area";
 import { cn } from "src/lib/utils";
 
 type ScrollAreaProps = {
   scrollBar?: boolean;
   classNameForView?: string;
-} & React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>;
+} & React.ComponentPropsWithoutRef<typeof Root>;
 
 const ScrollArea = React.forwardRef<
-  React.ElementRef<typeof ScrollAreaPrimitive.Root> & ScrollAreaProps,
+  React.ElementRef<typeof Root> & ScrollAreaProps,
   ScrollAreaProps
 >(
   (
     { className, classNameForView, children, scrollBar = true, ...props },
     ref
   ) => (
-    <ScrollAreaPrimitive.Root
+    <Root
       ref={ref}
       className={cn("relative overflow-hidden", className)}
       {...props}
     >
-      <ScrollAreaPrimitive.Viewport
+      <Viewport
         className={cn(
           "flex h-full w-full snap-y snap-mandatory flex-col rounded-[inherit]",
           classNameForView
         )}
       >
         {children}
-      </ScrollAreaPrimitive.Viewport>
+      </Viewport>
       {scrollBar && <ScrollBar />}
-      <ScrollAreaPrimitive.Corner />
-    </ScrollAreaPrimitive.Root>
+      <Corner />
+    </Root>
   )
 );
-ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
+ScrollArea.displayName = Root.displayName;
 
 type ScrollBarProps = {
   orientation?: "vertical" | "horizontal";
   scrollBar?: boolean;
-} & React.ComponentPropsWithoutRef<
-  typeof ScrollAreaPrimitive.ScrollAreaScrollbar
->;
+} & React.ComponentPropsWithoutRef<typeof ScrollAreaScrollbar>;
 
 const ScrollBar = React.forwardRef<
-  React.ElementRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar> &
-    ScrollBarProps,
+  React.ElementRef<typeof ScrollAreaScrollbar> & ScrollBarProps,
   ScrollBarProps
 >(({ className, orientation = "vertical", scrollBar, ...props }, ref) => (
-  <ScrollAreaPrimitive.ScrollAreaScrollbar
+  <ScrollAreaScrollbar
     ref={ref}
     orientation={orientation}
     className={cn(
@@ -61,13 +63,13 @@ const ScrollBar = React.forwardRef<
     )}
     {...props}
   >
-    <ScrollAreaPrimitive.ScrollAreaThumb
+    <ScrollAreaThumb
       className={`relative flex-1 rounded-full ${
         scrollBar && "bg-slate-300  dark:bg-slate-700"
       }`}
     />
-  </ScrollAreaPrimitive.ScrollAreaScrollbar>
+  </ScrollAreaScrollbar>
 ));
-ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
+ScrollBar.displayName = ScrollAreaScrollbar.displayName;
 
 export { ScrollArea, ScrollBar };

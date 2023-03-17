@@ -1,11 +1,11 @@
-import * as React from "react";
-import * as ProgressPrimitive from "@radix-ui/react-progress";
+import React from "react";
+import { Indicator, Root } from "@radix-ui/react-progress";
 
 import { cn } from "src/lib/utils";
 
 const Progress = React.forwardRef<
-  React.ElementRef<typeof ProgressPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
+  React.ElementRef<typeof Root>,
+  React.ComponentPropsWithoutRef<typeof Root>
 >(({ className, value, ...props }, ref) => {
   // add animation to the progress bar so it fills up smoothly from 0 to the value
   const [progress, setProgress] = React.useState(0);
@@ -25,7 +25,7 @@ const Progress = React.forwardRef<
   }, []);
 
   return (
-    <ProgressPrimitive.Root
+    <Root
       ref={ref}
       className={cn(
         "relative h-4 w-full overflow-hidden rounded-full border border-black bg-white dark:border-white dark:bg-black",
@@ -33,13 +33,13 @@ const Progress = React.forwardRef<
       )}
       {...props}
     >
-      <ProgressPrimitive.Indicator
+      <Indicator
         className="h-full flex-1 rounded-full bg-black transition-all duration-75 ease-linear dark:bg-white"
         style={{ width: `${progress}%` }}
       />
-    </ProgressPrimitive.Root>
+    </Root>
   );
 });
-Progress.displayName = ProgressPrimitive.Root.displayName;
+Progress.displayName = Root.displayName;
 
 export { Progress };

@@ -29,12 +29,12 @@ const balls: Ball[] = [];
 canvas.addEventListener("click", function (event) {
   //see if html has class dark
   const isDarkMode = document.documentElement.classList.contains("dark");
-  const x = event.clientX;
-  const y = event.clientY;
+  const xMouseClick = event.clientX;
+  const yMouseClick = event.clientY;
 
   balls.push({
-    x: x,
-    y: y,
+    x: xMouseClick,
+    y: yMouseClick,
     size: Math.random() * 30 + 10,
     color: !isDarkMode ? `rgb(0,0,0)` : `rgb(255,255,255)`,
     velocity: Math.random() * 5 + 1,
@@ -53,16 +53,16 @@ function animate() {
 
   if (Math.random() < 0.01) {
     // dont put the ball over the rectangle
-    let x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
+    let xRandomCoord = Math.random() * canvas.width;
+    const yRandomCoord = Math.random() * canvas.height;
 
-    if (x > h1Rect.left && x < h1Rect.right) {
-      x = Math.random() * canvas.width * 0.5 + canvas.width * 0.5;
+    if (xRandomCoord > h1Rect.left && xRandomCoord < h1Rect.right) {
+      xRandomCoord = Math.random() * canvas.width * 0.5 + canvas.width * 0.5;
     }
 
     balls.push({
-      x: x,
-      y: y,
+      x: xRandomCoord,
+      y: yRandomCoord,
       size: Math.random() * 30 + 10,
       color: !isDarkMode ? `rgb(0,0,0)` : `rgb(255,255,255)`,
       velocity: Math.random() * 5 + 1,

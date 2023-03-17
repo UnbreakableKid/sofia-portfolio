@@ -17,7 +17,7 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography"),
     require("tailwindcss-animate"),
-    plugin(function ({ addUtilities, addComponents, e, config }) {
+    plugin(function ({ addUtilities }) {
       addUtilities({
         ".no-scrollbar::-webkit-scrollbar": {
           display: "none",
