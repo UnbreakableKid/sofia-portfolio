@@ -2,11 +2,12 @@ import confetti from "canvas-confetti";
 
 // check if user types sofia (clicks s then o then f and so on). if so, show confetti.
 let sofiaCount = 0;
-let sofiaTimeoutDuration = 2000;
+const sofiaTimeoutDuration = 2000;
 
-const sofiaH1 = document.getElementById("sofia")!;
+const sofiaH1 = document.getElementById("sofia");
 
 function sofiaCheck(e: { key: string }) {
+  if (sofiaH1 === null) return;
   if (e.key === "s") {
     sofiaCount++;
     sofiaH1.innerHTML = '<span style="color:red">' + "S" + "</span>" + "ofia";

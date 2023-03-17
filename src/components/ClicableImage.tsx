@@ -1,4 +1,3 @@
-import type React from "react";
 import { Dialog, DialogContent, DialogTrigger } from "./ui/Dialog";
 
 interface ClicableImageProps {
