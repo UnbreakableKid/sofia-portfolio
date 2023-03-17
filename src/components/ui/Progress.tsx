@@ -12,7 +12,7 @@ const Progress = React.forwardRef<
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      if (!value) return clearInterval(interval);
+      if (!value) return value;
       setProgress((prevProgress) => {
         if (prevProgress >= value) {
           clearInterval(interval);

@@ -10,22 +10,18 @@ function sofiaCheck(e: { key: string }) {
   if (sofiaH1 === null) return;
   if (e.key === "s") {
     sofiaCount++;
-    sofiaH1.innerHTML = '<span style="color:red">' + "S" + "</span>" + "ofia";
+    sofiaH1.innerHTML = `<span style="color:red">S</span>ofia`;
   } else if (e.key === "o" && sofiaCount === 1) {
     sofiaCount++;
-    sofiaH1.innerHTML =
-      '<span style="color:red">' + "S" + "o" + "</span>" + "fia";
+    sofiaH1.innerHTML = `<span style="color:red">So</span>fia`;
   } else if (e.key === "f" && sofiaCount === 2) {
     sofiaCount++;
-    sofiaH1.innerHTML =
-      '<span style="color:red">' + "S" + "o" + "f" + "</span>" + "ia";
+    sofiaH1.innerHTML = `<span style="color:red">Sof</span>ia`;
   } else if (e.key === "i" && sofiaCount === 3) {
     sofiaCount++;
-    sofiaH1.innerHTML =
-      '<span style="color:red">' + "S" + "o" + "f" + "i" + "</span>" + "a";
+    sofiaH1.innerHTML = `<span style="color:red">Sofi</span>a`;
   } else if (e.key === "a" && sofiaCount === 4) {
-    sofiaH1.innerHTML =
-      '<span style="color:red">' + "S" + "o" + "f" + "i" + "a" + "</span>";
+    sofiaH1.innerHTML = `<span style="color:red">Sofia</span>`;
     sofiaConfetti();
     sofiaCount++;
   } else {

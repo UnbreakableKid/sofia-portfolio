@@ -16,7 +16,7 @@ const h1Rect = h1?.getBoundingClientRect();
 
 const mouse = { x: -100, y: -100 };
 
-canvas.addEventListener("mousemove", function (event) {
+canvas.addEventListener("mousemove", (event) => {
   mouse.x = event.clientX;
   mouse.y = event.clientY;
 });
@@ -26,7 +26,7 @@ canvas.height = window.innerHeight;
 
 const balls: Ball[] = [];
 
-canvas.addEventListener("click", function (event) {
+canvas.addEventListener("click", (event) => {
   //see if html has class dark
   const isDarkMode = document.documentElement.classList.contains("dark");
   const xMouseClick = event.clientX;
