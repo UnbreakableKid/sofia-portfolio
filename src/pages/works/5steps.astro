@@ -2,9 +2,9 @@
 import { changeLanguage } from "i18next";
 import WorkLayout from "../../layouts/WorkLayout.astro";
 import ClicableImage from "../../components/ClicableImage";
-import bookyUseFlowPNG from "../../assets/Booky/Booky_userflow.png";
-import bookySiteMapPNG from "../../assets/Booky/Booky_sitemap.png";
-import bookyInprogressPNG from "../../assets/Booky/Booky_inprogress.jpg";
+import passos1 from "../../assets/5passos/5passos1.png";
+import passos2 from "../../assets/5passos/5passos2.png";
+import passos3 from "../../assets/5passos/5passos3.png";
 import { Image } from "astro:assets";
 
 changeLanguage("en");
@@ -16,29 +16,38 @@ const content = {
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">Booky</h1>
+  <h1 slot="title" class="text-4xl font-bold">5 Passos Para Matar o Inimigo</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
-      O Booky é uma plataforma de venda de livros em segunda mão. Este desafio
-      surge como um desafio pessoal resultante das falhas que senti para o
-      vendedor e comprador presentes nas plataformas atuais em Portugal.
+      Este projeto consistia na realização de um poster para publicitar um
+      produto desenvolvido na disciplina de projeto para "livrar" das moscas . O
+      produto que me foi atribuido foi desenvolvido pela minha colega Maria
+      Brito Martins. O projeto "5 Passos para Matar o Inimigo" apresenta-se como
+      um manual banda desenhada que torna, através de dobras, o jornal mais
+      eficiente para matar moscas.
     </p>
 
     <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
-      Este projeto está atualmente em desenvolvimento.
+      Tendo em conta que o objeto final é um jornal qualquer e o objetivo do
+      projeto era ensinar as pessoas a transformar o jornal que têm num mata
+      moscas eficiente, o mais importante para transmitir era a necessidade de
+      dobrar e onde dobrar. Pela primeira vez larguei o preconceito que um
+      poster tem de ser algo 2D e, com as mesmas dobras que formariam o mata
+      moscas, o poster ganhou tridimensionalidade e os vincos passam a ser o
+      principal meio de comunicação.
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">
     <ClicableImage client:visible>
       <Image
-        src={bookyUseFlowPNG}
+        src={passos1}
         slot={"thumbnail"}
         alt="Representation of the user flow"
-        height={800}
+        height={1000}
       />
 
       <Image
-        src={bookyUseFlowPNG}
+        src={passos1}
         slot={"fullImage"}
         alt="Representation of the user flow"
         quality={"max"}
@@ -48,14 +57,14 @@ const content = {
 
     <ClicableImage client:visible>
       <Image
-        src={bookySiteMapPNG}
+        src={passos2}
         slot={"thumbnail"}
         alt="Booky sitemap"
         height={900}
       />
 
       <Image
-        src={bookySiteMapPNG}
+        src={passos2}
         slot={"fullImage"}
         alt="Booky sitemap"
         quality={"max"}
@@ -65,14 +74,14 @@ const content = {
 
     <ClicableImage client:visible>
       <Image
-        src={bookyInprogressPNG}
+        src={passos3}
         slot={"thumbnail"}
         alt="In progress identity"
         height={800}
       />
 
       <Image
-        src={bookyInprogressPNG}
+        src={passos3}
         slot={"fullImage"}
         alt="In progress identity"
         quality={"max"}
