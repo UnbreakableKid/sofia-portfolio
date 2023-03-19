@@ -19,8 +19,8 @@ const baseImgUrl = "../src/assets/daHorta/";
 ---
 
 <WorkLayout {content}>
-  <div slot="description" class="h-fit">
-    <h1 class="mb-8 text-4xl font-bold">DaHorta</h1>
+  <h1 slot="title" class="mb-8 text-4xl font-bold">DaHorta</h1>
+  <div slot="description">
     <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
       A associação “Localsapproach” propôs a criação de um website para a venda
       de produtos alimentares locais, a um preço justo e reduzindo a pegada
@@ -109,7 +109,7 @@ const baseImgUrl = "../src/assets/daHorta/";
         slot={"fullImage"}
         alt="My life timeline"
         quality={"max"}
-        height={1000}
+        height={900}
         class={"justify-self-center"}
         loading={"lazy"}
       />

@@ -7,6 +7,7 @@ specifiers:
   '@radix-ui/react-dialog': ^1.0.3
   '@radix-ui/react-progress': ^1.0.2
   '@radix-ui/react-scroll-area': ^1.0.3
+  '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.9
   '@types/canvas-confetti': ^1.6.0
   '@types/react': 18.0.21
@@ -53,6 +54,7 @@ dependencies:
   '@radix-ui/react-dialog': 1.0.3_dwcj3iq6xiyela6zqcz7lb4cyu
   '@radix-ui/react-progress': 1.0.2_zpnidt7m3osuk7shl3s4oenomq
   '@radix-ui/react-scroll-area': 1.0.3_zpnidt7m3osuk7shl3s4oenomq
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.7
   '@types/canvas-confetti': 1.6.0
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
@@ -1126,6 +1128,14 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.0
       react: 18.0.0
+    dev: false
+
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.7:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.7_postcss@8.4.21
     dev: false
 
   /@tailwindcss/typography/0.5.9_tailwindcss@3.2.7:
