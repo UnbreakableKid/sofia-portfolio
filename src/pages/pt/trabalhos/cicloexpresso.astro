@@ -14,8 +14,8 @@ const content = {
 ---
 
 <WorkLayout {content}>
+  <h1 slot="title" class="text-4xl font-bold">Cicloexpresso</h1>
   <div slot="description" class="h-fit">
-    <h1 class="mb-8 text-4xl font-bold">Cicloexpresso</h1>
     <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
       Na cadeira de Infografia realizei projetos infográficos para retratar
       vários temas e projetos retratados no programa É P'ra Amanhã. Os projetos
@@ -28,7 +28,7 @@ const content = {
       recursos, intervenientes e modelo do serviço.
     </p>
   </div>
-  <div slot="images" class="h-fit">
+  <div slot="images">
     <ClicableImage client:load>
       {/* @ts-ignore */}
 
