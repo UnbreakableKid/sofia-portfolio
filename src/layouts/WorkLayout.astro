@@ -5,13 +5,13 @@ const { content } = Astro.props;
 ---
 
 <MainLayout {content}>
-  <div class="grid grid-cols-2 overflow-hidden">
+  <div class="grid max-h-full overflow-hidden md:grid-cols-2">
     <div class="h-fit md:p-12">
       <slot name="description" />
     </div>
     <div class="flex-1 flex-grow-0 overflow-hidden">
       <div
-        class="fixed top-20 z-10 h-16 w-full bg-gradient-to-b from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0"
+        class="fixed z-10 h-16 w-full bg-gradient-to-b from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0 md:top-10"
       >
       </div>
       <div
