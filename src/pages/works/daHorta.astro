@@ -19,7 +19,7 @@ const baseImgUrl = "../src/assets/daHorta/";
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="mb-8 text-4xl font-bold">DaHorta</h1>
+  <h1 slot="title" class="text-4xl font-bold">DaHorta</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
       A associação “Localsapproach” propôs a criação de um website para a venda
@@ -40,51 +40,59 @@ const baseImgUrl = "../src/assets/daHorta/";
   </div>
   <div slot="images" class="flex flex-col gap-5">
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={capaPNG} slot={"thumbnail"} alt="My life timeline" />
-      {/* @ts-ignore */}
+      <Image
+        src={capaPNG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        height={900}
+      />
 
       <Image
         src={capaPNG}
         slot={"fullImage"}
         alt="My life timeline"
         quality={"max"}
+        height={1000}
       />
     </ClicableImage>
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={examePNG} slot={"thumbnail"} alt="My life timeline" />
-      {/* @ts-ignore */}
+      <Image
+        src={examePNG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        height={900}
+      />
 
       <Image
         src={examePNG}
         slot={"fullImage"}
         alt="My life timeline"
         quality={"max"}
+        height={1000}
       />
     </ClicableImage>
 
     <ClicableImage client:visible>
       {/* @ts-ignore */}
 
-      <Image src={sitemapPNG} slot={"thumbnail"} alt="My life timeline" />
-      {/* @ts-ignore */}
+      <Image
+        src={sitemapPNG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        height={900}
+      />
 
       <Image
         src={sitemapPNG}
         slot={"fullImage"}
         alt="My life timeline"
         quality={"max"}
+        height={1000}
       />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
       <Image src={conjuntoJPG} slot={"thumbnail"} alt="My life timeline" />
-      {/* @ts-ignore */}
 
       <Image
         src={conjuntoJPG}
@@ -94,15 +102,12 @@ const baseImgUrl = "../src/assets/daHorta/";
       />
     </ClicableImage>
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
       <Image
         src={screens01PNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        loading={"lazy"}
+        height={1000}
       />
-      {/* @ts-ignore */}
 
       <Image
         src={screens01PNG}
