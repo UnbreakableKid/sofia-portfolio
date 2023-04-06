@@ -1,0 +1,130 @@
+---
+import { changeLanguage } from "i18next";
+import WorkLayout from "../../../layouts/WorkLayout.astro";
+import ClicableImage from "../../../components/ClicableImage";
+import Fraunhofer1 from "../../../assets/fraunhofer/Fraunhofer1.png";
+import Fraunhofer2 from "../../../assets/fraunhofer/Fraunhofer2.png";
+import Fraunhofer3 from "../../../assets/fraunhofer/Fraunhofer3.png";
+import Fraunhofer4 from "../../../assets/fraunhofer/Fraunhofer4.png";
+import Fraunhofer5 from "../../../assets/fraunhofer/Fraunhofer5.png";
+import { Image } from "astro:assets";
+
+changeLanguage("pt");
+
+const content = {
+    title: "Hello World",
+    body: "This is a test",
+};
+---
+
+<WorkLayout {content}>
+  <h1 slot="title" class="font-bold md:text-4xl">Revista Fraunhofer</h1>
+  <div slot="description">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
+      Este projeto tinha como objetivo desenvolver um layout para a revista
+      científica Fraunhofer baseado numa grelha de modo a ser facilmente
+      repetida mantendo-se dinâmica. Também era necessário ter em conta a
+      variedade de tipologias de texto que a revista tinha e a necessidade de
+      conter muitas imagens em alguns tópicos.
+    </p>
+
+    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
+      Pelo seu caráter científico foram usado cores e tipografia neutra. Uma vez
+      que um dos principais objetivos da revista é promover o trabalho dos
+      cientistas da empresa logo as suas fotografias estariam a cores,
+      contrastando com os tons neutros do resto da revista. As imagens que
+      necessitam de estar a cores para a sua compreensão total também estariam a
+      cores.
+    </p>
+
+    <p class="prose prose-neutral mt-4 font-sans text-xl dark:prose-invert">
+      Esta proposta resultou no estágio de Verão que frequentei.
+    </p>
+  </div>
+  <div slot="images" class="flex flex-col gap-5">
+    <ClicableImage client:visible>
+      <Image
+        src={Fraunhofer1}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        height={800}
+      />
+
+      <Image
+        src={Fraunhofer1}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={Fraunhofer2}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        height={800}
+      />
+
+      <Image
+        src={Fraunhofer2}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={Fraunhofer3}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        height={800}
+      />
+
+      <Image
+        src={Fraunhofer3}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={Fraunhofer4}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        height={800}
+      />
+
+      <Image
+        src={Fraunhofer4}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={Fraunhofer5}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        height={800}
+      />
+
+      <Image
+        src={Fraunhofer5}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+  </div>
+</WorkLayout>

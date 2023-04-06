@@ -5,31 +5,33 @@ const { content } = Astro.props;
 ---
 
 <MainLayout {content}>
-  <div class="pt-5">
-    <slot name="title" />
-  </div>
-  <div
-    class="flex h-screen flex-col justify-evenly gap-5 overflow-auto md:grid md:grid-cols-2 md:overflow-hidden"
-  >
-    <div class="h-[30%] flex-initial overflow-auto pt-10 md:h-fit">
-      <slot name="description" />
-    </div>
-    <div class="flex-auto overflow-hidden">
-      <div
-        class="fixed z-10 h-16 w-full bg-gradient-to-b from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0 md:top-10"
-      >
+  <div class="p-8 md:pl-44">
+    <div
+      class="flex h-screen flex-col justify-evenly gap-5 overflow-auto md:grid md:grid-cols-2 md:overflow-hidden lg:gap-16"
+    >
+      <div class="h-[30%] flex-initial overflow-auto md:h-fit">
+        <div class="md:mb-10 md:pt-32">
+          <slot name="title" />
+        </div>
+        <slot name="description" />
       </div>
-      <div
-        class="fixed bottom-10 z-10 h-20 w-full bg-gradient-to-t from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0"
-      >
+      <div class="flex-auto overflow-hidden">
+        <div
+          class="fixed z-10 h-16 w-full bg-gradient-to-b from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0 md:top-10"
+        >
+        </div>
+        <div
+          class="fixed bottom-10 z-10 h-20 w-full bg-gradient-to-t from-white/[0.9] to-white/[0] dark:from-black/90 dark:to-black/0"
+        >
+        </div>
+        <ScrollArea
+          client:only="react"
+          className="md:h-[calc(100vh-100px)] h-[calc(100vh-100px)] pb-72 md:pb-28 "
+          classNameForView="flex flex-col gap-5 "
+        >
+          <slot name="images" />
+        </ScrollArea>
       </div>
-      <ScrollArea
-        client:only="react"
-        className="md:h-[calc(100vh-100px)] h-[calc(100vh-100px)] pb-72 md:pb-14"
-        classNameForView="flex flex-col gap-5 "
-      >
-        <slot name="images" />
-      </ScrollArea>
     </div>
   </div>
 </MainLayout>

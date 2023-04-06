@@ -18,10 +18,10 @@ const content = {
 ---
 
 <MainLayout content={content}>
-  <div class="grid h-screen grid-cols-1 gap-2 overflow-auto md:grid-cols-2">
-    <section>
-      <h1 class="mb-5 text-4xl">Description</h1>
-
+  <div
+    class="grid h-screen grid-cols-1 gap-2 overflow-auto p-8 md:mt-8 md:grid-cols-2 md:pl-48"
+  >
+    <section class="md:mt-36">
       <div class="prose mb-5 font-sans dark:prose-invert">
         <p class="mb-2">
           Olá. Eu sou a Sofia, uma designer de comunicação que através dos seus
@@ -29,7 +29,7 @@ const content = {
           para promover conhecimento e marcas.
         </p>
 
-        <p class="mb-2">
+        <p class="mb-12">
           Durante a minha licenciatura em Design na Universidade de Aveiro tive
           a oportunidade de trabalhar em várias áreas do design e descobri o meu
           amor pela vertente gráfica e digital. No mestrado em Design de
@@ -46,27 +46,15 @@ const content = {
           Curriculum Vitae
         </Button>
       </div>
-
-      <!-- <h1 class="mb-5 text-4xl">Skills</h1>
-      <div
-        class="grid w-5/6 grid-cols-1 md:grid-cols-2 md:grid-rows-5 md:gap-5"
-      >
-        {
-          skills.map((skill) => (
-            <div>
-              <label for={`${skill.name}`}>{skill.name}</label>
-              <Progress
-                client:visible
-                value={skill.value}
-                id={`${skill.name}`}
-              />
-            </div>
-          ))
-        }
-      </div> -->
     </section>
-    <ClicableImage client:load classNamesThumb={"md:overflow-y-auto md:pb-48"}>
-      <Image src={timelinePng} slot={"thumbnail"} alt="My life timeline" />
+    <ClicableImage client:load classNamesThumb={" pb-20 md:pb-48"}>
+      <Image
+        src={timelinePng}
+        height={778}
+        slot={"thumbnail"}
+        quality="mid"
+        alt="My life timeline"
+      />
 
       <Image
         src={timelinePng}

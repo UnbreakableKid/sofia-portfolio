@@ -14,26 +14,29 @@ const content = {
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">Cicloexpresso</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">Cicloexpresso</h1>
   <div slot="description" class="h-fit">
-    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
       Na cadeira de Infografia realizei projetos infográficos para retratar
       vários temas e projetos retratados no programa É P'ra Amanhã. Os projetos
       tinham de ter perspetivas diferentes como sequências de ações,
       user-journey e visão macro.
     </p>
 
-    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
       A infografia do cicloexpresso retratava a user-journey, objetivos,
       recursos, intervenientes e modelo do serviço.
     </p>
   </div>
-  <div slot="images">
+  <div slot="images" class="mt-8 md:mt-0">
     <ClicableImage client:load>
-      {/* @ts-ignore */}
-
-      <Image src={cicloExpresso} slot={"thumbnail"} alt="My life timeline" />
-      {/* @ts-ignore */}
+      <Image
+        src={cicloExpresso}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        quality="mid"
+        height={1000}
+      />
 
       <Image
         src={cicloExpresso}

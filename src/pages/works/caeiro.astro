@@ -1,0 +1,176 @@
+---
+import { changeLanguage } from "i18next";
+import WorkLayout from "../../layouts/WorkLayout.astro";
+import ClicableImage from "../../components/ClicableImage";
+import caeiro1 from "../../assets/Caeiro/1.png";
+import caeiro2 from "../../assets/Caeiro/2.png";
+import caeiro3 from "../../assets/Caeiro/3.png";
+import caeiro4 from "../../assets/Caeiro/4.png";
+import caeiro5 from "../../assets/Caeiro/5.png";
+import caeiro6 from "../../assets/Caeiro/6.png";
+import caeiro7 from "../../assets/Caeiro/7.png";
+import caeiro8 from "../../assets/Caeiro/8.png";
+import { Image } from "astro:assets";
+
+changeLanguage("en");
+
+const content = {
+    title: "Hello World",
+    body: "This is a test",
+};
+---
+
+<WorkLayout {content}>
+  <h1 slot="title" class="font-bold md:text-4xl">Cerveja Caeiro</h1>
+  <div slot="description">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
+      Este projeto tinha como objetivo a inserção de uma nova cerveja artesanal
+      no mercado português. O projeto incluíu o naming, branding, modelo de
+      negócio e webdesign.
+    </p>
+
+    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
+      A Caeiro surge então com uma cerveja pela sustentabilidade ambiental. A
+      preocupação ambiental pode ser vista pela sua produção com restos de pão,
+      garrafas de vidro reciclado projetadas para a reutilização, métodos de
+      impressão e iniciativas e eventos apoiados pela marca.
+    </p>
+  </div>
+  <div slot="images" class="flex flex-col gap-5">
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro1}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        height={800}
+      />
+
+      <Image
+        src={caeiro1}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro2}
+        slot={"thumbnail"}
+        alt="Booky sitemap"
+        height={900}
+      />
+
+      <Image
+        src={caeiro2}
+        slot={"fullImage"}
+        alt="Booky sitemap"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro3}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        height={800}
+      />
+
+      <Image
+        src={caeiro3}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro4}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        height={800}
+      />
+
+      <Image
+        src={caeiro4}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro5}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        height={800}
+      />
+
+      <Image
+        src={caeiro5}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro6}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        height={800}
+      />
+
+      <Image
+        src={caeiro6}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro7}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        height={800}
+      />
+
+      <Image
+        src={caeiro7}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro8}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        height={800}
+      />
+
+      <Image
+        src={caeiro8}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+  </div>
+</WorkLayout>

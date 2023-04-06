@@ -1,6 +1,7 @@
 ---
-import { changeLanguage } from "i18next";
+import i18next, { changeLanguage } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
+import { Trans } from "astro-i18next/components";
 import ClicableImage from "../../../components/ClicableImage";
 import { Image } from "astro:assets";
 import letterA from "../../../assets/36days/A.png";
@@ -22,6 +23,8 @@ import letterP from "../../../assets/36days/P.png";
 import letterQ from "../../../assets/36days/Q.png";
 import letterR from "../../../assets/36days/R.png";
 import letterS from "../../../assets/36days/S.png";
+import letterT from "../../../assets/36days/T.png";
+import letterU from "../../../assets/36days/U.png";
 
 changeLanguage("pt");
 
@@ -35,149 +38,289 @@ const content = {
   <h1 slot="title" class="font-bold md:text-4xl">36 Days of Type</h1>
   <div slot="description">
     <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      Este projeto pessoal surge do desafio 36 days of type, onde conjugo as
-      minhas duas áreas de interesse, ilustração e tipografia. Este projeto tem
-      sido bastante desafiante e gratificante e o seu desenvolvimento pode ser
-      acompanhado em <a
-        class="cursor-none no-underline hover:cursor-none hover:text-blue-500 hover:no-underline"
-        href="https://www.instagram.com/ah_sofs">@ah_sofs</a
-      > no instagram
+      <Trans i18nKey={"36days.description"}>
+        Este projeto pessoal surge do desafio 36 days of type, onde conjugo as
+        minhas duas áreas de interesse, ilustração e tipografia. Este projeto
+        tem sido bastante desafiante e gratificante e o seu desenvolvimento pode
+        ser acompanhado em <a
+          class="cursor-none no-underline hover:cursor-none hover:text-blue-500 hover:no-underline"
+          href="https://www.instagram.com/ah_sofs">@ah_sofs</a
+        > no instagram.
+      </Trans>
     </p>
   </div>
   <div slot="images">
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterA} slot={"thumbnail"} alt="Letter A" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterA}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter A"
+      />
 
       <Image src={letterA} slot={"fullImage"} alt="Letter A" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
+      <Image
+        src={letterB}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter B"
+      />
 
-      <Image src={letterB} slot={"thumbnail"} alt="Letter B" />
-
-      {/* @ts-ignore */}
       <Image src={letterB} slot={"fullImage"} alt="Letter B" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterC} slot={"thumbnail"} alt="Letter C" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterC}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter C"
+      />
 
       <Image src={letterC} slot={"fullImage"} alt="Letter C" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterD} slot={"thumbnail"} alt="Letter D" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterD}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter D"
+      />
 
       <Image src={letterD} slot={"fullImage"} alt="Letter D" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterE} slot={"thumbnail"} alt="Letter E" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterE}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter E"
+      />
 
       <Image src={letterE} slot={"fullImage"} alt="Letter E" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterF} slot={"thumbnail"} alt="Letter F" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterF}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter F"
+      />
 
       <Image src={letterF} slot={"fullImage"} alt="Letter F" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterG} slot={"thumbnail"} alt="Letter G" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterG}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter G"
+      />
 
       <Image src={letterG} slot={"fullImage"} alt="Letter G" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterH} slot={"thumbnail"} alt="Letter H" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterH}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter H"
+      />
 
       <Image src={letterH} slot={"fullImage"} alt="Letter H" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterI} slot={"thumbnail"} alt="Letter I" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterI}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter I"
+      />
 
       <Image src={letterI} slot={"fullImage"} alt="Letter I" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterJ} slot={"thumbnail"} alt="Letter J" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterJ}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter J"
+      />
 
       <Image src={letterJ} slot={"fullImage"} alt="Letter J" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterK} slot={"thumbnail"} alt="Letter K" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterK}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter K"
+      />
 
       <Image src={letterK} slot={"fullImage"} alt="Letter K" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterL} slot={"thumbnail"} alt="Letter L" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterL}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter L"
+      />
 
       <Image src={letterL} slot={"fullImage"} alt="Letter L" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterM} slot={"thumbnail"} alt="Letter M" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterM}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter M"
+      />
 
       <Image src={letterM} slot={"fullImage"} alt="Letter M" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterN} slot={"thumbnail"} alt="Letter N" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterN}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter N"
+      />
 
       <Image src={letterN} slot={"fullImage"} alt="Letter N" quality={"max"} />
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
-      <Image src={letterO} slot={"thumbnail"} alt="Letter O" />
-      {/* @ts-ignore */}
+      <Image
+        src={letterO}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter O"
+      />
 
       <Image src={letterO} slot={"fullImage"} alt="Letter O" quality={"max"} />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={letterP}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter P"
+      />
+
+      <Image src={letterP} slot={"fullImage"} alt="Letter P" quality={"max"} />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={letterQ}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter Q"
+      />
+
+      <Image src={letterQ} slot={"fullImage"} alt="Letter Q" quality={"max"} />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={letterR}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter Q"
+      />
+
+      <Image src={letterR} slot={"fullImage"} alt="Letter Q" quality={"max"} />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={letterS}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter Q"
+      />
+
+      <Image src={letterS} slot={"fullImage"} alt="Letter Q" quality={"max"} />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={letterT}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter Q"
+      />
+
+      <Image src={letterT} slot={"fullImage"} alt="Letter Q" quality={"max"} />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={letterU}
+        slot={"thumbnail"}
+        quality="mid"
+        width={732}
+        height={732}
+        alt="Letter Q"
+      />
+
+      <Image src={letterU} slot={"fullImage"} alt="Letter Q" quality={"max"} />
     </ClicableImage>
   </div>
 </WorkLayout>

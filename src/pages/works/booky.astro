@@ -16,15 +16,15 @@ const content = {
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">Booky</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">Booky</h1>
   <div slot="description">
-    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
       O Booky é uma plataforma de venda de livros em segunda mão. Este desafio
       surge como um desafio pessoal resultante das falhas que senti para o
       vendedor e comprador presentes nas plataformas atuais em Portugal.
     </p>
 
-    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
       Este projeto está atualmente em desenvolvimento.
     </p>
   </div>
@@ -34,7 +34,8 @@ const content = {
         src={bookyUseFlowPNG}
         slot={"thumbnail"}
         alt="Representation of the user flow"
-        height={800}
+        quality="mid"
+        height={760}
       />
 
       <Image
@@ -42,7 +43,7 @@ const content = {
         slot={"fullImage"}
         alt="Representation of the user flow"
         quality={"max"}
-        height={1000}
+        height={800}
       />
     </ClicableImage>
 

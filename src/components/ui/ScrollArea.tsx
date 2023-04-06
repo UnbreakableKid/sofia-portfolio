@@ -59,7 +59,7 @@ const ScrollArea = React.forwardRef<
     >
       <Viewport
         className={cn(
-          "flex h-full w-full snap-y snap-mandatory flex-col rounded-[inherit]",
+          "flex h-full w-full snap-y  flex-col scroll-smooth rounded-[inherit]",
           classNameForView
         )}
       >

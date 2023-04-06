@@ -44,13 +44,13 @@ const { content } = Astro.props;
   </head>
   <body>
     <div
-      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white px-5 font-sans dark:bg-black dark:text-white sm:min-h-max md:h-screen lg:h-screen"
+      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white font-sans dark:bg-black dark:text-white sm:min-h-max md:h-screen lg:h-screen"
     >
       <Header homeLink={localizePath("/")} workLink={localizePath("/works")} />
       <ins
         class="delay-[0s] duration-[0.5s] ease-[ease] pointer-events-none fixed z-[999999999] h-6 w-6 -translate-x-2/4 -translate-y-2/4 rounded-[50%] bg-white mix-blend-difference transition-[background]"
         id="movable"></ins>
-      <main class="grow self-stretch overflow-hidden md:px-10">
+      <main class="grow self-stretch overflow-hidden">
         <slot />
       </main>
       <Footer

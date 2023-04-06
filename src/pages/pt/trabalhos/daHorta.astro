@@ -19,15 +19,15 @@ const baseImgUrl = "../src/assets/daHorta/";
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">DaHorta</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">DaHorta</h1>
   <div slot="description">
-    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
       A associação “Localsapproach” propôs a criação de um website para a venda
       de produtos alimentares locais, a um preço justo e reduzindo a pegada
       ecológica. O exercício incluía o naming, branding e realização do website.
     </p>
 
-    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
+    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
       O daHorta é um website que para além de mercado de frutas e legumes
       online, ensina e incentiva os utilizadores a tomar práticas mais
       sustentáveis, tanto na produção como no consumo. Destina-se aos pequenos e
@@ -44,7 +44,8 @@ const baseImgUrl = "../src/assets/daHorta/";
         src={capaPNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        height={900}
+        quality={"mid"}
+        height={700}
       />
 
       <Image
@@ -92,7 +93,12 @@ const baseImgUrl = "../src/assets/daHorta/";
     </ClicableImage>
 
     <ClicableImage client:visible>
-      <Image src={conjuntoJPG} slot={"thumbnail"} alt="My life timeline" />
+      <Image
+        src={conjuntoJPG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        quality={"mid"}
+      />
 
       <Image
         src={conjuntoJPG}
@@ -106,7 +112,8 @@ const baseImgUrl = "../src/assets/daHorta/";
         src={screens01PNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        height={1000}
+        height={700}
+        quality={"mid"}
       />
 
       <Image
