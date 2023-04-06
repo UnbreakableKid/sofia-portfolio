@@ -6,7 +6,10 @@ import capaPNG from "../../../assets/daHorta/Capa_daHorta.png";
 import examePNG from "../../../assets/daHorta/Exame.png";
 import sitemapPNG from "../../../assets/daHorta/Sitemap.png";
 import screens01PNG from "../../../assets/daHorta/screens01.png";
+import screens02PNG from "../../../assets/daHorta/screens02.png";
 import conjuntoJPG from "../../../assets/daHorta/conjunto.jpg";
+import bideo from "../../../assets/daHorta/bideo.mp4";
+import mockup from "../../../assets/daHorta/mockup.mp4";
 import { Image } from "astro:assets";
 
 changeLanguage("pt");
@@ -35,7 +38,7 @@ const content = {
             href="https://www.behance.net/mariafigueira"
             target="_blank"
             rel="noopener noreferrer"
-            class="cursor-none hover:cursor-none underline hover:text-blue-500 hover:underline"
+            class="cursor-none underline hover:cursor-none hover:text-blue-500 hover:underline"
           >
             Maria Figueira</a
           >
@@ -45,7 +48,7 @@ const content = {
             href="https://www.behance.net/mariaspcc"
             target="_blank"
             rel="noopener noreferrer"
-            class="cursor-none hover:cursor-none underline hover:text-blue-500 hover:underline"
+            class="cursor-none underline hover:cursor-none hover:text-blue-500 hover:underline"
           >
             Maria Soares</a
           >
@@ -92,8 +95,6 @@ const content = {
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
       <Image
         src={sitemapPNG}
         slot={"thumbnail"}
@@ -112,21 +113,6 @@ const content = {
 
     <ClicableImage client:visible>
       <Image
-        src={conjuntoJPG}
-        slot={"thumbnail"}
-        alt="My life timeline"
-        quality={"mid"}
-      />
-
-      <Image
-        src={conjuntoJPG}
-        slot={"fullImage"}
-        alt="My life timeline"
-        quality={"max"}
-      />
-    </ClicableImage>
-    <ClicableImage client:visible>
-      <Image
         src={screens01PNG}
         slot={"thumbnail"}
         alt="My life timeline"
@@ -142,6 +128,60 @@ const content = {
         height={900}
         class={"justify-self-center"}
         loading={"lazy"}
+      />
+    </ClicableImage>
+
+    <div class="flex gap-1">
+      <ClicableImage client:visible>
+        <video slot={"thumbnail"} src={bideo} height={345} autoplay loop muted
+        ></video>
+
+        <video slot={"fullImage"} src={bideo} height={1000} controls muted
+        ></video>
+      </ClicableImage>
+
+      <ClicableImage client:visible>
+        <video slot={"thumbnail"} src={mockup} height={345} autoplay loop muted
+        ></video>
+
+        <video slot={"fullImage"} src={mockup} height={1000} controls muted
+        ></video>
+      </ClicableImage>
+    </div>
+
+    <ClicableImage client:visible>
+      <Image
+        src={screens02PNG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        height={700}
+        quality={"mid"}
+      />
+
+      <Image
+        src={screens02PNG}
+        slot={"fullImage"}
+        alt="My life timeline"
+        quality={"max"}
+        height={900}
+        class={"justify-self-center"}
+        loading={"lazy"}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={conjuntoJPG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        quality={"mid"}
+      />
+
+      <Image
+        src={conjuntoJPG}
+        slot={"fullImage"}
+        alt="My life timeline"
+        quality={"max"}
       />
     </ClicableImage>
   </div>

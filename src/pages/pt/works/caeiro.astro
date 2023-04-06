@@ -10,6 +10,8 @@ import caeiro5 from "../../../assets/Caeiro/5.png";
 import caeiro6 from "../../../assets/Caeiro/6.png";
 import caeiro7 from "../../../assets/Caeiro/7.png";
 import caeiro8 from "../../../assets/Caeiro/8.png";
+import caeiro9 from "../../../assets/Caeiro/9.mp4";
+import caeiro10 from "../../../assets/Caeiro/10.mp4";
 import { Image } from "astro:assets";
 
 changeLanguage("pt");
@@ -165,6 +167,22 @@ const content = {
         quality={"max"}
         height={1000}
       />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <video slot={"thumbnail"} src={caeiro9} height={800} autoplay loop muted
+      ></video>
+
+      <video slot={"fullImage"} src={caeiro9} height={1000} controls muted
+      ></video>
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <video slot={"thumbnail"} src={caeiro10} height={800} autoplay loop muted
+      ></video>
+
+      <video slot={"fullImage"} src={caeiro10} height={1000} controls muted
+      ></video>
     </ClicableImage>
   </div>
 </WorkLayout>
