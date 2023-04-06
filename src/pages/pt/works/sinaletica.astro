@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
 import ClicableImage from "../../../components/ClicableImage";
 import video from "../../../assets/Sinaletica/video.mp4";
@@ -11,34 +11,24 @@ import { Image } from "astro:assets";
 changeLanguage("pt");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("sinaletica.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="font-bold md:text-4xl">Sinalética</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("sinaletica.title")}</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
-      No âmbito do meu projeto final de mestrado desenvolvi um sistema de
-      sinalética, e os seus pictogramas para os espaços associados a transportes
-      públicos. Este projeto surge da conclusão que um sistema transversal aos
-      vários meios de transporte é mais acessível e eficaz do que a atual
-      situação em que cada operadora tem o seu sistema, obrigando o utilizador a
-      identificar e descodificar vários códigos ao longo da sua viagem.
+      {t("sinaletica.description1")}
     </p>
 
     <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      Neste projeto houve um especial foco no desenvolvimento dos pictogramas,
-      uma vez que estes apresentam menos barreiras para a interpretação do que a
-      tipografia. Foram recolhidos vários sistemas de pictogramas, analizados e
-      comparados para serem classificados pelo público alvo de maneira a obter
-      informação para a criação de pictogramas mais acessíveis.
+      {t("sinaletica.description2")}
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">
     <ClicableImage client:load>
-      <video slot={"thumbnail"} src={video} height={800} autoplay loop muted
+      <video slot={"thumbnail"} src={video} height={700} autoplay loop muted
       ></video>
 
       <video slot={"fullImage"} src={video} height={1000} controls muted

@@ -61,5 +61,10 @@
     "description1": "As Memo Cards são um jogo de memória para crianças com objetivo de as ensinar sobre pessoas relevantes de várias áreas de conhecimento e os seus feitos. Cada coleção tem uma linguagem de ilustração diferente, no entanto o verso das cartas é sempre igual para permitir misturar coleções e tornar o jogo mais desafiante.",
     "description2": "Os pares deste jogo da memória são feitos por criador/inventor com o seu feito, estando sempre identificado o nome da pessoa em ambas as cartas para uma associação mais rápida. Para complementar a informação das cartas existe um livro na caixa com as histórias sobre todas as ilustrações, que num momento futuro do projeto poderia ser substituído por tecnologia AR.",
     "description3": "Projeto desenvolvido em parceria com a <0>Rita Robalinho</0>"
+  },
+  "sinaletica": {
+    "title": "Signage",
+    "description1": "As part of my master's final project I developed a signage system, and its pictograms for spaces associated with public transport. This project arises from the conclusion that a system across the various means of transport is more accessible and effective than the current situation in which each operator has its own system, forcing the user to identify and decode various codes throughout his journey.",
+    "description2": "In this project there was a special focus on developing pictograms, since they present fewer barriers to interpretation than typography. Various pictogram systems were collected, analyzed and compared to be rated by the target audience in order to gain information for the creation of more accessible pictograms."
   }
 }
