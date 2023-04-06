@@ -16,8 +16,7 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const resource = {
-    title: "Astro",
-    description: "Astro is a new kind of static site generator. It's fast, modern, and built for the future.",
+    title: t("header.work"),
     image: "https://astro.build/assets/social.png",
     url: "https://astro.build",
     twitter: "@withastro",
@@ -88,7 +87,7 @@ const categories = [
 
 <style>
   .botGradient {
-    @apply fixed bottom-0 z-10 h-32 w-[90%] md:h-32;
+    @apply fixed bottom-0 z-10 h-32 w-[90%] md:h-32 md:px-48;
     background: linear-gradient(
       180deg,
       #ffffff 0%,
@@ -109,7 +108,7 @@ const categories = [
   }
 
   .topGradient {
-    @apply absolute z-10 h-12 w-[95%] translate-y-32 md:h-24 md:w-[85%] md:translate-y-12;
+    @apply absolute z-10 h-12 w-[95%] translate-y-32 md:h-24 md:translate-y-12 md:px-48;
     background: linear-gradient(
       180deg,
       #ffffff 0%,
@@ -131,7 +130,7 @@ const categories = [
 
 <MainLayout content={resource}>
   <div
-    class="flex max-h-[calc(100vh-150px)] flex-col items-center md:mt-16 md:max-h-[calc(100vh-200px)]"
+    class="flex max-h-[calc(100vh-150px)] flex-col items-center md:mt-16 md:max-h-[calc(100vh-200px)] md:px-48"
   >
     <div
       class="grid w-fit grid-cols-2 justify-items-center dark:bg-black dark:text-gray-100 md:flex"
@@ -140,7 +139,7 @@ const categories = [
       {
         categories.map((category, i) => (
           <div
-            class=" px-9 py-3 data-[active=true]:font-bold data-[active=false]:hover:underline data-[active=false]:hover:underline-offset-8 "
+            class=" px-9 py-3 data-[active=true]:font-bold data-[active=false]:hover:underline data-[active=false]:hover:underline-offset-8 md:p-4"
             role="tab"
             tabindex={i}
             data-active={i === 0 ? "true" : "false"}
@@ -157,7 +156,7 @@ const categories = [
       categories.map((category, i) => (
         <>
           <div
-            class="no-scrollbar flex flex-wrap justify-center gap-4 overflow-y-auto  data-[active=false]:hidden md:mt-16 md:grid md:grid-cols-4 md:gap-7 "
+            class="no-scrollbar flex flex-wrap justify-center gap-4 overflow-y-auto  data-[active=false]:hidden md:mt-16 md:grid md:grid-cols-2 md:gap-7 lg:grid-cols-4 "
             role="tabpanel"
             tabindex={i}
             data-active={i === 0 ? "true" : "false"}
