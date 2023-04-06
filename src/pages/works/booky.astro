@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../layouts/WorkLayout.astro";
 import ClicableImage from "../../components/ClicableImage";
 import bookyUseFlowPNG from "../../assets/Booky/Booky_userflow.png";
@@ -10,22 +10,19 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("booky.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="font-bold md:text-4xl">Booky</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("booky.title")}</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
-      O Booky é uma plataforma de venda de livros em segunda mão. Este desafio
-      surge como um desafio pessoal resultante das falhas que senti para o
-      vendedor e comprador presentes nas plataformas atuais em Portugal.
+      {t("booky.description1")}
     </p>
 
     <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      Este projeto está atualmente em desenvolvimento.
+      {t("booky.description2")}
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">

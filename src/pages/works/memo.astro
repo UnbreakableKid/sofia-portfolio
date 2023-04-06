@@ -1,5 +1,6 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
+import { Trans } from "astro-i18next/components";
 import WorkLayout from "../../layouts/WorkLayout.astro";
 import ClicableImage from "../../components/ClicableImage";
 import jogo from "../../assets/Memo/Jogo.jpg";
@@ -18,40 +19,35 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("memo.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="font-bold md:text-4xl">Memo Cards</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("memo.title")}</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
-      As Memo Cards são um jogo de memória para crianças com objetivo de as
-      ensinar sobre pessoas relevantes de várias áreas de conhecimento e os seus
-      feitos. Cada coleção tem uma linguagem de ilustração diferente, no entanto
-      o verso das cartas é sempre igual para permitir misturar coleções e tornar
-      o jogo mais desafiante.
+      {t("memo.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      Os pares deste jogo da memória são feitos por criador/inventor com o seu
-      feito, estando sempre identificado o nome da pessoa em ambas as cartas
-      para uma associação mais rápida. Para complementar a informação das cartas
-      existe um livro na caixa com as histórias sobre todas as ilustrações, que
-      num momento futuro do projeto poderia ser substituído por tecnologia AR.
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
+      {t("memo.description2")}
     </p>
 
-    <p class="prose prose-neutral mt-4 font-sans text-xl dark:prose-invert">
-      Projeto desenvolvido em parceria com a{" "}
-      <a
-        href="https://www.caixascience.pt/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="cursor-none underline hover:cursor-none"
-      >
-        Rita Robalinho
-      </a>
+    <p class="font-sans">
+      {t("projectMadeWith")}
+      <ul>
+        <li>
+          <a
+            href="https://www.behance.net/ritamontenegro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-none underline hover:cursor-none hover:text-blue-500 hover:underline"
+          >
+            Rita Robalinho</a
+          >
+        </li>
+      </ul>
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">

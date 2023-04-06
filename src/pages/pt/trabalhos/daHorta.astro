@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
 import ClicableImage from "../../../components/ClicableImage";
 import capaPNG from "../../../assets/daHorta/Capa_daHorta.png";
@@ -12,30 +12,48 @@ import { Image } from "astro:assets";
 changeLanguage("pt");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("daHorta.title"),
 };
-const baseImgUrl = "../src/assets/daHorta/";
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="font-bold md:text-4xl">DaHorta</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("daHorta.title")}</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
-      A associação “Localsapproach” propôs a criação de um website para a venda
-      de produtos alimentares locais, a um preço justo e reduzindo a pegada
-      ecológica. O exercício incluía o naming, branding e realização do website.
+      {t("daHorta.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      O daHorta é um website que para além de mercado de frutas e legumes
-      online, ensina e incentiva os utilizadores a tomar práticas mais
-      sustentáveis, tanto na produção como no consumo. Destina-se aos pequenos e
-      médios produtores e fornece-lhes ferramentas que ajudam a determinar o
-      preço justo dos produtos e de recompensação sempre que melhoram a sua
-      prática em termos ambientais. Para os consumidores a plataforma permite
-      adequar a ordenação dos produtos conforme as suas prioridades e sugere
-      receitas com os produtos vendidos na loja.
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
+      {t("daHorta.description2")}
+    </p>
+
+    <p class="font-sans">
+      {t("projectMadeWith")}
+      <ul>
+        <li>
+          <a
+            href="https://www.behance.net/mariafigueira"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-none hover:cursor-none underline hover:text-blue-500 hover:underline"
+          >
+            Maria Figueira</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.behance.net/mariaspcc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-none hover:cursor-none underline hover:text-blue-500 hover:underline"
+          >
+            Maria Soares</a
+          >
+        </li>
+        <li>
+          <a> Mariana Gonzales</a>
+        </li>
+      </ul>
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">

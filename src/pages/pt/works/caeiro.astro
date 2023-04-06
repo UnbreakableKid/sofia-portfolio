@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
 import ClicableImage from "../../../components/ClicableImage";
 import caeiro1 from "../../../assets/Caeiro/1.png";
@@ -15,25 +15,19 @@ import { Image } from "astro:assets";
 changeLanguage("pt");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("caeiro.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="font-bold md:text-4xl">Cerveja Caeiro</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("caeiro.title")}</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
-      Este projeto tinha como objetivo a inserção de uma nova cerveja artesanal
-      no mercado português. O projeto incluíu o naming, branding, modelo de
-      negócio e webdesign.
+      {t("caeiro.description1")}
     </p>
 
     <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      A Caeiro surge então com uma cerveja pela sustentabilidade ambiental. A
-      preocupação ambiental pode ser vista pela sua produção com restos de pão,
-      garrafas de vidro reciclado projetadas para a reutilização, métodos de
-      impressão e iniciativas e eventos apoiados pela marca.
+      {t("caeiro.description2")}
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">

@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../layouts/WorkLayout.astro";
 import ClicableImage from "../../components/ClicableImage";
 import Fraunhofer1 from "../../assets/fraunhofer/Fraunhofer1.png";
@@ -12,33 +12,23 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("fraunhofer.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="font-bold md:text-4xl">Revista Fraunhofer</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("fraunhofer.title")}</h1>
   <div slot="description">
     <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
-      Este projeto tinha como objetivo desenvolver um layout para a revista
-      científica Fraunhofer baseado numa grelha de modo a ser facilmente
-      repetida mantendo-se dinâmica. Também era necessário ter em conta a
-      variedade de tipologias de texto que a revista tinha e a necessidade de
-      conter muitas imagens em alguns tópicos.
+      {t("fraunhofer.description1")}
     </p>
 
     <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
-      Pelo seu caráter científico foram usado cores e tipografia neutra. Uma vez
-      que um dos principais objetivos da revista é promover o trabalho dos
-      cientistas da empresa logo as suas fotografias estariam a cores,
-      contrastando com os tons neutros do resto da revista. As imagens que
-      necessitam de estar a cores para a sua compreensão total também estariam a
-      cores.
+      {t("fraunhofer.description2")}
     </p>
 
     <p class="prose prose-neutral mt-4 font-sans text-xl dark:prose-invert">
-      Esta proposta resultou no estágio de Verão que frequentei.
+      {t("fraunhofer.description3")}
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">

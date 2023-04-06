@@ -5,6 +5,7 @@
   "header": {
     "work": "Works"
   },
+  "projectMadeWith": "Projeto made with",
   "footer": {
     "contact": "Contact",
     "about": "About"
@@ -28,5 +29,37 @@
   "36days": {
     "title": "36 Days of Type",
     "description": "This personal project arises from the challenge 36 days of type, where I combine my two areas of interest, illustration and typography. This project has been very challenging and rewarding and its development can be followed at <0>@ah_sofs</0> on instagram."
+  },
+  "booky": {
+    "description1": "Booky is a platform for selling second-hand books. This challenge arose as a personal challenge resulting from the gaps I felt for the seller and buyer present in the current platforms in Portugal.",
+    "description2": "This project is currently under development.",
+    "title": "Booky"
+  },
+  "caeiro": {
+    "title": "Caeiro",
+    "description1": "This project aimed to insert a new craft beer in the Portuguese market. The project included naming, branding, business model and webdesign.",
+    "description2": "Caeiro then comes up with a beer for environmental sustainability. The environmental concern can be seen by its production with bread scraps, recycled glass bottles designed for reuse, printing methods, and initiatives and events supported by the brand."
+  },
+  "cicloExpresso": {
+    "title": "Ciclo Expresso",
+    "description1": "In the Infographics course I made infographic projects to portray several themes and projects portrayed in the program É P'ra Amanhã (It's For Tomorrow). The projects had to have different perspectives such as action sequences, user-journey and macro vision.",
+    "description2": "The cycloexpresso infographic depicted the user-journey, goals, resources, stakeholders, and service model."
+  },
+  "daHorta": {
+    "title": "DaHorta",
+    "description1": "The \"Localsapproach\" association proposed the creation of a website for selling local food products, at a fair price and reducing the ecological footprint. The exercise included naming, branding, and making the website.",
+    "description2": "daHorta is a website that, in addition to being an online fruit and vegetable marketplace, teaches and encourages users to take more sustainable practices, both in production and consumption. It is aimed at small and medium-sized growers and provides them with tools to help determine a fair price for their produce and reward them for improving their environmental practices. For consumers, the platform allows them to adjust the ordering of products according to their priorities and suggests recipes using the products sold in the store."
+  },
+  "fraunhofer": {
+    "title": "Fraunhofer",
+    "description1": "This project aimed to develop a layout for Fraunhofer's scientific journal based on a grid so that it could be easily repeated while remaining dynamic. It was also necessary to take into account the variety of text typologies that the magazine had and the need to contain many images in some topics.",
+    "description2": "Because of its scientific character, neutral colors and typography were used. Since one of the main goals of the magazine is to promote the work of the company's scientists, their photographs would be in color, contrasting with the neutral tones of the rest of the magazine. Images that need to be in color for full comprehension would also be in color.",
+    "description3": "This proposal resulted in a summer internship that I attended."
+  },
+  "memo": {
+    "title": "Memo Cards",
+    "description1": "Memo Cards are a memory game for children aimed at teaching them about relevant people from various fields of knowledge and their achievements. Each collection has a different illustration language, however the back of the cards is always the same to allow you to mix collections and make the game more challenging.",
+    "description2": "The pairs of this memory game are made by creator/inventor with their achievement, and the name of the person is always identified on both cards for a faster association. To complement the information on the cards there is a book in the box with the stories about all the illustrations, which in a future moment of the project could be replaced by AR technology.",
+    "description3": "Project developed in partnership with <0>Rita Robalinho</0>"
   }
 }
