@@ -23,10 +23,8 @@ const { content } = Astro.props;
         ) {
           return localStorage.getItem("theme");
         }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-        return "dark";
+
+        return "light";
       })();
       if (theme === "light") {
         document.documentElement.classList.remove("dark");
