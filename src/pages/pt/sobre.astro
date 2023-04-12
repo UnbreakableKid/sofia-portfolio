@@ -47,10 +47,14 @@ const content = {
         </Button>
       </div>
     </section>
-    <ClicableImage client:load classNamesThumb={" pb-20 md:pb-48"}>
+    <ClicableImage
+      client:load
+      classNamesThumb={"pb-16 md:pb-0 md:max-h-[90%] md:overflow-y-auto no-scrollbar md:-translate-y-16"}
+    >
       <Image
         src={timelinePng}
-        height={778}
+        height={775}
+        class={"z-30 self-justify-end"}
         slot={"thumbnail"}
         quality="mid"
         alt="My life timeline"
@@ -61,7 +65,7 @@ const content = {
         slot={"fullImage"}
         alt="My life timeline"
         quality={"max"}
-        height={900}
+        height={800}
         class={"justify-self-center"}
       />
     </ClicableImage>
