@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "translations": "pnpx astro-i18next generate"
   },
   "dependencies": {
     "@astrojs/react": "^2.1.1",
