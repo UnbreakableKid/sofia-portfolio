@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import i18next, { changeLanguage, i18n } from "i18next";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import timelinePng from "../../assets/timeline.png";
@@ -15,6 +15,7 @@ const content = {
     image: "https://example.com/image.jpg",
     date: "2021-01-01",
 };
+const currentLang = i18next.language.toUpperCase();
 ---
 
 <MainLayout content={content}>
@@ -37,14 +38,20 @@ const content = {
           nestas áreas e abrir os horizontes sobre o papel do design gráfico na
           sociedade.
         </p>
-        <Button
-          size="lg"
-          class={`hover:no-underline p-0 font-bold text-2xl`}
-          id="logo"
-          variant={"link"}
+        <a
+          href={`/CV_${currentLang}.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Curriculum Vitae
-        </Button>
+          <Button
+            size="lg"
+            class={`hover:no-underline p-0 font-bold text-2xl`}
+            id="logo"
+            variant={"link"}
+          >
+            Curriculum Vitae
+          </Button>
+        </a>
       </div>
     </section>
     <ClicableImage
