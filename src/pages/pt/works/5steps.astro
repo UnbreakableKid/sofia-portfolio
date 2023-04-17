@@ -3,7 +3,7 @@ import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
 import ClicableImage from "../../../components/ClicableImage";
 import passos1 from "../../../assets/5passos/5passos1.png";
-import passos2 from "../../../assets/5passos/5passos2.png";
+import passos2 from "../../../assets/5passos/5passos2.jpg";
 import passos3 from "../../../assets/5passos/5passos3.png";
 import { Image } from "astro:assets";
 
@@ -19,11 +19,11 @@ const content = {
     {t("5steps.title")}
   </h1>
   <div slot="description">
-    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
       {t("5steps.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
+    <p class="prose prose-neutral font-sans dark:prose-invert">
       {t("5steps.description2")}
     </p>
   </div>

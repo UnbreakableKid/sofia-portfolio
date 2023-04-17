@@ -2,11 +2,11 @@
 import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
 import ClicableImage from "../../../components/ClicableImage";
-import Fraunhofer1 from "../../../assets/fraunhofer/Fraunhofer1.png";
-import Fraunhofer2 from "../../../assets/fraunhofer/Fraunhofer2.png";
-import Fraunhofer3 from "../../../assets/fraunhofer/Fraunhofer3.png";
-import Fraunhofer4 from "../../../assets/fraunhofer/Fraunhofer4.png";
-import Fraunhofer5 from "../../../assets/fraunhofer/Fraunhofer5.png";
+import Fraunhofer1 from "../../../assets/fraunhofer/Fraunhofer1.jpg";
+import Fraunhofer2 from "../../../assets/fraunhofer/Fraunhofer2.jpg";
+import Fraunhofer3 from "../../../assets/fraunhofer/Fraunhofer3.jpg";
+import Fraunhofer4 from "../../../assets/fraunhofer/Fraunhofer4.jpg";
+import Fraunhofer5 from "../../../assets/fraunhofer/Fraunhofer5.jpg";
 import { Image } from "astro:assets";
 
 changeLanguage("pt");
@@ -19,15 +19,15 @@ const content = {
 <WorkLayout {content}>
   <h1 slot="title" class="font-bold md:text-4xl">{t("fraunhofer.title")}</h1>
   <div slot="description">
-    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert md:text-xl">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
       {t("fraunhofer.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans dark:prose-invert md:text-xl">
+    <p class="prose prose-neutral font-sans dark:prose-invert">
       {t("fraunhofer.description2")}
     </p>
 
-    <p class="prose prose-neutral mt-4 font-sans dark:prose-invert md:text-xl">
+    <p class="prose prose-neutral mt-4 font-sans dark:prose-invert">
       {t("fraunhofer.description3")}
     </p>
   </div>
