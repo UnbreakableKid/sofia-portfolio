@@ -1,0 +1,81 @@
+---
+import { changeLanguage, t } from "i18next";
+import WorkLayout from "../../../layouts/WorkLayout.astro";
+import ClicableImage from "../../../components/ClicableImage";
+import bookyUseFlowPNG from "../../../assets/Booky/Booky_userflow.png";
+import bookySiteMapPNG from "../../../assets/Booky/Booky_sitemap.png";
+import bookyInprogressPNG from "../../../assets/Booky/Booky_inprogress.jpg";
+import { Image } from "astro:assets";
+
+changeLanguage("pt");
+
+const content = {
+    title: t("booky.title"),
+};
+---
+
+<WorkLayout {content}>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("booky.title")}</h1>
+  <div slot="description">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("booky.description1")}
+    </p>
+
+    <p class="prose prose-neutral font-sans dark:prose-invert">
+      {t("booky.description2")}
+    </p>
+  </div>
+  <div slot="images" class="flex flex-col gap-5">
+    <ClicableImage client:visible>
+      <Image
+        src={bookyUseFlowPNG}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        quality="mid"
+        width={732}
+      />
+
+      <Image
+        src={bookyUseFlowPNG}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={800}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={bookySiteMapPNG}
+        slot={"thumbnail"}
+        alt="Booky sitemap"
+        width={732}
+      />
+
+      <Image
+        src={bookySiteMapPNG}
+        slot={"fullImage"}
+        alt="Booky sitemap"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={bookyInprogressPNG}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        width={732}
+      />
+
+      <Image
+        src={bookyInprogressPNG}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+  </div>
+</WorkLayout>

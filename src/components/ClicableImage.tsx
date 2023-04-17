@@ -15,12 +15,12 @@ const ClicableImage = ({
     <Dialog>
       <DialogTrigger asChild>
         <div
-          className={`max-h-screen cursor-zoom-in snap-start md:snap-center  ${classNamesThumb}`}
+          className={`max-h-full cursor-zoom-in snap-start self-center md:snap-center ${classNamesThumb}`}
         >
           {thumbnail}
         </div>
       </DialogTrigger>
-      <DialogContent className="cursor-none md:w-3/5 md:max-w-none">
+      <DialogContent className="cursor-none justify-center md:w-3/5 md:max-w-none">
         {fullImage}
       </DialogContent>
     </Dialog>

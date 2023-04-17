@@ -1,0 +1,190 @@
+---
+import { changeLanguage, t } from "i18next";
+import WorkLayout from "../../../layouts/WorkLayout.astro";
+import ClicableImage from "../../../components/ClicableImage";
+import caeiro1 from "../../../assets/Caeiro/1.jpg";
+import caeiro2 from "../../../assets/Caeiro/2.png";
+import caeiro3 from "../../../assets/Caeiro/3.png";
+import caeiro4 from "../../../assets/Caeiro/4.jpg";
+import caeiro5 from "../../../assets/Caeiro/5.png";
+import caeiro6 from "../../../assets/Caeiro/6.jpg";
+import caeiro7 from "../../../assets/Caeiro/7.jpg";
+import caeiro8 from "../../../assets/Caeiro/8.jpg";
+import caeiro9 from "../../../assets/Caeiro/9.mp4";
+import caeiro10 from "../../../assets/Caeiro/10.mp4";
+import { Image } from "astro:assets";
+
+changeLanguage("pt");
+
+const content = {
+    title: t("caeiro.title"),
+};
+---
+
+<WorkLayout {content}>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("caeiro.title")}</h1>
+  <div slot="description">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("caeiro.description1")}
+    </p>
+
+    <p class="prose prose-neutral font-sans dark:prose-invert">
+      {t("caeiro.description2")}
+    </p>
+  </div>
+  <div slot="images" class="flex flex-col gap-5">
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro1}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        width={732}
+      />
+
+      <Image
+        src={caeiro1}
+        slot={"fullImage"}
+        alt={t("caeiro.alt2")}
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro2}
+        slot={"thumbnail"}
+        alt="Booky sitemap"
+        width={732}
+      />
+
+      <Image
+        src={caeiro2}
+        slot={"fullImage"}
+        alt="Booky sitemap"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro3}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        width={732}
+      />
+
+      <Image
+        src={caeiro3}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro4}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        width={732}
+      />
+
+      <Image
+        src={caeiro4}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro5}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        width={732}
+      />
+
+      <Image
+        src={caeiro5}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <div class="flex gap-2">
+      <ClicableImage client:visible>
+        <Image
+          src={caeiro6}
+          slot={"thumbnail"}
+          alt="In progress identity"
+          height={800}
+        />
+
+        <Image
+          src={caeiro6}
+          slot={"fullImage"}
+          alt="In progress identity"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+
+      <ClicableImage client:visible>
+        <Image
+          src={caeiro7}
+          slot={"thumbnail"}
+          alt="In progress identity"
+          height={800}
+        />
+
+        <Image
+          src={caeiro7}
+          slot={"fullImage"}
+          alt="In progress identity"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+    </div>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caeiro8}
+        slot={"thumbnail"}
+        alt="In progress identity"
+        width={732}
+      />
+
+      <Image
+        src={caeiro8}
+        slot={"fullImage"}
+        alt="In progress identity"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <video slot={"thumbnail"} src={caeiro9} height={800} autoplay loop muted
+      ></video>
+
+      <video slot={"fullImage"} src={caeiro9} height={1000} controls muted
+      ></video>
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <video slot={"thumbnail"} src={caeiro10} height={800} autoplay loop muted
+      ></video>
+
+      <video slot={"fullImage"} src={caeiro10} height={1000} controls muted
+      ></video>
+    </ClicableImage>
+  </div>
+</WorkLayout>

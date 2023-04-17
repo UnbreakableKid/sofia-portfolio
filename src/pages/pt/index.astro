@@ -5,8 +5,6 @@ import { t, changeLanguage } from "i18next";
 
 changeLanguage("pt");
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 const title = "Susu";
 const description = "Susu";
 const meta = {
@@ -18,14 +16,14 @@ const meta = {
 <MainLayout content={meta} class="absolute">
   <div class="grid h-full content-center justify-center">
     <h1
-      class="prose relative z-10 bg-black font-serif text-9xl font-bold text-white mix-blend-difference"
+      class="prose relative z-10 bg-black text-9xl font-bold text-white mix-blend-difference"
       id="sofia"
     >
       {t("home.name")}
     </h1>
   </div>
   <canvas
-    class="absolute top-0 right-0 z-0 h-screen w-screen mix-blend-difference"
+    class="absolute right-0 top-0 z-0 h-screen w-screen mix-blend-difference"
     id="canvas"></canvas>
   <script>
     import "../../scripts/Balls";

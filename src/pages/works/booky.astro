@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../layouts/WorkLayout.astro";
 import ClicableImage from "../../components/ClicableImage";
 import bookyUseFlowPNG from "../../assets/Booky/Booky_userflow.png";
@@ -10,22 +10,19 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const content = {
-  title: "Hello World",
-  body: "This is a test",
+    title: t("booky.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">Booky</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("booky.title")}</h1>
   <div slot="description">
-    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
-      O Booky é uma plataforma de venda de livros em segunda mão. Este desafio
-      surge como um desafio pessoal resultante das falhas que senti para o
-      vendedor e comprador presentes nas plataformas atuais em Portugal.
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("booky.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
-      Este projeto está atualmente em desenvolvimento.
+    <p class="prose prose-neutral font-sans dark:prose-invert">
+      {t("booky.description2")}
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">
@@ -34,7 +31,8 @@ const content = {
         src={bookyUseFlowPNG}
         slot={"thumbnail"}
         alt="Representation of the user flow"
-        height={800}
+        quality="mid"
+        width={732}
       />
 
       <Image
@@ -42,7 +40,7 @@ const content = {
         slot={"fullImage"}
         alt="Representation of the user flow"
         quality={"max"}
-        height={1000}
+        height={800}
       />
     </ClicableImage>
 
@@ -51,7 +49,7 @@ const content = {
         src={bookySiteMapPNG}
         slot={"thumbnail"}
         alt="Booky sitemap"
-        height={900}
+        width={732}
       />
 
       <Image
@@ -68,7 +66,7 @@ const content = {
         src={bookyInprogressPNG}
         slot={"thumbnail"}
         alt="In progress identity"
-        height={800}
+        width={732}
       />
 
       <Image

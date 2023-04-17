@@ -1,41 +1,62 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import WorkLayout from "../../../layouts/WorkLayout.astro";
 import ClicableImage from "../../../components/ClicableImage";
 import capaPNG from "../../../assets/daHorta/Capa_daHorta.png";
 import examePNG from "../../../assets/daHorta/Exame.png";
 import sitemapPNG from "../../../assets/daHorta/Sitemap.png";
-import screens01PNG from "../../../assets/daHorta/screens01.png";
+import screens01PNG from "../../../assets/daHorta/screens-01.png";
+import screens02PNG from "../../../assets/daHorta/screens-02.png";
 import conjuntoJPG from "../../../assets/daHorta/conjunto.jpg";
+import bideo from "../../../assets/daHorta/bideo.mp4";
+import mockup from "../../../assets/daHorta/mockup.mp4";
 import { Image } from "astro:assets";
 
 changeLanguage("pt");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("daHorta.title"),
 };
-const baseImgUrl = "../src/assets/daHorta/";
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">DaHorta</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("daHorta.title")}</h1>
   <div slot="description">
-    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
-      A associação “Localsapproach” propôs a criação de um website para a venda
-      de produtos alimentares locais, a um preço justo e reduzindo a pegada
-      ecológica. O exercício incluía o naming, branding e realização do website.
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("daHorta.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
-      O daHorta é um website que para além de mercado de frutas e legumes
-      online, ensina e incentiva os utilizadores a tomar práticas mais
-      sustentáveis, tanto na produção como no consumo. Destina-se aos pequenos e
-      médios produtores e fornece-lhes ferramentas que ajudam a determinar o
-      preço justo dos produtos e de recompensação sempre que melhoram a sua
-      prática em termos ambientais. Para os consumidores a plataforma permite
-      adequar a ordenação dos produtos conforme as suas prioridades e sugere
-      receitas com os produtos vendidos na loja.
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("daHorta.description2")}
+    </p>
+
+    <p class="font-sans">
+      {t("projectMadeWith")}
+      <ul>
+        <li>
+          <a
+            href="https://www.behance.net/mariafigueira"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-none underline hover:cursor-none hover:text-blue-500 hover:underline"
+          >
+            Maria Figueira</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.behance.net/mariaspcc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-none underline hover:cursor-none hover:text-blue-500 hover:underline"
+          >
+            Maria Soares</a
+          >
+        </li>
+        <li>
+          <a> Mariana Gonzales</a>
+        </li>
+      </ul>
     </p>
   </div>
   <div slot="images" class="flex flex-col gap-5">
@@ -44,7 +65,9 @@ const baseImgUrl = "../src/assets/daHorta/";
         src={capaPNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        height={900}
+        quality={"mid"}
+        width={732}
+        height={732}
       />
 
       <Image
@@ -60,7 +83,7 @@ const baseImgUrl = "../src/assets/daHorta/";
         src={examePNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        height={900}
+        width={732}
       />
 
       <Image
@@ -73,13 +96,11 @@ const baseImgUrl = "../src/assets/daHorta/";
     </ClicableImage>
 
     <ClicableImage client:visible>
-      {/* @ts-ignore */}
-
       <Image
         src={sitemapPNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        height={900}
+        width={732}
       />
 
       <Image
@@ -91,22 +112,13 @@ const baseImgUrl = "../src/assets/daHorta/";
       />
     </ClicableImage>
 
-    <ClicableImage client:visible>
-      <Image src={conjuntoJPG} slot={"thumbnail"} alt="My life timeline" />
-
-      <Image
-        src={conjuntoJPG}
-        slot={"fullImage"}
-        alt="My life timeline"
-        quality={"max"}
-      />
-    </ClicableImage>
     <ClicableImage client:visible>
       <Image
         src={screens01PNG}
         slot={"thumbnail"}
         alt="My life timeline"
-        height={1000}
+        width={732}
+        quality={"mid"}
       />
 
       <Image
@@ -117,6 +129,61 @@ const baseImgUrl = "../src/assets/daHorta/";
         height={900}
         class={"justify-self-center"}
         loading={"lazy"}
+      />
+    </ClicableImage>
+
+    <div class="my-5 flex h-fit max-h-80 gap-1">
+      <ClicableImage client:visible>
+        <video slot={"thumbnail"} src={bideo} height={345} autoplay loop muted
+        ></video>
+
+        <video slot={"fullImage"} src={bideo} height={1000} controls muted
+        ></video>
+      </ClicableImage>
+
+      <ClicableImage client:visible>
+        <video slot={"thumbnail"} src={mockup} height={330} autoplay loop muted
+        ></video>
+
+        <video slot={"fullImage"} src={mockup} height={1000} controls muted
+        ></video>
+      </ClicableImage>
+    </div>
+
+    <ClicableImage client:visible>
+      <Image
+        src={screens02PNG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        width={732}
+        quality={"mid"}
+      />
+
+      <Image
+        src={screens02PNG}
+        slot={"fullImage"}
+        alt="My life timeline"
+        quality={"max"}
+        height={900}
+        class={"justify-self-center"}
+        loading={"lazy"}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={conjuntoJPG}
+        slot={"thumbnail"}
+        alt="My life timeline"
+        quality={"mid"}
+        width={732}
+      />
+
+      <Image
+        src={conjuntoJPG}
+        slot={"fullImage"}
+        alt="My life timeline"
+        quality={"max"}
       />
     </ClicableImage>
   </div>

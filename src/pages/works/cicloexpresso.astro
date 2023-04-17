@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import ClicableImage from "../../components/ClicableImage";
 import WorkLayout from "../../layouts/WorkLayout.astro";
 import cicloExpresso from "../../assets/cicloExpresso/cicloexpresso.png";
@@ -8,37 +8,35 @@ import { Image } from "astro:assets";
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    body: "This is a test",
+    title: t("cicloExpresso.title"),
 };
 ---
 
 <WorkLayout {content}>
-  <h1 slot="title" class="text-4xl font-bold">Cicloexpresso</h1>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("cicloExpresso.title")}</h1>
   <div slot="description" class="h-fit">
-    <p class="prose prose-neutral mb-5 font-sans text-xl dark:prose-invert">
-      Na cadeira de Infografia realizei projetos infográficos para retratar
-      vários temas e projetos retratados no programa É P'ra Amanhã. Os projetos
-      tinham de ter perspetivas diferentes como sequências de ações,
-      user-journey e visão macro.
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("cicloExpresso.description1")}
     </p>
 
-    <p class="prose prose-neutral font-sans text-xl dark:prose-invert">
-      A infografia do cicloexpresso retratava a user-journey, objetivos,
-      recursos, intervenientes e modelo do serviço.
+    <p class="prose prose-neutral font-sans dark:prose-invert">
+      {t("cicloExpresso.description2")}
     </p>
   </div>
-  <div slot="images">
+  <div slot="images" class="mt-8 md:mt-0">
     <ClicableImage client:load>
-      {/* @ts-ignore */}
-
-      <Image src={cicloExpresso} slot={"thumbnail"} alt="My life timeline" />
-      {/* @ts-ignore */}
+      <Image
+        src={cicloExpresso}
+        slot={"thumbnail"}
+        alt="Infography of the life of the project Cicloexpresso"
+        quality="mid"
+        width={732}
+      />
 
       <Image
         src={cicloExpresso}
         slot={"fullImage"}
-        alt="My life timeline"
+        alt="Infography of the life of the project Cicloexpresso"
         quality={"max"}
       />
     </ClicableImage>

@@ -10,9 +10,6 @@ const ThemeToggle = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
     return "light";
   });
 
@@ -40,6 +37,7 @@ const ThemeToggle = () => {
       type="button"
       className="cursor-none hover:cursor-none hover:no-underline  focus:outline-none focus:ring-2 focus:ring-transparent focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:focus:ring-transparent dark:focus:ring-white dark:focus:ring-offset-gray-900"
       onClick={toggleTheme}
+      title="Toggle dark mode"
     >
       {currentTheme === "light" ? <Moon /> : <Sun />}
     </button>

@@ -1,0 +1,243 @@
+---
+import { changeLanguage, t } from "i18next";
+import WorkLayout from "../../layouts/WorkLayout.astro";
+import ClicableImage from "../../components/ClicableImage";
+import jogo from "../../assets/Memo/Jogo.jpg";
+import caixaScience from "../../assets/Memo/CaixaScience.png";
+import livroMemo from "../../assets/Memo/livroMEMO.png";
+import baralhos from "../../assets/Memo/baralhos.png";
+import VR from "../../assets/Memo/VR.jpg";
+import Archimedes from "../../assets/Memo/Archimedes.png";
+import Newton from "../../assets/Memo/Newton.png";
+import rosalind from "../../assets/Memo/rosalind.png";
+import maca from "../../assets/Memo/maca.png";
+import coroa from "../../assets/Memo/coroa.png";
+import Dna from "../../assets/Memo/Dna.png";
+import { Image } from "astro:assets";
+
+changeLanguage("en");
+
+const content = {
+    title: t("memo.title"),
+};
+---
+
+<WorkLayout {content}>
+  <h1 slot="title" class="font-bold md:text-4xl">{t("memo.title")}</h1>
+  <div slot="description">
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("memo.description1")}
+    </p>
+
+    <p class="prose prose-neutral mb-8 font-sans dark:prose-invert">
+      {t("memo.description2")}
+    </p>
+
+    <p class="font-sans">
+      {t("projectMadeWith")}
+      <ul>
+        <li>
+          <a
+            href="https://www.behance.net/ritamontenegro"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor-none underline hover:cursor-none hover:text-blue-500 hover:underline"
+          >
+            Rita Robalinho</a
+          >
+        </li>
+      </ul>
+    </p>
+  </div>
+  <div slot="images" class="flex flex-col gap-5">
+    <ClicableImage client:visible>
+      <Image
+        src={jogo}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        width={732}
+      />
+
+      <Image
+        src={jogo}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        width={732}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={caixaScience}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        width={732}
+      />
+
+      <Image
+        src={caixaScience}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={livroMemo}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        width={732}
+      />
+
+      <Image
+        src={livroMemo}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={baralhos}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        width={732}
+      />
+
+      <Image
+        src={baralhos}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={VR}
+        slot={"thumbnail"}
+        alt="Representation of the user flow"
+        width={732}
+      />
+
+      <Image
+        src={VR}
+        slot={"fullImage"}
+        alt="Representation of the user flow"
+        quality={"max"}
+        height={1000}
+      />
+    </ClicableImage>
+
+    <div class="flex">
+      <ClicableImage client:visible>
+        <Image
+          src={Archimedes}
+          slot={"thumbnail"}
+          alt="Representation of the user flow"
+          height={800}
+        />
+
+        <Image
+          src={Archimedes}
+          slot={"fullImage"}
+          alt="Representation of the user flow"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+      <ClicableImage client:visible>
+        <Image
+          src={coroa}
+          slot={"thumbnail"}
+          alt="Representation of the user flow"
+          height={800}
+        />
+
+        <Image
+          src={coroa}
+          slot={"fullImage"}
+          alt="Representation of the user flow"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+    </div>
+
+    <div class="flex">
+      <ClicableImage client:visible>
+        <Image
+          src={Newton}
+          slot={"thumbnail"}
+          alt="Representation of the user flow"
+          height={800}
+        />
+
+        <Image
+          src={Newton}
+          slot={"fullImage"}
+          alt="Representation of the user flow"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+      <ClicableImage client:visible>
+        <Image
+          src={maca}
+          slot={"thumbnail"}
+          alt="Representation of the user flow"
+          height={800}
+        />
+
+        <Image
+          src={maca}
+          slot={"fullImage"}
+          alt="Representation of the user flow"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+    </div>
+
+    <div class="flex">
+      <ClicableImage client:visible>
+        <Image
+          src={rosalind}
+          slot={"thumbnail"}
+          alt="Representation of the user flow"
+          height={800}
+        />
+
+        <Image
+          src={rosalind}
+          slot={"fullImage"}
+          alt="Representation of the user flow"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+      <ClicableImage client:visible>
+        <Image
+          src={Dna}
+          slot={"thumbnail"}
+          alt="Representation of the user flow"
+          height={800}
+        />
+
+        <Image
+          src={Dna}
+          slot={"fullImage"}
+          alt="Representation of the user flow"
+          quality={"max"}
+          height={1000}
+        />
+      </ClicableImage>
+    </div>
+  </div>
+</WorkLayout>
