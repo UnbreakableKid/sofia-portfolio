@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "translations": "pnpx astro-i18next generate"
+    "translations": "pnpm dlx astro-i18next generate"
   },
   "dependencies": {
     "@astrojs/react": "^2.1.1",

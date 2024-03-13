@@ -5,6 +5,8 @@ import ClicableImage from "../../../components/ClicableImage";
 import bookyUseFlowPNG from "../../../assets/Booky/Booky_userflow.png";
 import bookySiteMapPNG from "../../../assets/Booky/Booky_sitemap.png";
 import bookyInprogressPNG from "../../../assets/Booky/Booky_inprogress.jpg";
+import StyleScapeYoung from "../../../assets/Booky/stylescape.png";
+import StyleScapeLibrary from "../../../assets/Booky/stylescape2.png";
 import { Image } from "astro:assets";
 
 changeLanguage("pt");
@@ -58,6 +60,39 @@ const content = {
         alt="Booky sitemap"
         quality={"max"}
         height={1000}
+      />
+    </ClicableImage>
+
+    <ClicableImage client:visible>
+      <Image
+        src={StyleScapeYoung}
+        slot={"thumbnail"}
+        alt="Young and colorful stylescape"
+        width={732}
+      />
+
+      <Image
+        src={StyleScapeYoung}
+        slot={"fullImage"}
+        alt="Young and colorful stylescape"
+        quality={"max"}
+        width={1700}
+      />
+    </ClicableImage>
+    <ClicableImage client:visible>
+      <Image
+        src={StyleScapeLibrary}
+        slot={"thumbnail"}
+        alt="Stylescape inspired on libraries' aesthetic"
+        width={732}
+      />
+
+      <Image
+        src={StyleScapeLibrary}
+        slot={"fullImage"}
+        alt="Stylescape inspired on libraries' aesthetic"
+        quality={"max"}
+        width={1700}
       />
     </ClicableImage>
 
