@@ -7,12 +7,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    assets: true,
-  },
-  image: {
-    service: "astro/assets/services/sharp",
-  },
   integrations: [tailwind(), react(), astroI18next()],
   vite: {
     ssr: {

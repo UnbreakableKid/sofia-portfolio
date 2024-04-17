@@ -1,33 +1,37 @@
 ---
-import i18next, { changeLanguage, i18n } from "i18next";
+import i18next, { changeLanguage, type i18n } from "i18next";
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import timelinePng from "../assets/timeline.png";
 import Button from "../components/ui/Button.astro";
-import ClicableImage from "../components/ClicableImage";
+import { ScrollArea } from "src/components/ui/ScrollArea";
+import {
+  Fofinha,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "src/components/ui/HoverCard";
 
 changeLanguage("en");
 
 const content = {
-    title: "Hello World",
-    description: "This is a test page",
-    url: "https://example.com",
-    image: "https://example.com/image.jpg",
-    date: "2021-01-01",
+  title: "Hello World",
+  description: "This is a test page",
+  url: "https://example.com",
+  image: "https://example.com/image.jpg",
+  date: "2021-01-01",
 };
 const currentLang = i18next.language.toUpperCase();
 ---
 
 <MainLayout content={content}>
-  <div
-    class="grid h-screen grid-cols-1 gap-2 overflow-auto p-8 md:mt-8 md:grid-cols-2 md:pl-48"
-  >
+  <div class="flex flex-col items-center justify-center p-8 md:mt-8 md:pl-48">
     <section class="md:mt-16">
       <div class="prose mb-5 font-sans dark:prose-invert">
         <p class="mb-2">
-          Olá. Eu sou a Sofia, uma designer de comunicação que através dos seus
-          variados gostos e competências resolve problemas de comunicação visual
-          para promover conhecimento e marcas.
+          Olá. Eu sou a
+          <Fofinha client:load />
+          , uma designer de comunicação que através dos seus variados gostos e competências
+          resolve problemas de comunicação visual para promover conhecimento e marcas.
         </p>
 
         <p class="mb-12">
@@ -54,27 +58,12 @@ const currentLang = i18next.language.toUpperCase();
         </a>
       </div>
     </section>
-    <ClicableImage
-      client:load
-      classNamesThumb={"pb-16 md:pb-0 md:max-h-[90%] md:overflow-y-auto no-scrollbar md:-translate-y-16"}
+    <ScrollArea
+      client:only="react"
+      className="md:h-[calc(100vh-500px)] h-[calc(100vh-308px)] pb-32 "
+      classNameForView="flex flex-col gap-5 "
     >
-      <Image
-        src={timelinePng}
-        height={775}
-        class={"z-30 self-justify-end"}
-        slot={"thumbnail"}
-        quality="mid"
-        alt="My life timeline"
-      />
-
-      <Image
-        src={timelinePng}
-        slot={"fullImage"}
-        alt="My life timeline"
-        quality={"max"}
-        height={800}
-        class={"justify-self-center"}
-      />
-    </ClicableImage>
+      <Image src={timelinePng} alt="Timeline" loading={"eager"} />
+    </ScrollArea>
   </div>
 </MainLayout>
