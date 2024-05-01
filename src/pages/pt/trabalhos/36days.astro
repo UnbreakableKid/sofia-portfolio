@@ -52,6 +52,8 @@ const content = {
   <div slot="images">
     <ClicableImage client:visible>
       <Image
+      loading={"eager"}
+
         src={letterA}
         slot={"thumbnail"}
         quality="mid"
@@ -72,6 +74,8 @@ const content = {
     <ClicableImage client:visible>
       <Image
         src={letterB}
+      loading={"eager"}
+
         slot={"thumbnail"}
         quality="mid"
         width={732}
