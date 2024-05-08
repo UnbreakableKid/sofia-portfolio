@@ -156,7 +156,7 @@ const categories = [
       categories.map((category, i) => (
         <>
           <div
-            class="no-scrollbar flex flex-wrap justify-center gap-4 overflow-y-auto  data-[active=false]:hidden md:mt-16 md:grid md:grid-cols-2 md:gap-7 lg:grid-cols-4 "
+            class="flex flex-wrap justify-center gap-4 overflow-y-auto no-scrollbar  data-[active=false]:hidden md:mt-16 md:grid md:grid-cols-2 md:gap-7 lg:grid-cols-4 "
             role="tabpanel"
             tabindex={i}
             data-active={i === 0 ? "true" : "false"}
@@ -169,6 +169,7 @@ const categories = [
                 target="_self"
               >
                 <Image
+                  loading={"eager"}
                   src={element.img}
                   class={
                     "border grayscale filter transition-all duration-500 hover:filter-none"
