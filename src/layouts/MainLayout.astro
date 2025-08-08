@@ -42,7 +42,7 @@ const { content } = Astro.props;
   </head>
   <body>
     <div
-      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col bg-white font-sans dark:bg-black dark:text-white sm:min-h-max md:h-screen lg:h-screen"
+      class="flex h-screen w-screen cursor-none auto-rows-auto flex-col overflow-auto bg-white font-sans dark:bg-black dark:text-white sm:min-h-max md:h-screen lg:h-screen"
     >
       <Header homeLink={localizePath("/")} workLink={localizePath("/works")} />
       <ins
